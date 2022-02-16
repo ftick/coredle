@@ -183,7 +183,6 @@ export const WORDS = [
   'loyal',
   'jaden',
   'zhime',
-  'grealy',
   'flipp',
   'gallo',
 
