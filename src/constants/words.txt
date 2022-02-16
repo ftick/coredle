@@ -1,6 +1,9 @@
-export const WORDS = [
-  'timer', // general terms
   'melee',
+  'flash',
+  'brawl',
+  'minus',
+  'remix',
+  'timer',
   'spawn',
   'smurf',
   'ledge',
@@ -23,17 +26,13 @@ export const WORDS = [
   'clone',
   'ditto',
   'plank',
-  'shine',
   'spike',
   'stale',
   'throw',
-  'float',
   'ftilt',
   'sideb',
   'downb',
   'frame',
-  'laser',
-  'drill',
   'reads',
   'cargo',
   'taunt',
@@ -45,34 +44,48 @@ export const WORDS = [
   'reset',
   'crews',
   'getup',
-  'minus',
-  'scrub',
   'setup',
+  'scrub',
   'trade',
   'whiff',
   'major',
   'local',
   'tiers',
-
-  'shffl', // tech
+  'stage',
+  'belay',//
+  'laser',
+  'drill',
+  'float',
+  'shine',
+  'fludd',
+  'stone',
+  'judge',
+  'chomp',
+  'fruit',
+  'cross',
+  'lloid',
+  'woosh',
+  'craft',
+  'flare',
+  'gordo',
+  'shffl',//
   'tdrop',
   'wdoos',
   'qdrop',
   'djnil',
-  'belay',
+  'floss',
   'vdrop',
   'dacus',
   'trump',
   'bidou',
-
-  'timer', // items
+  'shoto',
+  'timer',//
   'staff',
   'unira',
   'cucco',
   'crate',
   'xbomb',
-
-  'marth', // characters
+  'marth',//
   'sheik',
   'falco',
   'pichu',
@@ -98,24 +111,30 @@ export const WORDS = [
   'simon',
   'snake',
   'joker',
-
-  'onett', // stages
+  'shulk',
+  'terry',
+  'wendy',
+  'larry',
+  'lemmy',
+  'tabuu',//
+  'porky',
+  'petey',//
+  'onett',
   'venom',
   'lylat',
   'kalos',
   'unova',
   'gamer',
-
-  'hflan', // tournaments
+  'zebes',//
+  'hflan',
   'wtfox',
   'beast',
   'sktar',
   'moast',
   'whobo',
   'snosa',
-  'kanto',
-
-  'shino', // melee
+  'kanto',//
+  'shino',
   'logan',
   'mango',
   'lucky',
@@ -143,9 +162,8 @@ export const WORDS = [
   'wally',
   'faust',
   'goomy',
-  'tempo',
-
-  'alvin', // 64
+  'tempo',//
+  'alvin',
   'tacos',
   'revan',
   'banze',
@@ -156,9 +174,8 @@ export const WORDS = [
   'joshi',
   'finio',
   'hydra',
-  'janco',
-
-  'grzly', // PM
+  'janco',//
+  'grzly',
   'sextc',
   'suvir',
   'sothe',
@@ -183,15 +200,13 @@ export const WORDS = [
   'loyal',
   'jaden',
   'zhime',
-  'grealy',
   'flipp',
   'gallo',
-
-  'pelca', // brawl
+  'blitz',//
+  'pelca',
   'denti',
-  'otori',
-
-  'ranai', // sm4sh
+  'otori',//
+  'ranai',
   'falln',
   'earth',
   'locus',
@@ -200,9 +215,8 @@ export const WORDS = [
   'konga',
   'shaky',
   'karna',
-  'tamim',
-
-  'mkleo', // ult
+  'tamim',//
+  'mkleo',
   'tweek',
   'dabuz',
   'light',
@@ -242,26 +256,28 @@ export const WORDS = [
   'toast',
   'yonni',
   'tarik',
-  'varun',
-
-  'bambi', // TOs
+  'varun',//
+  'bambi',
   'petra',
   'jayde',
   'oadby',
   'tojoe',
-  'stone',
   'puppy',
   'fluff',
   'spots',
   'fizix',
   'dusky',
-  'feral',
-
-  'fizzi', // community members
+  'feral',//
+  'fizzi',
   'samox',
+  'shell',
+  'magus',
+  'jiang',
+  'yeroc',
+  'cmart',
   'bensw',
-
-  'stude', // commentators
+  'mogul',//
+  'stude',
   'zetts',
   'slime',
   'radar',
@@ -270,7 +286,7 @@ export const WORDS = [
   'brosa',
   'coney',
 
-             // well-ish known melee
+  // well-ish known melee
   // 'lexor', 
   // 'palpa',
   // 'sanne',
@@ -316,4 +332,3 @@ export const WORDS = [
   // 'zoler',
   // 'valdo',
   // 'blaze',
-];
