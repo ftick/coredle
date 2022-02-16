@@ -1,5 +1,5 @@
 export const WORDS = [
-  'timer',
+  'timer', // general terms
   'melee',
   'spawn',
   'smurf',
@@ -54,7 +54,7 @@ export const WORDS = [
   'local',
   'tiers',
 
-  'shffl',
+  'shffl', // tech
   'tdrop',
   'wdoos',
   'qdrop',
@@ -65,14 +65,14 @@ export const WORDS = [
   'trump',
   'bidou',
 
-  'timer',
+  'timer', // items
   'staff',
   'unira',
   'cucco',
   'crate',
   'xbomb',
 
-  'marth',
+  'marth', // characters
   'sheik',
   'falco',
   'pichu',
@@ -99,14 +99,14 @@ export const WORDS = [
   'snake',
   'joker',
 
-  'onett',
+  'onett', // stages
   'venom',
   'lylat',
   'kalos',
   'unova',
   'gamer',
 
-  'hflan',
+  'hflan', // tournaments
   'wtfox',
   'beast',
   'sktar',
@@ -115,7 +115,7 @@ export const WORDS = [
   'snosa',
   'kanto',
 
-  'shino',
+  'shino', // melee
   'logan',
   'mango',
   'lucky',
@@ -145,7 +145,7 @@ export const WORDS = [
   'goomy',
   'tempo',
 
-  'alvin',
+  'alvin', // 64
   'tacos',
   'revan',
   'banze',
@@ -158,7 +158,7 @@ export const WORDS = [
   'hydra',
   'janco',
 
-  'grzly',
+  'grzly', // PM
   'sextc',
   'suvir',
   'sothe',
@@ -187,11 +187,11 @@ export const WORDS = [
   'flipp',
   'gallo',
 
-  'pelca',
+  'pelca', // brawl
   'denti',
   'otori',
 
-  'ranai',
+  'ranai', // sm4sh
   'falln',
   'earth',
   'locus',
@@ -202,7 +202,7 @@ export const WORDS = [
   'karna',
   'tamim',
 
-  'mkleo',
+  'mkleo', // ult
   'tweek',
   'dabuz',
   'light',
@@ -244,7 +244,7 @@ export const WORDS = [
   'tarik',
   'varun',
 
-  'bambi',
+  'bambi', // TOs
   'petra',
   'jayde',
   'oadby',
@@ -257,11 +257,11 @@ export const WORDS = [
   'dusky',
   'feral',
 
-  'fizzi',
+  'fizzi', // community members
   'samox',
   'bensw',
 
-  'stude',
+  'stude', // commentators
   'zetts',
   'slime',
   'radar',
@@ -269,4 +269,51 @@ export const WORDS = [
   'virum',
   'brosa',
   'coney',
+
+             // well-ish known melee
+  // 'lexor', 
+  // 'palpa',
+  // 'sanne',
+  // 'watch',
+  // 'gooms',
+  // 'pappi',
+  // 'weonx',
+  // 'mahie',
+  // 'raoul',
+  // 'maruf',
+  // 'logos',
+  // 'humpe',
+  // 'renzo',
+  // 'kingu',
+  // 'rikzz',
+  // 'sharp',
+  // 'jerry',
+  // 'kaeon',
+  // 'bigdk',
+  // 'panko',
+  // 'fluid',
+  // 'fable',
+  // 'gdawg',
+  // 'sharp',
+  // 'eekim',
+  // 'deegs',
+  // 'quaff',
+  // 'panos',
+  // 'adust',
+  // 'shabo',
+  // 'eddie',
+  // 'jiano',
+  // 'gravy',
+  // 'gucci',
+  // 'trail',
+  // 'vwins',
+  // 'remen',
+  // 'azusa',
+  // 'ralph',
+  // 'prinz',
+  // 'baxon',
+  // 'snowy',
+  // 'zoler',
+  // 'valdo',
+  // 'blaze',
 ];
