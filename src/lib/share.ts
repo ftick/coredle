@@ -7,13 +7,14 @@ import { MAX_CHALLENGES } from '../constants/settings'
 export const shareStatus = (
   guesses: string[],
   lost: boolean,
-  isHardMode: boolean
+  isHardMode: boolean,
+  includeLink: boolean
 ) => {
   navigator.clipboard.writeText(
     `${GAME_TITLE} ${solutionIndex} ${
       lost ? 'X' : guesses.length
     }/${MAX_CHALLENGES}${isHardMode ? '*' : ''}\n\n` +
-      generateEmojiGrid(guesses)
+      generateEmojiGrid(guesses) + `${includeLink ? '\nhttps://randle.vercel.app': ''}`
   )
 }
 
