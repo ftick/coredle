@@ -24,7 +24,7 @@ jobs:
         env:
           AUTHOR: ftick
           BUILD_PATH: public
-          GITHUB_PAGE_NAME: ftick.github.io
+          GITHUB_PAGE_NAME: ftick.github.io/smash-wordle
           PA_TOKEN: ${{ secrets.PA_TOKEN }}
           USERNAME: ftick
           EMAIL: lcbantoto@gmail.com
