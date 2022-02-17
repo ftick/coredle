@@ -12,7 +12,7 @@ If you're interested, the [demo](https://reactle.vercel.app/) and [source code](
 Clone the repository and perform the following command line actions:
 
 ```bash
-$> cd react-wordle
+$> cd smash-wordle
 $> npm install
 $> npm run start
 ```
