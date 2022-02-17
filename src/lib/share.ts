@@ -14,7 +14,8 @@ export const shareStatus = (
     `${GAME_TITLE} ${solutionIndex} ${
       lost ? 'X' : guesses.length
     }/${MAX_CHALLENGES}${isHardMode ? '*' : ''}\n\n` +
-      generateEmojiGrid(guesses) + `${includeLink ? '\nrandle.vercel.app': ''}`
+      generateEmojiGrid(guesses) +
+      `${includeLink ? '\nrandle.vercel.app' : ''}`
   )
 }
 

@@ -88,9 +88,7 @@ export const Keyboard = ({
           />
         ))}
         <Key width={65.4} value="DELETE" onClick={onClick}>
-          <BackspaceIcon
-            className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
-          />
+          <BackspaceIcon className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white" />
         </Key>
       </div>
     </div>
