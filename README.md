@@ -2,6 +2,9 @@
 
 This is a clone project of the popular word guessing game we all know and love. Made using React, Typescript, and Tailwind.
 
+![image](https://user-images.githubusercontent.com/7319798/154559192-38d54175-7c72-471b-9f32-580f0aad112c.png)
+
+
 Try out this Smash-themed clone [**here**](https://randle.vercel.app/)!    
 If you're interested, the [demo](https://reactle.vercel.app/) and [source code](https://github.com/cwackerfuss/react-wordle) of the project this is based on is also available
 
