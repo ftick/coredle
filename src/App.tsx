@@ -238,8 +238,8 @@ function App() {
   }
 
   return (
-    <div className="pt-2 pb-8 max-w-7xl mx-auto sm:px-6 lg:px-8">
-      <div className="flex w-80 mx-auto items-center mb-8 mt-20">
+    <div className="flex flex-col pt-2 pb-4 max-w-7xl mx-auto sm:px-6 lg:px-8">
+      <div className="flex w-80 mx-auto items-center mb-4 mt-4">
         <h1 className="text-xl ml-2.5 grow font-bold dark:text-white">
           {GAME_TITLE}
         </h1>
@@ -262,6 +262,7 @@ function App() {
         isRevealing={isRevealing}
         currentRowClassName={currentRowClass}
       />
+      <div className="h-48"></div>
       <Keyboard
         onChar={onChar}
         onDelete={onDelete}
