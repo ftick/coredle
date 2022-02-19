@@ -23,3 +23,14 @@ export const TOTAL_TRIES_TEXT = 'Total tries'
 export const SUCCESS_RATE_TEXT = 'Success rate'
 export const CURRENT_STREAK_TEXT = 'Current streak'
 export const BEST_STREAK_TEXT = 'Best streak'
+
+export const HOW_TO1_TEXT =
+  'Guess the word in 8 tries. After each guess, the color of the tiles will change to show how close your guess was to the word.'
+export const HOW_TO2_TEXT =
+  'The letter M is in the word and in the correct spot.'
+export const HOW_TO3_TEXT = 'The letter C is in the word but in the wrong spot.'
+export const HOW_TO4_TEXT = 'The letter N is not in the word in any spot.'
+
+export const HOW_TO5_TEXT =
+  'This is an open source version of the word guessing game we all know and love -'
+export const HOW_TO6_TEXT = 'check out the code here'
