@@ -262,6 +262,7 @@ function App() {
         isRevealing={isRevealing}
         currentRowClassName={currentRowClass}
       />
+      <div className="h-40"></div>
       <Keyboard
         onChar={onChar}
         onDelete={onDelete}
