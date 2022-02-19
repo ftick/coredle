@@ -51,7 +51,7 @@ export const Keyboard = ({
   }, [onEnter, onDelete, onChar])
 
   return (
-    <div className="flex flex-flow flex-col absolute bottom-5">
+    <div className="flex flex-flow flex-col absolute bottom-1">
       <div className="flex justify-center mb-1 w-screen">
         {['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'].map((key) => (
           <Key
