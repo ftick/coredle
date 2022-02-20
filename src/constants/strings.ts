@@ -12,6 +12,10 @@ export const WRONG_SPOT_MESSAGE = (guess: string, position: number) =>
   `Must use ${guess} in position ${position}`
 export const NOT_CONTAINED_MESSAGE = (letter: string) =>
   `Guess must contain ${letter}`
+export const SETTINGS_TEXT = 'Settings'
+export const HARD_MODE_TEXT = 'Hard Mode'
+export const DARK_MODE_TEXT = 'Dark Mode'
+export const CONTRAST_MODE_TEXT = 'High Contrast Mode'
 export const ENTER_TEXT = 'Enter'
 export const DELETE_TEXT = 'Delete'
 export const STATISTICS_TITLE = 'Statistics'
@@ -24,6 +28,7 @@ export const SUCCESS_RATE_TEXT = 'Success rate'
 export const CURRENT_STREAK_TEXT = 'Current streak'
 export const BEST_STREAK_TEXT = 'Best streak'
 
+export const HOW_TO0_TEXT = 'How to Play'
 export const HOW_TO1_TEXT =
   'Guess the word in 8 tries. After each guess, the color of the tiles will change to show how close your guess was to the word.'
 export const HOW_TO2_TEXT =

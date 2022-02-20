@@ -12,6 +12,10 @@ export const WRONG_SPOT_MESSAGE = (guess: string, position: number) =>
   `Doit utiliser ${guess} en position ${position}`
 export const NOT_CONTAINED_MESSAGE = (letter: string) =>
   `Supposition doit contenir ${letter}`
+export const SETTINGS_TEXT = 'Paramètres'
+export const HARD_MODE_TEXT = 'Mode Difficile'
+export const DARK_MODE_TEXT = 'Dark Mode'
+export const CONTRAST_MODE_TEXT = 'High Contrast Mode'
 export const ENTER_TEXT = 'Entrée'
 export const DELETE_TEXT = 'Supprimé'
 export const STATISTICS_TITLE = 'Statistiques'
@@ -24,13 +28,14 @@ export const SUCCESS_RATE_TEXT = 'Taux de réussite'
 export const CURRENT_STREAK_TEXT = 'Traînée actuelle'
 export const BEST_STREAK_TEXT = 'Meilleure série'
 
+export const HOW_TO0_TEXT = 'Comment Jouer'
 export const HOW_TO1_TEXT =
-  'Guess the word in 8 tries. After each guess, the color of the tiles will change to show how close your guess was to the word.'
+  'Devinez le mot en 8 essais. Après chaque supposition, la couleur des tuiles changera pour montrer à quel point votre supposition était proche du mot.'
 export const HOW_TO2_TEXT =
-  'The letter M is in the word and in the correct spot.'
-export const HOW_TO3_TEXT = 'The letter C is in the word but in the wrong spot.'
-export const HOW_TO4_TEXT = 'The letter N is not in the word in any spot.'
+  'La lettre M est dans le mot et au bon endroit.'
+export const HOW_TO3_TEXT = 'La lettre C est dans le mot mais au mauvais endroit.'
+export const HOW_TO4_TEXT = 'La lettre N n\'est dans le mot à aucun endroit.'
 
 export const HOW_TO5_TEXT =
-  'This is an open source version of the word guessing game we all know and love -'
-export const HOW_TO6_TEXT = 'check out the code here'
+  'Il s\'agit d\'une version open source du jeu de devinettes de mots que nous connaissons et aimons tous -'
+export const HOW_TO6_TEXT = 'consultez le code ici'
