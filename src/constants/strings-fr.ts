@@ -14,8 +14,8 @@ export const NOT_CONTAINED_MESSAGE = (letter: string) =>
   `Supposition doit contenir ${letter}`
 export const SETTINGS_TEXT = 'Paramètres'
 export const HARD_MODE_TEXT = 'Mode Difficile'
-export const DARK_MODE_TEXT = 'Dark Mode'
-export const CONTRAST_MODE_TEXT = 'High Contrast Mode'
+export const DARK_MODE_TEXT = 'Mode Sombre'
+export const CONTRAST_MODE_TEXT = 'Mode de Contraste Élevé'
 export const ENTER_TEXT = 'Entrée'
 export const DELETE_TEXT = 'Supprimé'
 export const STATISTICS_TITLE = 'Statistiques'
