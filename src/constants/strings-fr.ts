@@ -19,7 +19,7 @@ export const CONTRAST_MODE_TEXT = 'Mode de Contraste Élevé'
 export const ENTER_TEXT = 'Entrée'
 export const DELETE_TEXT = 'Supprimé'
 export const STATISTICS_TITLE = 'Statistiques'
-export const GUESS_DISTRIBUTION_TEXT = 'Distribution des suppositions'
+export const GUESS_DISTRIBUTION_TEXT = 'Distribution des essais'
 export const NEW_WORD_TEXT = 'Nouveau mot en'
 export const SHARE_TEXT = 'Partager'
 export const WITH_LINK_TEXT = 'Avec Lien'
@@ -30,7 +30,7 @@ export const BEST_STREAK_TEXT = 'Meilleure série'
 
 export const HOW_TO0_TEXT = 'Comment Jouer'
 export const HOW_TO1_TEXT =
-  'Devinez le mot en 8 essais. Après chaque supposition, la couleur des tuiles changera pour montrer à quel point votre supposition était proche du mot.'
+  'Devinez le mot en 8 essais. Après chaque essai, la couleur des tuiles changera pour montrer à quel point votre essai était proche du mot.'
 export const HOW_TO2_TEXT = 'La lettre M est dans le mot et au bon endroit.'
 export const HOW_TO3_TEXT =
   'La lettre C est dans le mot mais au mauvais endroit.'
