@@ -19,7 +19,6 @@ import {
 import { Cell } from '../grid/Cell'
 import { BaseModal } from './BaseModal'
 
-
 var HOW_TO0 = ''
 var HOW_TO1 = ''
 var HOW_TO2 = ''
@@ -27,7 +26,7 @@ var HOW_TO3 = ''
 var HOW_TO4 = ''
 var HOW_TO5 = ''
 var HOW_TO6 = ''
-var userLang = navigator.language;
+var userLang = navigator.language
 
 if (userLang.startsWith('en')) {
   HOW_TO0 = HOW_TO0_EN
@@ -37,7 +36,7 @@ if (userLang.startsWith('en')) {
   HOW_TO4 = HOW_TO4_EN
   HOW_TO5 = HOW_TO5_EN
   HOW_TO6 = HOW_TO6_EN
-} else if(userLang.startsWith('fr')) {
+} else if (userLang.startsWith('fr')) {
   HOW_TO0 = HOW_TO0_FR
   HOW_TO1 = HOW_TO1_FR
   HOW_TO2 = HOW_TO2_FR

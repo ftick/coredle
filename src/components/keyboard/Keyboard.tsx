@@ -6,11 +6,11 @@ import { ENTER_TEXT as ENTER_FR } from '../../constants/strings-fr'
 import { BackspaceIcon } from '@heroicons/react/outline'
 
 var ENTER = ''
-var userLang = navigator.language;
+var userLang = navigator.language
 
 if (userLang.startsWith('en')) {
   ENTER = ENTER_EN
-} else if(userLang.startsWith('fr')) {
+} else if (userLang.startsWith('fr')) {
   ENTER = ENTER_FR
 }
 

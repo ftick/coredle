@@ -15,24 +15,24 @@ import {
   SETTINGS_TEXT as SETTNGS_FR,
 } from '../../constants/strings-fr'
 
-var userLang = navigator.language;
-
 var HARD_MODE = ''
 var DARK_MODE = ''
 var CONTRAST_MODE = ''
 var SETTINGS_TITLE = ''
+
+var userLang = navigator.language
 
 if (userLang.startsWith('en')) {
   HARD_MODE = HARD_EN
   DARK_MODE = DARK_EN
   CONTRAST_MODE = CONTRAST_EN
   SETTINGS_TITLE = SETTNGS_EN
-} else if(userLang.startsWith('fr')) {
+} else if (userLang.startsWith('fr')) {
   HARD_MODE = HARD_FR
   DARK_MODE = DARK_FR
   CONTRAST_MODE = CONTRAST_FR
   SETTINGS_TITLE = SETTNGS_FR
-} 
+}
 
 type Props = {
   isOpen: boolean

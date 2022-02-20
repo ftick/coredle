@@ -16,14 +16,14 @@ var TOTAL_TRIES = ''
 var SUCCESS_RATE = ''
 var CURRENT_STREAK = ''
 var BEST_STREAK = ''
-var userLang = navigator.language;
+var userLang = navigator.language
 
 if (userLang.startsWith('en')) {
   TOTAL_TRIES = TOTAL_EN
   SUCCESS_RATE = SUCCESS_EN
   CURRENT_STREAK = CURRENT_EN
   BEST_STREAK = BEST_EN
-} else if(userLang.startsWith('fr')) {
+} else if (userLang.startsWith('fr')) {
   TOTAL_TRIES = TOTAL_FR
   SUCCESS_RATE = SUCCESS_FR
   CURRENT_STREAK = CURRENT_FR
