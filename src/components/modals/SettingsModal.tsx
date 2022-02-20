@@ -1,6 +1,39 @@
 import { BaseModal } from './BaseModal'
 import { SettingsToggle } from './SettingsToggle'
 
+import {
+  HARD_MODE_TEXT as HARD_EN,
+  DARK_MODE_TEXT as DARK_EN,
+  CONTRAST_MODE_TEXT as CONTRAST_EN,
+  SETTINGS_TEXT as SETTNGS_EN,
+} from '../../constants/strings'
+
+import {
+  HARD_MODE_TEXT as HARD_FR,
+  DARK_MODE_TEXT as DARK_FR,
+  CONTRAST_MODE_TEXT as CONTRAST_FR,
+  SETTINGS_TEXT as SETTNGS_FR,
+} from '../../constants/strings-fr'
+
+var HARD_MODE = ''
+var DARK_MODE = ''
+var CONTRAST_MODE = ''
+var SETTINGS_TITLE = ''
+
+var userLang = navigator.language
+
+if (userLang.startsWith('en')) {
+  HARD_MODE = HARD_EN
+  DARK_MODE = DARK_EN
+  CONTRAST_MODE = CONTRAST_EN
+  SETTINGS_TITLE = SETTNGS_EN
+} else if (userLang.startsWith('fr')) {
+  HARD_MODE = HARD_FR
+  DARK_MODE = DARK_FR
+  CONTRAST_MODE = CONTRAST_FR
+  SETTINGS_TITLE = SETTNGS_FR
+}
+
 type Props = {
   isOpen: boolean
   handleClose: () => void
@@ -23,20 +56,20 @@ export const SettingsModal = ({
   handleHighContrastMode,
 }: Props) => {
   return (
-    <BaseModal title="Settings" isOpen={isOpen} handleClose={handleClose}>
+    <BaseModal title={SETTINGS_TITLE} isOpen={isOpen} handleClose={handleClose}>
       <div className="grid-cols-2 gap-4">
         <SettingsToggle
-          settingName="Hard Mode"
+          settingName={HARD_MODE}
           flag={isHardMode}
           handleFlag={handleHardMode}
         />
         <SettingsToggle
-          settingName="Dark Mode"
+          settingName={DARK_MODE}
           flag={isDarkMode}
           handleFlag={handleDarkMode}
         />
         <SettingsToggle
-          settingName="High Contrast Mode"
+          settingName={CONTRAST_MODE}
           flag={isHighContrastMode}
           handleFlag={handleHighContrastMode}
         />

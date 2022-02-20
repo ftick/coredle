@@ -1,8 +1,18 @@
 import { getStatuses } from '../../lib/statuses'
 import { Key } from './Key'
 import { useEffect } from 'react'
-import { ENTER_TEXT } from '../../constants/strings'
+import { ENTER_TEXT as ENTER_EN } from '../../constants/strings'
+import { ENTER_TEXT as ENTER_FR } from '../../constants/strings-fr'
 import { BackspaceIcon } from '@heroicons/react/outline'
+
+var ENTER = ''
+var userLang = navigator.language
+
+if (userLang.startsWith('en')) {
+  ENTER = ENTER_EN
+} else if (userLang.startsWith('fr')) {
+  ENTER = ENTER_FR
+}
 
 type Props = {
   onChar: (value: string) => void
@@ -76,7 +86,7 @@ export const Keyboard = ({
       </div>
       <div className="flex justify-center w-screen">
         <Key width={65.4} value="ENTER" onClick={onClick}>
-          {ENTER_TEXT}
+          {ENTER}
         </Key>
         {['Z', 'X', 'C', 'V', 'B', 'N', 'M'].map((key) => (
           <Key
