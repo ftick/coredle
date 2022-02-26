@@ -17,18 +17,14 @@ export const addStatsForCompletedGame = (
 
   const day_index = getDayIndex()
 
-  console.log(stats.lastAttempted, day_index, THE_USUAL)
-  console.log(0, stats.totalGames === 0)
-  console.log(1, (typeof stats.lastAttempted === "number" && stats.lastAttempted < day_index))
-  console.log(2, (typeof stats.lastAttempted === "number" && stats.lastAttempted < THE_USUAL))
-  console.log(3, (typeof stats.lastAttempted !== "number" && day_index === THE_USUAL))
-
   // if (day_index === THE_USUAL) {
-  if (stats.totalGames === 0 ||
-    (typeof stats.lastAttempted === "number" && stats.lastAttempted < day_index) ||
+  if (
+    stats.totalGames === 0 ||
+    (typeof stats.lastAttempted === 'number' &&
+      stats.lastAttempted < day_index) ||
     // (typeof stats.lastAttempted === "number" && stats.lastAttempted < THE_USUAL) ||
-    (typeof stats.lastAttempted !== "number" && day_index === THE_USUAL)) {
-  // if (stats.lastAttempted && stats.lastAttempted < day_index) {
+    (typeof stats.lastAttempted !== 'number' && day_index === THE_USUAL)
+  ) {
     stats.totalGames += 1
     stats.lastAttempted = day_index
 
