@@ -28,6 +28,18 @@ import { getGuessStatuses } from './statuses'
 //   return urlparameter;
 // }
 
+export function getURLBase() {
+  var parts = window.location.href.replace('&', '').split('/')
+  console.log(parts)
+  return parts[0] + '//' + parts[2]
+}
+
+export function getURLNum() {
+  var parts = window.location.href.replace('&', '').split('/')
+  console.log(parts)
+  return parts[3]
+}
+
 export function getUrlOverrides() {
   var parts = window.location.href.replace('&', '').split('/')
   parts = parts.splice(3)

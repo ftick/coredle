@@ -14,6 +14,7 @@ import {
   CONTRAST_MODE_TEXT as CONTRAST_FR,
   SETTINGS_TEXT as SETTNGS_FR,
 } from '../../constants/strings-fr'
+import TrashIcon from '@heroicons/react/outline/TrashIcon'
 
 var HARD_MODE = ''
 var DARK_MODE = ''
@@ -72,6 +73,13 @@ export const SettingsModal = ({
           settingName={CONTRAST_MODE}
           flag={isHighContrastMode}
           handleFlag={handleHighContrastMode}
+        />
+        <TrashIcon
+          className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
+          onClick={() => {
+            localStorage.clear()
+            window.location.reload()
+          }}
         />
       </div>
     </BaseModal>

@@ -2,6 +2,9 @@ import {
   InformationCircleIcon,
   ChartBarIcon,
   CogIcon,
+  CalendarIcon,
+  RewindIcon,
+  FastForwardIcon,
 } from '@heroicons/react/outline'
 import { useState, useEffect } from 'react'
 import { Grid } from './components/grid/Grid'
@@ -32,6 +35,8 @@ import {
   solution,
   findFirstUnusedReveal,
   getDayIndex,
+  THE_USUAL,
+  getURLBase,
   // LENGTH_OVERRIDE,
 } from './lib/words'
 import { addStatsForCompletedGame, loadStats } from './lib/stats'
@@ -246,68 +251,232 @@ function App() {
     }
   }
 
-  return (
-    <div className="flex flex-col pt-2 pb-4 max-w-7xl mx-auto sm:px-6 lg:px-8">
-      <div className="flex w-80 mx-auto items-center mb-4 mt-4">
-        <h1 className="text-xl ml-2.5 grow font-bold dark:text-white">
-          {GAME_TITLE} {DAY_INDEX}
-          {/* {GAME_TITLE} {getDayIndex()}-{LENGTH_OVERRIDE} */}
-        </h1>
-        <InformationCircleIcon
-          className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
-          onClick={() => setIsInfoModalOpen(true)}
+  if (DAY_INDEX !== THE_USUAL && DAY_INDEX > 0) {
+    return (
+      <div className="flex flex-col pt-2 pb-4 max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div className="flex w-80 mx-auto items-center mb-4 mt-4">
+          <h1 className="text-xl ml-2.5 grow font-bold dark:text-white">
+            {GAME_TITLE} {DAY_INDEX}
+            {/* {GAME_TITLE} {getDayIndex()}-{LENGTH_OVERRIDE} */}
+          </h1>
+          <RewindIcon
+            className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
+            onClick={() => {
+              window.open(getURLBase().concat(`/${DAY_INDEX - 1}`), '_self')
+            }}
+          />
+          <FastForwardIcon
+            className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
+            onClick={() => {
+              window.open(getURLBase().concat(`/${DAY_INDEX + 1}`), '_self')
+            }}
+          />
+          <CalendarIcon
+            className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
+            onClick={() => {
+              window.open(getURLBase(), '_self')
+            }}
+          />
+          <InformationCircleIcon
+            className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
+            onClick={() => setIsInfoModalOpen(true)}
+          />
+          <ChartBarIcon
+            className="h-6 w-6 mr-3 cursor-pointer dark:stroke-white"
+            onClick={() => setIsStatsModalOpen(true)}
+          />
+          <CogIcon
+            className="h-6 w-6 mr-3 cursor-pointer dark:stroke-white"
+            onClick={() => setIsSettingsModalOpen(true)}
+          />
+        </div>
+        <Grid
+          guesses={guesses}
+          currentGuess={currentGuess}
+          isRevealing={isRevealing}
+          currentRowClassName={currentRowClass}
         />
-        <ChartBarIcon
-          className="h-6 w-6 mr-3 cursor-pointer dark:stroke-white"
-          onClick={() => setIsStatsModalOpen(true)}
+        <div className="h-48"></div>
+        <Keyboard
+          onChar={onChar}
+          onDelete={onDelete}
+          onEnter={onEnter}
+          guesses={guesses}
+          isRevealing={isRevealing}
         />
-        <CogIcon
-          className="h-6 w-6 mr-3 cursor-pointer dark:stroke-white"
-          onClick={() => setIsSettingsModalOpen(true)}
+        <InfoModal
+          isOpen={isInfoModalOpen}
+          handleClose={() => setIsInfoModalOpen(false)}
         />
-      </div>
-      <Grid
-        guesses={guesses}
-        currentGuess={currentGuess}
-        isRevealing={isRevealing}
-        currentRowClassName={currentRowClass}
-      />
-      <div className="h-48"></div>
-      <Keyboard
-        onChar={onChar}
-        onDelete={onDelete}
-        onEnter={onEnter}
-        guesses={guesses}
-        isRevealing={isRevealing}
-      />
-      <InfoModal
-        isOpen={isInfoModalOpen}
-        handleClose={() => setIsInfoModalOpen(false)}
-      />
-      <StatsModal
-        isOpen={isStatsModalOpen}
-        handleClose={() => setIsStatsModalOpen(false)}
-        guesses={guesses}
-        gameStats={stats}
-        isGameLost={isGameLost}
-        isGameWon={isGameWon}
-        handleShare={() => showSuccessAlert(GAME_COPIED_MESSAGE)}
-        isHardMode={isHardMode}
-      />
-      <SettingsModal
-        isOpen={isSettingsModalOpen}
-        handleClose={() => setIsSettingsModalOpen(false)}
-        isHardMode={isHardMode}
-        handleHardMode={handleHardMode}
-        isDarkMode={isDarkMode}
-        handleDarkMode={handleDarkMode}
-        isHighContrastMode={isHighContrastMode}
-        handleHighContrastMode={handleHighContrastMode}
-      />
+        <StatsModal
+          isOpen={isStatsModalOpen}
+          handleClose={() => setIsStatsModalOpen(false)}
+          guesses={guesses}
+          gameStats={stats}
+          isGameLost={isGameLost}
+          isGameWon={isGameWon}
+          handleShare={() => showSuccessAlert(GAME_COPIED_MESSAGE)}
+          isHardMode={isHardMode}
+        />
+        <SettingsModal
+          isOpen={isSettingsModalOpen}
+          handleClose={() => setIsSettingsModalOpen(false)}
+          isHardMode={isHardMode}
+          handleHardMode={handleHardMode}
+          isDarkMode={isDarkMode}
+          handleDarkMode={handleDarkMode}
+          isHighContrastMode={isHighContrastMode}
+          handleHighContrastMode={handleHighContrastMode}
+        />
 
-      <AlertContainer />
-    </div>
-  )
+        <AlertContainer />
+      </div>
+    )
+  } else if (DAY_INDEX !== THE_USUAL) {
+    return (
+      <div className="flex flex-col pt-2 pb-4 max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div className="flex w-80 mx-auto items-center mb-4 mt-4">
+          <h1 className="text-xl ml-2.5 grow font-bold dark:text-white">
+            {GAME_TITLE} {DAY_INDEX}
+            {/* {GAME_TITLE} {getDayIndex()}-{LENGTH_OVERRIDE} */}
+          </h1>
+          <FastForwardIcon
+            className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
+            onClick={() => {
+              window.open(getURLBase().concat(`/${DAY_INDEX + 1}`), '_self')
+            }}
+          />
+          <CalendarIcon
+            className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
+            onClick={() => {
+              window.open(getURLBase(), '_self')
+            }}
+          />
+          <InformationCircleIcon
+            className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
+            onClick={() => setIsInfoModalOpen(true)}
+          />
+          <ChartBarIcon
+            className="h-6 w-6 mr-3 cursor-pointer dark:stroke-white"
+            onClick={() => setIsStatsModalOpen(true)}
+          />
+          <CogIcon
+            className="h-6 w-6 mr-3 cursor-pointer dark:stroke-white"
+            onClick={() => setIsSettingsModalOpen(true)}
+          />
+        </div>
+        <Grid
+          guesses={guesses}
+          currentGuess={currentGuess}
+          isRevealing={isRevealing}
+          currentRowClassName={currentRowClass}
+        />
+        <div className="h-48"></div>
+        <Keyboard
+          onChar={onChar}
+          onDelete={onDelete}
+          onEnter={onEnter}
+          guesses={guesses}
+          isRevealing={isRevealing}
+        />
+        <InfoModal
+          isOpen={isInfoModalOpen}
+          handleClose={() => setIsInfoModalOpen(false)}
+        />
+        <StatsModal
+          isOpen={isStatsModalOpen}
+          handleClose={() => setIsStatsModalOpen(false)}
+          guesses={guesses}
+          gameStats={stats}
+          isGameLost={isGameLost}
+          isGameWon={isGameWon}
+          handleShare={() => showSuccessAlert(GAME_COPIED_MESSAGE)}
+          isHardMode={isHardMode}
+        />
+        <SettingsModal
+          isOpen={isSettingsModalOpen}
+          handleClose={() => setIsSettingsModalOpen(false)}
+          isHardMode={isHardMode}
+          handleHardMode={handleHardMode}
+          isDarkMode={isDarkMode}
+          handleDarkMode={handleDarkMode}
+          isHighContrastMode={isHighContrastMode}
+          handleHighContrastMode={handleHighContrastMode}
+        />
+
+        <AlertContainer />
+      </div>
+    )
+  } else {
+    return (
+      <div className="flex flex-col pt-2 pb-4 max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div className="flex w-80 mx-auto items-center mb-4 mt-4">
+          <h1 className="text-xl ml-2.5 grow font-bold dark:text-white">
+            {GAME_TITLE} {DAY_INDEX}
+            {/* {GAME_TITLE} {getDayIndex()}-{LENGTH_OVERRIDE} */}
+          </h1>
+          <RewindIcon
+            className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
+            onClick={() => {
+              window.open(getURLBase().concat(`/${DAY_INDEX - 1}`), '_self')
+            }}
+          />
+          <InformationCircleIcon
+            className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
+            onClick={() => setIsInfoModalOpen(true)}
+          />
+          <ChartBarIcon
+            className="h-6 w-6 mr-3 cursor-pointer dark:stroke-white"
+            onClick={() => setIsStatsModalOpen(true)}
+          />
+          <CogIcon
+            className="h-6 w-6 mr-3 cursor-pointer dark:stroke-white"
+            onClick={() => setIsSettingsModalOpen(true)}
+          />
+        </div>
+        <Grid
+          guesses={guesses}
+          currentGuess={currentGuess}
+          isRevealing={isRevealing}
+          currentRowClassName={currentRowClass}
+        />
+        <div className="h-48"></div>
+        <Keyboard
+          onChar={onChar}
+          onDelete={onDelete}
+          onEnter={onEnter}
+          guesses={guesses}
+          isRevealing={isRevealing}
+        />
+        <InfoModal
+          isOpen={isInfoModalOpen}
+          handleClose={() => setIsInfoModalOpen(false)}
+        />
+        <StatsModal
+          isOpen={isStatsModalOpen}
+          handleClose={() => setIsStatsModalOpen(false)}
+          guesses={guesses}
+          gameStats={stats}
+          isGameLost={isGameLost}
+          isGameWon={isGameWon}
+          handleShare={() => showSuccessAlert(GAME_COPIED_MESSAGE)}
+          isHardMode={isHardMode}
+        />
+        <SettingsModal
+          isOpen={isSettingsModalOpen}
+          handleClose={() => setIsSettingsModalOpen(false)}
+          isHardMode={isHardMode}
+          handleHardMode={handleHardMode}
+          isDarkMode={isDarkMode}
+          handleDarkMode={handleDarkMode}
+          isHighContrastMode={isHighContrastMode}
+          handleHighContrastMode={handleHighContrastMode}
+        />
+
+        <AlertContainer />
+      </div>
+    )
+  }
 }
 
 export default App
