@@ -17,7 +17,7 @@ export const WORDS_5 = [
   'ditto',
   'Marth',
   'Iwata',
-  'Hamer',
+  'Gamer',
   'tjolt',
   'plank',
   'unira',
