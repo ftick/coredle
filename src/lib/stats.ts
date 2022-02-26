@@ -55,7 +55,7 @@ const defaultStats: GameStats = {
   bestStreak: 0,
   totalGames: 0,
   successRate: 0,
-  // lastAttempted: -1,
+  lastAttempted: -1,
 }
 
 export const loadStats = () => {
