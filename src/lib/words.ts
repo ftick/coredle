@@ -43,12 +43,16 @@ export const findFirstUnusedReveal = (word: string, guesses: string[]) => {
   return false
 }
 
-export const getWordOfDay = () => {
-  // January 1, 2022 Game Epoch
-  const epochMs = new Date('February 15, 2022 00:00:00').valueOf()
-  const now = Date.now()
+export const getDayIndex = (epochMs=new Date('February 15, 2022 00:00:00').valueOf()) => {
   const msInDay = 86400000
-  const index = Math.floor((now - epochMs) / msInDay)
+  return Math.floor((Date.now() - epochMs) / msInDay)
+}
+
+export const getWordOfDay = () => {
+  // February 15, 2022 Game Epoch
+  const epochMs = new Date('February 15, 2022 00:00:00').valueOf()
+  const msInDay = 86400000
+  const index = getDayIndex()
   const nextday = (index + 1) * msInDay + epochMs
 
   return {
