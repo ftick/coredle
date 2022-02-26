@@ -5,6 +5,7 @@ import {
   CalendarIcon,
   RewindIcon,
   FastForwardIcon,
+  RefreshIcon,
 } from '@heroicons/react/outline'
 import { useState, useEffect } from 'react'
 import { Grid } from './components/grid/Grid'
@@ -419,6 +420,12 @@ function App() {
             className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
             onClick={() => {
               window.open(getURLBase().concat(`/${DAY_INDEX - 1}`), '_self')
+            }}
+          />
+          <RefreshIcon
+            className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
+            onClick={() => {
+              window.open(getURLBase().concat(`/infinite`), '_self')
             }}
           />
           <InformationCircleIcon

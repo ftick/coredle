@@ -34,7 +34,7 @@ export function getURLBase() {
   return parts[0] + '//' + parts[2]
 }
 
-export function getURLNum() {
+export function getURLFirst() {
   var parts = window.location.href.replace('&', '').split('/')
   console.log(parts)
   return parts[3]
