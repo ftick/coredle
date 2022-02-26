@@ -4,6 +4,7 @@ import {
   loadStatsFromLocalStorage,
   saveStatsToLocalStorage,
 } from './localStorage'
+import { getDayIndex, THE_USUAL } from './words'
 
 // In stats array elements 0-5 are successes in 1-6 trys
 
@@ -14,24 +15,40 @@ export const addStatsForCompletedGame = (
   // Count is number of incorrect guesses before end.
   const stats = { ...gameStats }
 
-  stats.totalGames += 1
+  const day_index = getDayIndex()
 
-  if (count >= MAX_CHALLENGES) {
-    // A fail situation
-    stats.currentStreak = 0
-    stats.gamesFailed += 1
-  } else {
-    stats.winDistribution[count] += 1
-    stats.currentStreak += 1
+  console.log(stats.lastAttempted, day_index, THE_USUAL)
+  console.log(0, stats.totalGames === 0)
+  console.log(1, (typeof stats.lastAttempted === "number" && stats.lastAttempted < day_index))
+  console.log(2, (typeof stats.lastAttempted === "number" && stats.lastAttempted < THE_USUAL))
+  console.log(3, (typeof stats.lastAttempted !== "number" && day_index === THE_USUAL))
 
-    if (stats.bestStreak < stats.currentStreak) {
-      stats.bestStreak = stats.currentStreak
+  // if (day_index === THE_USUAL) {
+  if (stats.totalGames === 0 ||
+    (typeof stats.lastAttempted === "number" && stats.lastAttempted < day_index) ||
+    // (typeof stats.lastAttempted === "number" && stats.lastAttempted < THE_USUAL) ||
+    (typeof stats.lastAttempted !== "number" && day_index === THE_USUAL)) {
+  // if (stats.lastAttempted && stats.lastAttempted < day_index) {
+    stats.totalGames += 1
+    stats.lastAttempted = day_index
+
+    if (count >= MAX_CHALLENGES) {
+      // A fail situation
+      stats.currentStreak = 0
+      stats.gamesFailed += 1
+    } else {
+      stats.winDistribution[count] += 1
+      stats.currentStreak += 1
+
+      if (stats.bestStreak < stats.currentStreak) {
+        stats.bestStreak = stats.currentStreak
+      }
     }
+
+    stats.successRate = getSuccessRate(stats)
+
+    saveStatsToLocalStorage(stats)
   }
-
-  stats.successRate = getSuccessRate(stats)
-
-  saveStatsToLocalStorage(stats)
   return stats
 }
 
@@ -42,6 +59,7 @@ const defaultStats: GameStats = {
   bestStreak: 0,
   totalGames: 0,
   successRate: 0,
+  // lastAttempted: -1,
 }
 
 export const loadStats = () => {

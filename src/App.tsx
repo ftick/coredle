@@ -32,6 +32,7 @@ import {
   solution,
   findFirstUnusedReveal,
   getDayIndex,
+  LENGTH_OVERRIDE,
 } from './lib/words'
 import { addStatsForCompletedGame, loadStats } from './lib/stats'
 import {
@@ -46,6 +47,9 @@ import { AlertContainer } from './components/alerts/AlertContainer'
 import { useAlert } from './context/AlertContext'
 
 function App() {
+  const DAY_INDEX = getDayIndex()
+  // console.log(DAY_INDEX, LENGTH_OVERRIDE)
+
   const prefersDarkMode = window.matchMedia(
     '(prefers-color-scheme: dark)'
   ).matches
@@ -147,7 +151,7 @@ function App() {
     if (isGameWon) {
       const winMessage =
         WIN_MESSAGES[Math.floor(Math.random() * WIN_MESSAGES.length)]
-      const delayMs = REVEAL_TIME_MS * MAX_WORD_LENGTH
+      const delayMs = REVEAL_TIME_MS * MAX_WORD_LENGTH // LENGTH_OVERRIDE
 
       showSuccessAlert(winMessage, {
         delayMs,
@@ -164,7 +168,7 @@ function App() {
 
   const onChar = (value: string) => {
     if (
-      currentGuess.length < MAX_WORD_LENGTH &&
+      currentGuess.length < MAX_WORD_LENGTH && // LENGTH_OVERRIDE &&
       guesses.length < MAX_CHALLENGES &&
       !isGameWon
     ) {
@@ -181,6 +185,7 @@ function App() {
       return
     }
     if (!(currentGuess.length === MAX_WORD_LENGTH)) {
+      // LENGTH_OVERRIDE)) {
       showErrorAlert(NOT_ENOUGH_LETTERS_MESSAGE)
       setCurrentRowClass('jiggle')
       return setTimeout(() => {
@@ -213,12 +218,12 @@ function App() {
     // chars have been revealed
     setTimeout(() => {
       setIsRevealing(false)
-    }, REVEAL_TIME_MS * MAX_WORD_LENGTH)
+    }, REVEAL_TIME_MS * MAX_WORD_LENGTH) // LENGTH_OVERRIDE)
 
     const winningWord = isWinningWord(currentGuess)
 
     if (
-      currentGuess.length === MAX_WORD_LENGTH &&
+      currentGuess.length === MAX_WORD_LENGTH && // LENGTH_OVERRIDE &&
       guesses.length < MAX_CHALLENGES &&
       !isGameWon
     ) {
@@ -235,7 +240,7 @@ function App() {
         setIsGameLost(true)
         showErrorAlert(CORRECT_WORD_MESSAGE(solution), {
           persist: true,
-          delayMs: REVEAL_TIME_MS * MAX_WORD_LENGTH + 1,
+          delayMs: REVEAL_TIME_MS * MAX_WORD_LENGTH + 1, //LENGTH_OVERRIDE + 1,
         })
       }
     }
@@ -245,7 +250,8 @@ function App() {
     <div className="flex flex-col pt-2 pb-4 max-w-7xl mx-auto sm:px-6 lg:px-8">
       <div className="flex w-80 mx-auto items-center mb-4 mt-4">
         <h1 className="text-xl ml-2.5 grow font-bold dark:text-white">
-          {GAME_TITLE} {getDayIndex()}-{MAX_WORD_LENGTH}
+          {GAME_TITLE} {DAY_INDEX}
+          {/* {GAME_TITLE} {getDayIndex()}-{LENGTH_OVERRIDE} */}
         </h1>
         <InformationCircleIcon
           className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
