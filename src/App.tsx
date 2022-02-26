@@ -31,7 +31,6 @@ import {
   isWinningWord,
   solution,
   findFirstUnusedReveal,
-  getDayIndex,
 } from './lib/words'
 import { addStatsForCompletedGame, loadStats } from './lib/stats'
 import {
@@ -245,7 +244,7 @@ function App() {
     <div className="flex flex-col pt-2 pb-4 max-w-7xl mx-auto sm:px-6 lg:px-8">
       <div className="flex w-80 mx-auto items-center mb-4 mt-4">
         <h1 className="text-xl ml-2.5 grow font-bold dark:text-white">
-          {GAME_TITLE} {getDayIndex()}-{MAX_WORD_LENGTH}
+          {GAME_TITLE}
         </h1>
         <InformationCircleIcon
           className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
