@@ -45,8 +45,8 @@ export function getUrlOverrides() {
   parts = parts.splice(3)
   console.log(parts)
   var dict = new Map<string, number>()
-  dict.set('daily', parseInt(parts[0]))
-  // dict.set('max', parseInt(parts[1]))
+  if (parts[0]) dict.set('daily', parseInt(parts[0]))
+  dict.set('max', parseInt(parts[1]))
   return dict
 }
 
@@ -64,7 +64,7 @@ export const THE_USUAL = Math.floor((Date.now() - epochMs) / msInDay)
 export const isWordInWordList = (word: string) => {
   return (
     WORDS[LENGTH_OVERRIDE].includes(word.toLowerCase()) ||
-    VALID_GUESSES.includes(word.toLowerCase()) ||
+    VALID_GUESSES[LENGTH_OVERRIDE].includes(word.toLowerCase()) ||
     SMASH_VALID_GUESSES.includes(word.toLowerCase())
   )
 }
@@ -108,9 +108,15 @@ export const getDayIndex = () => {
 }
 
 export const getWordOfDay = () => {
-  var index = getDayIndex()
-  if (!index) index = 0
+  var index = 0
   const nextday = (THE_USUAL + 1) * msInDay + epochMs
+
+  console.log(DAY_OVERRIDE)
+
+  if (DAY_OVERRIDE && !isNaN(DAY_OVERRIDE)) index = getDayIndex()
+  else index = Math.floor(Math.random() * WORDS[LENGTH_OVERRIDE].length)
+
+  console.log(LENGTH_OVERRIDE, index, WORDS[LENGTH_OVERRIDE])
 
   return {
     solution:

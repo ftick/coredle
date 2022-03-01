@@ -40,10 +40,10 @@ import {
   loadUnlimitedStats,
 } from './lib/stats'
 import {
-  loadGameStateFromLocalStorage,
-  saveGameStateToLocalStorage,
   setStoredIsHighContrastMode,
   getStoredIsHighContrastMode,
+  loadUnlimitedGameStateFromLocalStorage,
+  saveUnlimitedGameStateToLocalStorage,
 } from './lib/localStorage'
 
 import './App.css'
@@ -78,7 +78,7 @@ function AppInf() {
   )
   const [isRevealing, setIsRevealing] = useState(false)
   const [guesses, setGuesses] = useState<string[]>(() => {
-    const loaded = loadGameStateFromLocalStorage()
+    const loaded = loadUnlimitedGameStateFromLocalStorage()
     if (loaded?.solution !== solution) {
       return []
     }
@@ -106,7 +106,7 @@ function AppInf() {
   useEffect(() => {
     // if no game state on load,
     // show the user the how-to info modal
-    if (!loadGameStateFromLocalStorage()) {
+    if (!loadUnlimitedGameStateFromLocalStorage()) {
       setTimeout(() => {
         setIsInfoModalOpen(true)
       }, WELCOME_INFO_MODAL_MS)
@@ -147,7 +147,7 @@ function AppInf() {
   }
 
   useEffect(() => {
-    saveGameStateToLocalStorage({ guesses, solution })
+    saveUnlimitedGameStateToLocalStorage({ guesses, solution: solution })
   }, [guesses])
 
   useEffect(() => {
