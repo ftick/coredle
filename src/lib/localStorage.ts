@@ -57,7 +57,7 @@ export type UnlimitedStats = {
   bestStreak: number
   totalGames: number
   successRate: number
-  lastAttempted?: number
+  pastSolutions: string[]
 }
 
 export const saveUnlimitedStatsToLocalStorage = (gameStats: UnlimitedStats) => {

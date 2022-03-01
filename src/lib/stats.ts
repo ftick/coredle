@@ -53,12 +53,14 @@ export const addStatsForCompletedGame = (
 
 export const addStatsForCompletedUnlimitedGame = (
   unlimitedStats: UnlimitedStats,
-  count: number
+  count: number,
+  solution: string
 ) => {
   // Count is number of incorrect guesses before end.
   const stats = { ...unlimitedStats }
 
   stats.totalGames += 1
+  stats.pastSolutions.push(solution)
 
   if (count >= MAX_CHALLENGES) {
     // A fail situation
@@ -96,6 +98,7 @@ const defaultUnlimitedStats: UnlimitedStats = {
   bestStreak: 0,
   totalGames: 0,
   successRate: 0,
+  pastSolutions: [],
 }
 
 export const loadStats = () => {

@@ -4,6 +4,10 @@ import { SMASH_VALID_GUESSES } from '../constants/validGuessesSmash'
 
 import { WRONG_SPOT_MESSAGE, NOT_CONTAINED_MESSAGE } from '../constants/strings'
 import { getGuessStatuses } from './statuses'
+import {
+  loadUnlimitedStatsFromLocalStorage,
+  saveUnlimitedStatsToLocalStorage,
+} from './localStorage'
 
 // function getUrlVars() {
 //   var parts = window.location.href.split('/');
@@ -107,6 +111,14 @@ export const getDayIndex = () => {
   return THE_USUAL
 }
 
+function checkSameLength(word: string) {
+  return word.length === LENGTH_OVERRIDE
+}
+
+function checkNotSameLength(word: string) {
+  return !checkSameLength(word)
+}
+
 export const getWordOfDay = () => {
   var index = 0
   const nextday = (THE_USUAL + 1) * msInDay + epochMs
@@ -118,11 +130,44 @@ export const getWordOfDay = () => {
 
   console.log(LENGTH_OVERRIDE, index, WORDS[LENGTH_OVERRIDE])
 
+  var solutionToBe =
+    WORDS[LENGTH_OVERRIDE][index % WORDS[LENGTH_OVERRIDE].length].toUpperCase()
+
+  var loaded = loadUnlimitedStatsFromLocalStorage()
+  var loaded_sameLength = loaded?.pastSolutions.filter(checkSameLength)
+
+  if (
+    loaded &&
+    loaded_sameLength &&
+    loaded_sameLength.length === WORDS[LENGTH_OVERRIDE].length
+  ) {
+    var filtered = loaded.pastSolutions.filter(checkNotSameLength)
+
+    saveUnlimitedStatsToLocalStorage({
+      winDistribution: loaded?.winDistribution,
+      gamesFailed: loaded?.gamesFailed,
+      currentStreak: loaded?.currentStreak,
+      bestStreak: loaded?.bestStreak,
+      totalGames: loaded?.totalGames,
+      successRate: loaded?.successRate,
+      pastSolutions: filtered,
+    })
+  }
+
+  if (!DAY_OVERRIDE || isNaN(DAY_OVERRIDE)) {
+    while (
+      loadUnlimitedStatsFromLocalStorage()?.pastSolutions.includes(solutionToBe)
+    ) {
+      index = Math.floor(Math.random() * WORDS[LENGTH_OVERRIDE].length)
+      solutionToBe =
+        WORDS[LENGTH_OVERRIDE][
+          index % WORDS[LENGTH_OVERRIDE].length
+        ].toUpperCase()
+    }
+  }
+
   return {
-    solution:
-      WORDS[LENGTH_OVERRIDE][
-        index % WORDS[LENGTH_OVERRIDE].length
-      ].toUpperCase(),
+    solution: solutionToBe,
     solutionIndex: index,
     tomorrow: nextday,
   }

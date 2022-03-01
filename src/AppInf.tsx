@@ -147,7 +147,7 @@ function AppInf() {
   }
 
   useEffect(() => {
-    saveUnlimitedGameStateToLocalStorage({ guesses, solution: solution })
+    saveUnlimitedGameStateToLocalStorage({ guesses, solution })
   }, [guesses])
 
   useEffect(() => {
@@ -234,12 +234,16 @@ function AppInf() {
       setCurrentGuess('')
 
       if (winningWord) {
-        setStats(addStatsForCompletedUnlimitedGame(stats, guesses.length))
+        setStats(
+          addStatsForCompletedUnlimitedGame(stats, guesses.length, solution)
+        )
         return setIsGameWon(true)
       }
 
       if (guesses.length === MAX_CHALLENGES - 1) {
-        setStats(addStatsForCompletedUnlimitedGame(stats, guesses.length + 1))
+        setStats(
+          addStatsForCompletedUnlimitedGame(stats, guesses.length + 1, solution)
+        )
         setIsGameLost(true)
         showErrorAlert(CORRECT_WORD_MESSAGE(solution), {
           persist: true,
