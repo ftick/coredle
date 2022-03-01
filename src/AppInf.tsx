@@ -35,7 +35,10 @@ import {
   getURLBase,
   // LENGTH_OVERRIDE,
 } from './lib/words'
-import { addStatsForCompletedGame, loadStats } from './lib/stats'
+import {
+  addStatsForCompletedUnlimitedGame,
+  loadUnlimitedStats,
+} from './lib/stats'
 import {
   loadGameStateFromLocalStorage,
   saveGameStateToLocalStorage,
@@ -92,7 +95,7 @@ function AppInf() {
     return loaded.guesses
   })
 
-  const [stats, setStats] = useState(() => loadStats())
+  const [stats, setStats] = useState(() => loadUnlimitedStats())
 
   const [isHardMode, setIsHardMode] = useState(
     localStorage.getItem('gameMode')
@@ -231,12 +234,12 @@ function AppInf() {
       setCurrentGuess('')
 
       if (winningWord) {
-        setStats(addStatsForCompletedGame(stats, guesses.length))
+        setStats(addStatsForCompletedUnlimitedGame(stats, guesses.length))
         return setIsGameWon(true)
       }
 
       if (guesses.length === MAX_CHALLENGES - 1) {
-        setStats(addStatsForCompletedGame(stats, guesses.length + 1))
+        setStats(addStatsForCompletedUnlimitedGame(stats, guesses.length + 1))
         setIsGameLost(true)
         showErrorAlert(CORRECT_WORD_MESSAGE(solution), {
           persist: true,

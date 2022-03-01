@@ -36,6 +36,27 @@ export const loadStatsFromLocalStorage = () => {
   return stats ? (JSON.parse(stats) as GameStats) : null
 }
 
+const unlimitedStatKey = 'unlimitedStats'
+
+export type UnlimitedStats = {
+  winDistribution: number[]
+  gamesFailed: number
+  currentStreak: number
+  bestStreak: number
+  totalGames: number
+  successRate: number
+  lastAttempted?: number
+}
+
+export const saveUnlimitedStatsToLocalStorage = (gameStats: UnlimitedStats) => {
+  localStorage.setItem(unlimitedStatKey, JSON.stringify(gameStats))
+}
+
+export const loadUnlimitedStatsFromLocalStorage = () => {
+  const stats = localStorage.getItem(unlimitedStatKey)
+  return stats ? (JSON.parse(stats) as UnlimitedStats) : null
+}
+
 export const setStoredIsHighContrastMode = (isHighContrast: boolean) => {
   if (isHighContrast) {
     localStorage.setItem(highContrastKey, '1')
