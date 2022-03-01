@@ -34,7 +34,7 @@ import {
 
 function getURLParts() {
   var parts = window.location.href.replace('&', '').split('/')
-  console.log(parts)
+  // console.log(parts)
   return parts
 }
 
@@ -70,9 +70,10 @@ const msInDay = 86400000
 export const THE_USUAL = Math.floor((Date.now() - epochMs) / msInDay)
 
 export const isWordInWordList = (word: string) => {
+  const WORD_LENGTH = word.length
   return (
-    WORDS[LENGTH_OVERRIDE].includes(word.toLowerCase()) ||
-    VALID_GUESSES[LENGTH_OVERRIDE].includes(word.toLowerCase()) ||
+    WORDS[WORD_LENGTH].includes(word.toLowerCase()) ||
+    VALID_GUESSES[WORD_LENGTH].includes(word.toLowerCase()) ||
     SMASH_VALID_GUESSES.includes(word.toLowerCase())
   )
 }
@@ -115,6 +116,23 @@ export const getDayIndex = () => {
   return THE_USUAL
 }
 
+export const getWordDaily = () => {
+  var index = getDayIndex()
+  const nextday = (THE_USUAL + 1) * msInDay + epochMs
+
+  console.log('daily')
+  console.log('len', LENGTH_OVERRIDE, 'index', index)
+
+  var solutionToBe =
+    WORDS[LENGTH_OVERRIDE][index % WORDS[LENGTH_OVERRIDE].length].toUpperCase()
+
+  return {
+    solution: solutionToBe,
+    solutionIndex: index,
+    tomorrow: nextday,
+  }
+}
+
 function checkSameLength(word: string) {
   return word.length === LENGTH_OVERRIDE
 }
@@ -123,16 +141,11 @@ function checkNotSameLength(word: string) {
   return !checkSameLength(word)
 }
 
-export const getWordOfDay = () => {
-  var index = 0
+export const getWordUnlimited = () => {
+  var index = Math.floor(Math.random() * WORDS[LENGTH_OVERRIDE].length)
   const nextday = (THE_USUAL + 1) * msInDay + epochMs
 
-  console.log(DAY_OVERRIDE)
-
-  if (DAY_OVERRIDE && !isNaN(DAY_OVERRIDE)) index = getDayIndex()
-  else index = Math.floor(Math.random() * WORDS[LENGTH_OVERRIDE].length)
-
-  console.log(LENGTH_OVERRIDE, index, WORDS[LENGTH_OVERRIDE])
+  console.log('unlimited')
 
   var solutionToBe =
     WORDS[LENGTH_OVERRIDE][index % WORDS[LENGTH_OVERRIDE].length].toUpperCase()
@@ -158,16 +171,14 @@ export const getWordOfDay = () => {
     })
   }
 
-  if (!DAY_OVERRIDE || isNaN(DAY_OVERRIDE)) {
-    while (
-      loadUnlimitedStatsFromLocalStorage()?.pastSolutions.includes(solutionToBe)
-    ) {
-      index = Math.floor(Math.random() * WORDS[LENGTH_OVERRIDE].length)
-      solutionToBe =
-        WORDS[LENGTH_OVERRIDE][
-          index % WORDS[LENGTH_OVERRIDE].length
-        ].toUpperCase()
-    }
+  while (
+    loadUnlimitedStatsFromLocalStorage()?.pastSolutions.includes(solutionToBe)
+  ) {
+    index = Math.floor(Math.random() * WORDS[LENGTH_OVERRIDE].length)
+    solutionToBe =
+      WORDS[LENGTH_OVERRIDE][
+        index % WORDS[LENGTH_OVERRIDE].length
+      ].toUpperCase()
   }
 
   return {
@@ -177,4 +188,10 @@ export const getWordOfDay = () => {
   }
 }
 
-export const { solution, solutionIndex, tomorrow } = getWordOfDay()
+export const getWord = () => {
+  if (DAY_OVERRIDE === undefined) return getWordDaily()
+  if (getURLFirst() === 'infinite') return getWordUnlimited()
+  return getWordDaily()
+}
+
+export const { solution, solutionIndex, tomorrow } = getWord()
