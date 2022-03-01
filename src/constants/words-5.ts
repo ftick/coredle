@@ -275,7 +275,7 @@ export const WORDS_5 = [
   'drill',
   'yeroc',
   'Oryon',
-  'mugen',//sm4sh
+  'mugen',
   'Onett',
   'Tombo',
   'Syrup',
