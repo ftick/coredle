@@ -50,5 +50,4 @@ export const WORDS_4 = [
   'wyld',
   'qtip',
   'comb',
-  'zonoy',
 ]

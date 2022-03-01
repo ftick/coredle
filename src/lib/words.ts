@@ -32,20 +32,24 @@ import {
 //   return urlparameter;
 // }
 
-export function getURLBase() {
+function getURLParts() {
   var parts = window.location.href.replace('&', '').split('/')
   console.log(parts)
+  return parts
+}
+
+export function getURLBase() {
+  var parts = getURLParts()
   return parts[0] + '//' + parts[2]
 }
 
 export function getURLFirst() {
-  var parts = window.location.href.replace('&', '').split('/')
-  console.log(parts)
+  var parts = getURLParts()
   return parts[3]
 }
 
 export function getUrlOverrides() {
-  var parts = window.location.href.replace('&', '').split('/')
+  var parts = getURLParts()
   parts = parts.splice(3)
   console.log(parts)
   var dict = new Map<string, number>()
