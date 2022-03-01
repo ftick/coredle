@@ -22,5 +22,13 @@ export const WORDS_7 = [
   'peabnut',
   'levingy',
   'abbearv',
+  'mezcaul',
   'kuyachi',
+  'malachi',
+  'techboy',
+  'dirtboy',
+  'bubbles',
+  'motobug',
+  'copykat',
+  'metroid',
 ]
