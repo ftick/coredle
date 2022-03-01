@@ -8,7 +8,7 @@ import { useState, useEffect } from 'react'
 import { Grid } from './components/grid/Grid'
 import { Keyboard } from './components/keyboard/Keyboard'
 import { InfoModal } from './components/modals/InfoModal'
-import { StatsModal } from './components/modals/StatsModal'
+import { StatsModalUnlimited } from './components/modals/StatsModalUnlimited'
 import { SettingsModal } from './components/modals/SettingsModal'
 import {
   GAME_TITLE,
@@ -293,7 +293,7 @@ function AppInf() {
         isOpen={isInfoModalOpen}
         handleClose={() => setIsInfoModalOpen(false)}
       />
-      <StatsModal
+      <StatsModalUnlimited
         isOpen={isStatsModalOpen}
         handleClose={() => setIsStatsModalOpen(false)}
         guesses={guesses}
