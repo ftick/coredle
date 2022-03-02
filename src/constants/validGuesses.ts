@@ -1,7 +1,7 @@
-import { VALID_GUESSES_4 } from './validGuesses_4'
-import { VALID_GUESSES_5 } from './validGuesses_5'
-import { VALID_GUESSES_6 } from './validGuesses_6'
-import { VALID_GUESSES_7 } from './validGuesses_7'
+import { VALID_GUESSES_4 } from './english/validGuesses_4'
+import { VALID_GUESSES_5 } from './english/validGuesses_5'
+import { VALID_GUESSES_6 } from './english/validGuesses_6'
+import { VALID_GUESSES_7 } from './english/validGuesses_7'
 
 export const VALID_GUESSES = [
   [],

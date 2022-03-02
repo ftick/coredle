@@ -21,6 +21,7 @@ export const DELETE_TEXT = 'Supprimé'
 export const STATISTICS_TITLE = 'Statistiques'
 export const GUESS_DISTRIBUTION_TEXT = 'Distribution des essais'
 export const NEW_WORD_TEXT = 'Nouveau mot en'
+export const NEXT_WORD_TEXT = 'Prochain Mot'
 export const SHARE_TEXT = 'Partager'
 export const WITH_LINK_TEXT = 'Avec Lien'
 export const TOTAL_TRIES_TEXT = "Nombre total d'essais"
