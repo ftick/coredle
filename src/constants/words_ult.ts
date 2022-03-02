@@ -229,4 +229,11 @@ export const WORDS_ULT = [
   'tachyon',
   'mezcaul',
   'masashi',
+
+  'lyric',
+  'virum',
+  'brosa',
+  'coney',
+
+  'whydo',
 ]

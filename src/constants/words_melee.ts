@@ -202,4 +202,16 @@ export const WORDS_MELEE = [
   'tafo',
   'vish',
   'phil',
+  'stude',
+  'zetts',
+  'slime',
+  'radar',
+
+  'fizzi',
+  'samox',
+  'cyfer',
+  'wheat',
+  'edwin',
+  'bensw',
+  'cyfer',
 ]
