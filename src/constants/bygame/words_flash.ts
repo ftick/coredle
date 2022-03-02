@@ -30,6 +30,9 @@ export const WORDS_FLASH = [
   'hypest',
 
   'arsee',
+  'bowler',
+  'flavien',
+  'tillur',
   'monte',
   'akame',
   'river',
