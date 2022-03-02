@@ -85,8 +85,8 @@ export const Keyboard = ({
         ))}
       </div>
       <div className="flex justify-center w-screen">
-        <Key width={65.4} value="ENTER" onClick={onClick}>
-          {ENTER}
+        <Key width={65.4} value="DELETE" onClick={onClick}>
+          <BackspaceIcon className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white" />
         </Key>
         {['Z', 'X', 'C', 'V', 'B', 'N', 'M'].map((key) => (
           <Key
@@ -97,8 +97,8 @@ export const Keyboard = ({
             isRevealing={isRevealing}
           />
         ))}
-        <Key width={65.4} value="DELETE" onClick={onClick}>
-          <BackspaceIcon className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white" />
+        <Key width={65.4} value="ENTER" onClick={onClick}>
+          {ENTER}
         </Key>
       </div>
     </div>
