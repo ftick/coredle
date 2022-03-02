@@ -1,6 +1,13 @@
 const gameStateKey = 'gameState'
 const unlimitedStateKey = 'unlimitedState'
 const highContrastKey = 'highContrast'
+const sixtyFourKey = 'sixtyFour'
+const meleeKey = 'melee'
+const brawlKey = 'brawl'
+const pmKey = 'pm'
+const sm4shKey = 'sm4sh'
+const ultKey = 'ult'
+const flashKey = 'flash'
 
 type StoredGameState = {
   guesses: string[]
@@ -80,4 +87,95 @@ export const setStoredIsHighContrastMode = (isHighContrast: boolean) => {
 export const getStoredIsHighContrastMode = () => {
   const highContrast = localStorage.getItem(highContrastKey)
   return highContrast === '1'
+}
+
+export const setStoredIs64Enabled = (is64Enabled: boolean) => {
+  if (is64Enabled) {
+    localStorage.setItem(sixtyFourKey, '1')
+  } else {
+    localStorage.removeItem(sixtyFourKey)
+  }
+}
+
+export const getStoredIs64Enabled = () => {
+  const is64Enabled = localStorage.getItem(sixtyFourKey)
+  return is64Enabled === '1'
+}
+
+export const setStoredIsMeleeEnabled = (isMeleeEnabled: boolean) => {
+  if (isMeleeEnabled) {
+    localStorage.setItem(meleeKey, '1')
+  } else {
+    localStorage.removeItem(meleeKey)
+  }
+}
+
+export const getStoredIsMeleeEnabled = () => {
+  const isMeleeEnabled = localStorage.getItem(meleeKey)
+  return isMeleeEnabled === '1'
+}
+
+export const setStoredIsBrawlEnabled = (isBrawlEnabled: boolean) => {
+  if (isBrawlEnabled) {
+    localStorage.setItem(brawlKey, '1')
+  } else {
+    localStorage.removeItem(brawlKey)
+  }
+}
+
+export const getStoredIsBrawlEnabled = () => {
+  const isBrawlEnabled = localStorage.getItem(brawlKey)
+  return isBrawlEnabled === '1'
+}
+
+export const setStoredIsPMEnabled = (isPMEnabled: boolean) => {
+  if (isPMEnabled) {
+    localStorage.setItem(pmKey, '1')
+  } else {
+    localStorage.removeItem(pmKey)
+  }
+}
+
+export const getStoredIsPMEnabled = () => {
+  const isPMEnabled = localStorage.getItem(pmKey)
+  return isPMEnabled === '1'
+}
+
+export const setStoredIsSm4shEnabled = (isSm4shEnabled: boolean) => {
+  if (isSm4shEnabled) {
+    localStorage.setItem(sm4shKey, '1')
+  } else {
+    localStorage.removeItem(sm4shKey)
+  }
+}
+
+export const getStoredIsSm4shEnabled = () => {
+  const isSm4shEnabled = localStorage.getItem(sm4shKey)
+  return isSm4shEnabled === '1'
+}
+
+export const setStoredIsUltEnabled = (isUltEnabled: boolean) => {
+  if (isUltEnabled) {
+    localStorage.setItem(ultKey, '1')
+  } else {
+    localStorage.removeItem(ultKey)
+  }
+}
+
+export const getStoredIsUltEnabled = () => {
+  const isUltEnabled = localStorage.getItem(ultKey)
+  return isUltEnabled === '1'
+}
+
+export const setStoredIsFlashEnabled = (isFlashEnabled: boolean) => {
+  if (isFlashEnabled) {
+    localStorage.setItem(flashKey, '1')
+  } else {
+    localStorage.removeItem(flashKey)
+  }
+}
+
+export const getStoredIsFlashEnabled = () => {
+  const isFlashEnabled = localStorage.getItem(flashKey)
+  return isFlashEnabled === '1'
 }

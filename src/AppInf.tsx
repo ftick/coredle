@@ -9,7 +9,7 @@ import { Grid } from './components/grid/Grid'
 import { Keyboard } from './components/keyboard/Keyboard'
 import { InfoModal } from './components/modals/InfoModal'
 import { StatsModalUnlimited } from './components/modals/StatsModalUnlimited'
-import { SettingsModal } from './components/modals/SettingsModal'
+import { SettingsModalInf } from './components/modals/SettingsModal'
 import {
   GAME_TITLE,
   WIN_MESSAGES,
@@ -44,6 +44,20 @@ import {
   getStoredIsHighContrastMode,
   loadUnlimitedGameStateFromLocalStorage,
   saveUnlimitedGameStateToLocalStorage,
+  getStoredIs64Enabled,
+  getStoredIsMeleeEnabled,
+  getStoredIsBrawlEnabled,
+  getStoredIsFlashEnabled,
+  getStoredIsPMEnabled,
+  getStoredIsSm4shEnabled,
+  getStoredIsUltEnabled,
+  setStoredIs64Enabled,
+  setStoredIsBrawlEnabled,
+  setStoredIsFlashEnabled,
+  setStoredIsMeleeEnabled,
+  setStoredIsPMEnabled,
+  setStoredIsSm4shEnabled,
+  setStoredIsUltEnabled,
 } from './lib/localStorage'
 
 import './App.css'
@@ -103,6 +117,22 @@ function AppInf() {
       : false
   )
 
+  const [is64Enabled, setIs64Enabled] = useState(getStoredIs64Enabled())
+  const [isMeleeEnabled, setIsMeleeEnabled] = useState(
+    getStoredIsMeleeEnabled()
+  )
+  const [isBrawlEnabled, setIsBrawlEnabled] = useState(
+    getStoredIsBrawlEnabled()
+  )
+  const [isPMEnabled, setIsPMEnabled] = useState(getStoredIsPMEnabled())
+  const [isSm4shEnabled, setIsSm4shEnabled] = useState(
+    getStoredIsSm4shEnabled()
+  )
+  const [isUltEnabled, setIsUltEnabled] = useState(getStoredIsUltEnabled())
+  const [isFlashEnabled, setIsFlashEnabled] = useState(
+    getStoredIsFlashEnabled()
+  )
+
   useEffect(() => {
     // if no game state on load,
     // show the user the how-to info modal
@@ -144,6 +174,41 @@ function AppInf() {
   const handleHighContrastMode = (isHighContrast: boolean) => {
     setIsHighContrastMode(isHighContrast)
     setStoredIsHighContrastMode(isHighContrast)
+  }
+
+  const handle64Enabled = (is64Enabled: boolean) => {
+    setIs64Enabled(is64Enabled)
+    setStoredIs64Enabled(is64Enabled)
+  }
+
+  const handleMeleeEnabled = (isMeleeEnabled: boolean) => {
+    setIsMeleeEnabled(isMeleeEnabled)
+    setStoredIsMeleeEnabled(isMeleeEnabled)
+  }
+
+  const handleBrawlEnabled = (isBrawlEnabled: boolean) => {
+    setIsBrawlEnabled(isBrawlEnabled)
+    setStoredIsBrawlEnabled(isBrawlEnabled)
+  }
+
+  const handlePMEnabled = (isPMEnabled: boolean) => {
+    setIsPMEnabled(isPMEnabled)
+    setStoredIsPMEnabled(isPMEnabled)
+  }
+
+  const handleSm4shEnabled = (isSm4shEnabled: boolean) => {
+    setIsSm4shEnabled(isSm4shEnabled)
+    setStoredIsSm4shEnabled(isSm4shEnabled)
+  }
+
+  const handleUltEnabled = (isUltEnabled: boolean) => {
+    setIsUltEnabled(isUltEnabled)
+    setStoredIsUltEnabled(isUltEnabled)
+  }
+
+  const handleFlashEnabled = (isFlashEnabled: boolean) => {
+    setIsFlashEnabled(isFlashEnabled)
+    setStoredIsFlashEnabled(isFlashEnabled)
   }
 
   useEffect(() => {
@@ -307,7 +372,7 @@ function AppInf() {
         handleShare={() => showSuccessAlert(GAME_COPIED_MESSAGE)}
         isHardMode={isHardMode}
       />
-      <SettingsModal
+      <SettingsModalInf
         isOpen={isSettingsModalOpen}
         handleClose={() => setIsSettingsModalOpen(false)}
         isHardMode={isHardMode}
@@ -316,6 +381,20 @@ function AppInf() {
         handleDarkMode={handleDarkMode}
         isHighContrastMode={isHighContrastMode}
         handleHighContrastMode={handleHighContrastMode}
+        is64Enabled={is64Enabled}
+        handle64Enabled={handle64Enabled}
+        isMeleeEnabled={isMeleeEnabled}
+        handleMeleeEnabled={handleMeleeEnabled}
+        isBrawlEnabled={isBrawlEnabled}
+        handleBrawlEnabled={handleBrawlEnabled}
+        isPMEnabled={isPMEnabled}
+        handlePMEnabled={handlePMEnabled}
+        isUltEnabled={isUltEnabled}
+        handleUltEnabled={handleUltEnabled}
+        isSm4shEnabled={isSm4shEnabled}
+        handleSm4shEnabled={handleSm4shEnabled}
+        isFlashEnabled={isFlashEnabled}
+        handleFlashEnabled={handleFlashEnabled}
       />
 
       <AlertContainer />

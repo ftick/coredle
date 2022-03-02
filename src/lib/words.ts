@@ -1,4 +1,4 @@
-import { WORDS } from '../constants/wordlist'
+import { getWordsByGame, WORDS } from '../constants/wordlist'
 import { VALID_GUESSES } from '../constants/validGuesses'
 import { SMASH_VALID_GUESSES } from '../constants/validGuessesSmash'
 
@@ -133,33 +133,19 @@ export const getWordDaily = () => {
   }
 }
 
-function checkSameLength(word: string) {
-  return word.length === LENGTH_OVERRIDE
-}
-
-function checkNotSameLength(word: string) {
-  return !checkSameLength(word)
-}
-
 export const getWordUnlimited = () => {
-  var index = Math.floor(Math.random() * WORDS[LENGTH_OVERRIDE].length)
+  const WORDS_BYGAME = getWordsByGame()
+  var index = Math.floor(Math.random() * WORDS_BYGAME.length)
   const nextday = (THE_USUAL + 1) * msInDay + epochMs
 
   console.log('unlimited')
 
-  var solutionToBe =
-    WORDS[LENGTH_OVERRIDE][index % WORDS[LENGTH_OVERRIDE].length].toUpperCase()
+  var solutionToBe = WORDS_BYGAME[index % WORDS_BYGAME.length].toUpperCase()
 
   var loaded = loadUnlimitedStatsFromLocalStorage()
-  var loaded_sameLength = loaded?.pastSolutions.filter(checkSameLength)
+  var loaded_array = loaded?.pastSolutions
 
-  if (
-    loaded &&
-    loaded_sameLength &&
-    loaded_sameLength.length === WORDS[LENGTH_OVERRIDE].length
-  ) {
-    var filtered = loaded.pastSolutions.filter(checkNotSameLength)
-
+  if (loaded && loaded_array && loaded_array.length === WORDS_BYGAME.length) {
     saveUnlimitedStatsToLocalStorage({
       winDistribution: loaded?.winDistribution,
       gamesFailed: loaded?.gamesFailed,
@@ -167,19 +153,18 @@ export const getWordUnlimited = () => {
       bestStreak: loaded?.bestStreak,
       totalGames: loaded?.totalGames,
       successRate: loaded?.successRate,
-      pastSolutions: filtered,
+      pastSolutions: [],
     })
   }
 
   while (
     loadUnlimitedStatsFromLocalStorage()?.pastSolutions.includes(solutionToBe)
   ) {
-    index = Math.floor(Math.random() * WORDS[LENGTH_OVERRIDE].length)
-    solutionToBe =
-      WORDS[LENGTH_OVERRIDE][
-        index % WORDS[LENGTH_OVERRIDE].length
-      ].toUpperCase()
+    index = Math.floor(Math.random() * WORDS_BYGAME.length)
+    solutionToBe = WORDS_BYGAME[index % WORDS_BYGAME.length].toUpperCase()
   }
+
+  console.log('soln:', solutionToBe)
 
   return {
     solution: solutionToBe,

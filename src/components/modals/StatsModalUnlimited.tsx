@@ -2,7 +2,7 @@ import Countdown from 'react-countdown'
 import { StatBar } from '../stats/StatBar'
 import { Histogram } from '../stats/Histogram'
 import { UnlimitedStats } from '../../lib/localStorage'
-import { shareStatus } from '../../lib/share'
+import { shareStatusInf } from '../../lib/share'
 import { tomorrow } from '../../lib/words'
 import { BaseModal } from './BaseModal'
 import {
@@ -71,7 +71,7 @@ export const StatsModalUnlimited = ({
               type="button"
               className="mt-2 w-half rounded-md border border-transparent shadow-sm px-3 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"
               onClick={() => {
-                shareStatus(guesses, isGameLost, isHardMode, false)
+                shareStatusInf(guesses, isGameLost, isHardMode, false)
                 handleShare()
               }}
             >
@@ -81,7 +81,7 @@ export const StatsModalUnlimited = ({
               type="button"
               className="mt-2 w-half rounded-md border border-transparent shadow-sm px-3 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"
               onClick={() => {
-                shareStatus(guesses, isGameLost, isHardMode, true)
+                shareStatusInf(guesses, isGameLost, isHardMode, true)
                 handleShare()
               }}
             >
