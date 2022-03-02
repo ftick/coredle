@@ -58,11 +58,12 @@ export function getUrlOverrides() {
   return dict
 }
 
+// Set up overrides
 const OVERRIDES = getUrlOverrides()
 export const DAY_OVERRIDE = OVERRIDES.get('daily')
 var max_override = OVERRIDES.get('max')
 export const LENGTH_OVERRIDE =
-  !max_override || max_override < 3 || max_override > 7 ? 5 : max_override
+  !max_override || max_override < 4 || max_override > 7 ? 5 : max_override
 
 // February 15, 2022 Game Epoch
 const epochMs = new Date('February 15, 2022 00:00:00').valueOf()
@@ -73,6 +74,7 @@ export const isWordInWordList = (word: string) => {
   const WORD_LENGTH = word.length
   return (
     WORDS[WORD_LENGTH].includes(word.toLowerCase()) ||
+    getWordsByGame().includes(word.toLowerCase()) ||
     VALID_GUESSES[WORD_LENGTH].includes(word.toLowerCase()) ||
     SMASH_VALID_GUESSES.includes(word.toLowerCase())
   )

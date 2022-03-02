@@ -30,7 +30,7 @@ export const shareStatusInf = (
       isHardMode ? '*' : ''
     }\n\n` +
       generateEmojiGrid(guesses) +
-      `${includeLink ? '\nrandle.vercel.app' : ''}`
+      `${includeLink ? '\nrandle.vercel.app/infinite' : ''}`
   )
 }
 
