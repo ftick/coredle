@@ -122,11 +122,13 @@ export const getWordDaily = () => {
   var index = getDayIndex()
   const nextday = (THE_USUAL + 1) * msInDay + epochMs
 
-  console.log('daily')
+  console.log('daily mode')
   console.log('len', LENGTH_OVERRIDE, 'index', index)
 
   var solutionToBe =
     WORDS[LENGTH_OVERRIDE][index % WORDS[LENGTH_OVERRIDE].length].toUpperCase()
+
+  console.log(solutionToBe)
 
   return {
     solution: solutionToBe,
@@ -140,7 +142,7 @@ export const getWordUnlimited = () => {
   var index = Math.floor(Math.random() * WORDS_BYGAME.length)
   const nextday = (THE_USUAL + 1) * msInDay + epochMs
 
-  console.log('unlimited')
+  console.log('unlimited mode')
 
   var solutionToBe = WORDS_BYGAME[index % WORDS_BYGAME.length].toUpperCase()
 

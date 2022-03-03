@@ -37,5 +37,7 @@ export function getWordsByGame() {
     return arr.indexOf(element) === index
   })
 
+  console.log(uniqueWords.length, 'unique words')
+
   return uniqueWords
 }
