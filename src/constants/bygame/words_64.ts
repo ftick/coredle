@@ -2,12 +2,16 @@ export const WORDS_64 = [
   'sectorz',
   'zebes',
 
+  'hitstun',
+  'zcancel',
+
   'snosa',
   'kanto',
   'kansai',
   'tacna',
-  'hitstun',
-  'zcancel',
+  'dpotg',
+  'eglx',
+  'goml',
 
   'alvin',
   'tacos',
