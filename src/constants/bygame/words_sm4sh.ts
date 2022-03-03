@@ -100,7 +100,6 @@ export const WORDS_SM4SH = [
   'rags',
   'ixis',
   'zenyou',
-  'pugwest',
   'kuwa',
   'masashi',
 ]
