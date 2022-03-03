@@ -4,6 +4,7 @@ export const WORDS_64 = [
 
   'hitstun',
   'zcancel',
+  'edgehog',
 
   'snosa',
   'kanto',

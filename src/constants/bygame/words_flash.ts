@@ -9,6 +9,8 @@ export const WORDS_FLASH = [
   'sheik',
   'falco',
   'marth',
+  'popo',
+  'nana',
   'sonic',
   'pacman',
   'sora',

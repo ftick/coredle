@@ -46,11 +46,16 @@ export const WORDS_SM4SH = [
   'corrin',
   'bayo',
   'lucina',
+  'boshi',
 
   'sideb',
   'trump',
   'bidou',
   'trip',
+  'cstick',
+  'wifi',
+  'tapjump',
+
   'needle',
   'chain',
   'turnip',
@@ -58,8 +63,7 @@ export const WORDS_SM4SH = [
   'stitch',
   'doteyes',
   'float',
-  'bomb',
-  'bombs',
+  'bobomb',
   'beam',
   'sword',
 

@@ -8,6 +8,7 @@ export const WORDS_PM = [
   'onett',
   'saffron',
   'temple',
+  'randall',
 
   'peach',
   'bowser',
@@ -16,6 +17,8 @@ export const WORDS_PM = [
   'falco',
   'marth',
   'ganon',
+  'popo',
+  'nana',
   'wario',
   'snake',
   'ivysaur',
@@ -43,6 +46,9 @@ export const WORDS_PM = [
   'dacus',
   'trip',
   'glide',
+  'cstick',
+  'tapjump',
+
   'wobble',
   'desync',
   'needle',
@@ -52,7 +58,7 @@ export const WORDS_PM = [
   'stitch',
   'doteyes',
   'float',
-  
+
   'balc',
   'olympus',
   'theatre',

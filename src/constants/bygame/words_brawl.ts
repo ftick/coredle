@@ -15,6 +15,8 @@ export const WORDS_BRAWL = [
   'falco',
   'marth',
   'ganon',
+  'popo',
+  'nana',
   'wario',
   'snake',
   'ivysaur',
@@ -38,6 +40,11 @@ export const WORDS_BRAWL = [
   'dacus',
   'trip',
   'glide',
+  'cstick',
+  'edgehog',
+  'wifi',
+  'tapjump',
+
   'desync',
   'needle',
   'chain',
@@ -46,8 +53,7 @@ export const WORDS_BRAWL = [
   'stitch',
   'doteyes',
   'float',
-  'bomb',
-  'bombs',
+  'bobomb',
   'beam',
   'sword',
 
@@ -58,6 +64,7 @@ export const WORDS_BRAWL = [
   'aposl',
   'goml',
   'tojoe',
+  'tiopro',
 
   'lurr',
   'adhd',

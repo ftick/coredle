@@ -15,6 +15,7 @@ export const WORDS_ULT = [
   'unova',
   'venom',
   'wuhu',
+  'randall',
 
   'peach',
   'bowser',
@@ -25,6 +26,8 @@ export const WORDS_ULT = [
   'marth',
   'yink',
   'ganon',
+  'popo',
+  'nana',
   'mewtwo',
   'wario',
   'snake',
@@ -87,6 +90,10 @@ export const WORDS_ULT = [
   'shoto',
   'trump',
   'trip',
+  'cstick',
+  'wifi',
+  'tapjump',
+
   'desync',
   'needle',
   'chain',
