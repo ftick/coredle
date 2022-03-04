@@ -8,6 +8,7 @@ import {
   loadUnlimitedStatsFromLocalStorage,
   saveUnlimitedStatsToLocalStorage,
 } from './localStorage'
+import { FLASH_VALID_GUESSES } from '../constants/validGuessesFlash'
 
 // function getUrlVars() {
 //   var parts = window.location.href.split('/');
@@ -72,7 +73,8 @@ export const isWordInWordList = (word: string, override = false) => {
   return (
     getWordsByGame(override).includes(word.toLowerCase()) ||
     VALID_GUESSES[WORD_LENGTH].includes(word.toLowerCase()) ||
-    SMASH_VALID_GUESSES.includes(word.toLowerCase())
+    SMASH_VALID_GUESSES.includes(word.toLowerCase()) ||
+    FLASH_VALID_GUESSES.includes(word.toLowerCase())
   )
 }
 
