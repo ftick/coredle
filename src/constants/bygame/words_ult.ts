@@ -137,9 +137,9 @@ export const WORDS_ULT = [
   'brosa',
   'coney',
   'charles',
-  'korean',
   'whydo',
 
+  'lurr',
   'wadi',
   'esam',
   'void',
@@ -226,6 +226,7 @@ export const WORDS_ULT = [
   'grape',
   'dakpo',
   'mabel',
+  'wizzy',
   'kameme',
   'shuton',
   'cosmos',
