@@ -279,6 +279,7 @@ export const WORDS_ULT = [
   'mkleo',
   'tweek',
   'dabuz',
+  'gluto',
   'light',
   'marss',
   'myran',

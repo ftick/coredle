@@ -188,6 +188,7 @@ export const WORDS_SMASH4 = [
   'edge',
   'rfang',
   'otori',
+  'gluto',
   'ranai',
   'falln',
   'earth',

@@ -139,6 +139,7 @@ export const WORDS_BRAWL = [
   'dabuz',
   'nakat',
   'otori',
+  'gluto',
   'fatal',
   'brood',
   'choco',
