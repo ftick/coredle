@@ -185,6 +185,9 @@ export const WORDS_BASE = [
   'gimp',
   'gimps',
   'gimping',
+  'shark',
+  'grind',
+  'ranking',
 
   'firefox',
   'yoyo',
