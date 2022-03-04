@@ -61,20 +61,16 @@ export function getUrlOverrides() {
 // Set up overrides
 const OVERRIDES = getUrlOverrides()
 export const DAY_OVERRIDE = OVERRIDES.get('daily')
-var max_override = OVERRIDES.get('max')
-export const LENGTH_OVERRIDE =
-  !max_override || max_override < 4 || max_override > 7 ? 5 : max_override
 
 // February 15, 2022 Game Epoch
 const epochMs = new Date('February 15, 2022 00:00:00').valueOf()
 const msInDay = 86400000
 export const THE_USUAL = Math.floor((Date.now() - epochMs) / msInDay)
 
-export const isWordInWordList = (word: string) => {
+export const isWordInWordList = (word: string, override = false) => {
   const WORD_LENGTH = word.length
   return (
-    WORDS[WORD_LENGTH].includes(word.toLowerCase()) ||
-    getWordsByGame().includes(word.toLowerCase()) ||
+    getWordsByGame(override).includes(word.toLowerCase()) ||
     VALID_GUESSES[WORD_LENGTH].includes(word.toLowerCase()) ||
     SMASH_VALID_GUESSES.includes(word.toLowerCase())
   )
@@ -122,11 +118,9 @@ export const getWordDaily = () => {
   var index = getDayIndex()
   const nextday = (THE_USUAL + 1) * msInDay + epochMs
 
-  console.log('daily mode')
-  console.log('len', LENGTH_OVERRIDE, 'index', index)
+  console.log('daily #', index)
 
-  var solutionToBe =
-    WORDS[LENGTH_OVERRIDE][index % WORDS[LENGTH_OVERRIDE].length].toUpperCase()
+  var solutionToBe = WORDS[index % WORDS.length].toUpperCase()
 
   console.log(solutionToBe)
 

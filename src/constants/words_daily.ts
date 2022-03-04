@@ -1,4 +1,4 @@
-export const WORDS_5 = [
+export const WORDS_DAILY = [
   'getup',
   'whiff',
   'samox',
