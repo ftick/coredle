@@ -1,4 +1,4 @@
-export const WORDS_SM4SH = [
+export const WORDS_SMASH4 = [
   'findmii',
   'gamer',
   'halberd',
@@ -88,6 +88,7 @@ export const WORDS_SM4SH = [
   'brosa',
   'coney',
   'charles',
+  'yeetsmash',
 
   'lurr',
   'dehf',

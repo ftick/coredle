@@ -4,7 +4,7 @@ import {
   getStoredIsFlashEnabled,
   getStoredIsMeleeEnabled,
   getStoredIsPMEnabled,
-  getStoredIsSm4shEnabled,
+  getStoredIsSmash4Enabled,
   getStoredIsUltEnabled,
 } from '../lib/localStorage'
 import { WORDS_4 } from './bylength/words-4'
@@ -17,7 +17,7 @@ import { WORDS_BRAWL } from './bygame/words_brawl'
 import { WORDS_FLASH } from './bygame/words_flash'
 import { WORDS_MELEE } from './bygame/words_melee'
 import { WORDS_PM } from './bygame/words_pm'
-import { WORDS_SM4SH } from './bygame/words_sm4sh'
+import { WORDS_SMASH4 } from './bygame/words_smash4'
 import { WORDS_ULT } from './bygame/words_ult'
 
 export const WORDS = [[], [], [], [], WORDS_4, WORDS_5, WORDS_6, WORDS_7]
@@ -29,7 +29,7 @@ export function getWordsByGame() {
   if (getStoredIsMeleeEnabled()) arr.push(...WORDS_MELEE)
   if (getStoredIsBrawlEnabled()) arr.push(...WORDS_BRAWL)
   if (getStoredIsPMEnabled()) arr.push(...WORDS_PM)
-  if (getStoredIsSm4shEnabled()) arr.push(...WORDS_SM4SH)
+  if (getStoredIsSmash4Enabled()) arr.push(...WORDS_SMASH4)
   if (getStoredIsUltEnabled()) arr.push(...WORDS_ULT)
   if (getStoredIsFlashEnabled()) arr.push(...WORDS_FLASH)
 

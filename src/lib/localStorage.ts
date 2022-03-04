@@ -5,7 +5,7 @@ const sixtyFourKey = 'sixtyFour'
 const meleeKey = 'melee'
 const brawlKey = 'brawl'
 const pmKey = 'pm'
-const sm4shKey = 'sm4sh'
+const smash4Key = 'smash4'
 const ultKey = 'ult'
 const flashKey = 'flash'
 
@@ -141,17 +141,17 @@ export const getStoredIsPMEnabled = () => {
   return isPMEnabled === '1'
 }
 
-export const setStoredIsSm4shEnabled = (isSm4shEnabled: boolean) => {
-  if (isSm4shEnabled) {
-    localStorage.setItem(sm4shKey, '1')
+export const setStoredIsSmash4Enabled = (isSmash4Enabled: boolean) => {
+  if (isSmash4Enabled) {
+    localStorage.setItem(smash4Key, '1')
   } else {
-    localStorage.removeItem(sm4shKey)
+    localStorage.removeItem(smash4Key)
   }
 }
 
-export const getStoredIsSm4shEnabled = () => {
-  const isSm4shEnabled = localStorage.getItem(sm4shKey)
-  return isSm4shEnabled === '1'
+export const getStoredIsSmash4Enabled = () => {
+  const isSmash4Enabled = localStorage.getItem(smash4Key)
+  return isSmash4Enabled === '1'
 }
 
 export const setStoredIsUltEnabled = (isUltEnabled: boolean) => {
