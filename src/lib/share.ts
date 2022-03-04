@@ -1,5 +1,5 @@
 import { getGuessStatuses } from './statuses'
-import { solutionIndex } from './words'
+import { solution, solutionIndex } from './words'
 import { GAME_TITLE } from '../constants/strings'
 import { getStoredIsHighContrastMode } from './localStorage'
 import { MAX_CHALLENGES } from '../constants/settings'
@@ -16,6 +16,21 @@ export const shareStatus = (
     }/${MAX_CHALLENGES}${isHardMode ? '*' : ''}\n\n` +
       generateEmojiGrid(guesses) +
       `${includeLink ? '\nrandle.vercel.app' : ''}`
+  )
+}
+
+export const shareStatusInf = (
+  guesses: string[],
+  lost: boolean,
+  isHardMode: boolean,
+  includeLink: boolean
+) => {
+  navigator.clipboard.writeText(
+    `${GAME_TITLE} ${lost ? 'X' : guesses.length}/${solution.length}${
+      isHardMode ? '*' : ''
+    }\n\n` +
+      generateEmojiGrid(guesses) +
+      `${includeLink ? '\nrandle.vercel.app/infinite' : ''}`
   )
 }
 

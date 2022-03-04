@@ -1,9 +1,13 @@
-import { WORDS } from '../constants/wordlist'
+import { getWordsByGame, WORDS } from '../constants/wordlist'
 import { VALID_GUESSES } from '../constants/validGuesses'
 import { SMASH_VALID_GUESSES } from '../constants/validGuessesSmash'
 
 import { WRONG_SPOT_MESSAGE, NOT_CONTAINED_MESSAGE } from '../constants/strings'
 import { getGuessStatuses } from './statuses'
+import {
+  loadUnlimitedStatsFromLocalStorage,
+  saveUnlimitedStatsToLocalStorage,
+} from './localStorage'
 
 // function getUrlVars() {
 //   var parts = window.location.href.split('/');
@@ -28,43 +32,46 @@ import { getGuessStatuses } from './statuses'
 //   return urlparameter;
 // }
 
-export function getURLBase() {
+function getURLParts() {
   var parts = window.location.href.replace('&', '').split('/')
-  console.log(parts)
+  // console.log(parts)
+  return parts
+}
+
+export function getURLBase() {
+  var parts = getURLParts()
   return parts[0] + '//' + parts[2]
 }
 
-export function getURLNum() {
-  var parts = window.location.href.replace('&', '').split('/')
-  console.log(parts)
+export function getURLFirst() {
+  var parts = getURLParts()
   return parts[3]
 }
 
 export function getUrlOverrides() {
-  var parts = window.location.href.replace('&', '').split('/')
+  var parts = getURLParts()
   parts = parts.splice(3)
   console.log(parts)
   var dict = new Map<string, number>()
-  dict.set('daily', parseInt(parts[0]))
-  // dict.set('max', parseInt(parts[1]))
+  if (parts[0]) dict.set('daily', parseInt(parts[0]))
+  dict.set('max', parseInt(parts[1]))
   return dict
 }
 
+// Set up overrides
 const OVERRIDES = getUrlOverrides()
 export const DAY_OVERRIDE = OVERRIDES.get('daily')
-var max_override = OVERRIDES.get('max')
-export const LENGTH_OVERRIDE =
-  !max_override || max_override < 3 || max_override > 7 ? 5 : max_override
 
 // February 15, 2022 Game Epoch
 const epochMs = new Date('February 15, 2022 00:00:00').valueOf()
 const msInDay = 86400000
 export const THE_USUAL = Math.floor((Date.now() - epochMs) / msInDay)
 
-export const isWordInWordList = (word: string) => {
+export const isWordInWordList = (word: string, override = false) => {
+  const WORD_LENGTH = word.length
   return (
-    WORDS[LENGTH_OVERRIDE].includes(word.toLowerCase()) ||
-    VALID_GUESSES.includes(word.toLowerCase()) ||
+    getWordsByGame(override).includes(word.toLowerCase()) ||
+    VALID_GUESSES[WORD_LENGTH].includes(word.toLowerCase()) ||
     SMASH_VALID_GUESSES.includes(word.toLowerCase())
   )
 }
@@ -107,19 +114,67 @@ export const getDayIndex = () => {
   return THE_USUAL
 }
 
-export const getWordOfDay = () => {
+export const getWordDaily = () => {
   var index = getDayIndex()
-  if (!index) index = 0
   const nextday = (THE_USUAL + 1) * msInDay + epochMs
 
+  console.log('daily #', index)
+
+  var solutionToBe = WORDS[index % WORDS.length].toUpperCase()
+
+  console.log(solutionToBe)
+
   return {
-    solution:
-      WORDS[LENGTH_OVERRIDE][
-        index % WORDS[LENGTH_OVERRIDE].length
-      ].toUpperCase(),
+    solution: solutionToBe,
     solutionIndex: index,
     tomorrow: nextday,
   }
 }
 
-export const { solution, solutionIndex, tomorrow } = getWordOfDay()
+export const getWordUnlimited = () => {
+  const WORDS_BYGAME = getWordsByGame()
+  var index = Math.floor(Math.random() * WORDS_BYGAME.length)
+  const nextday = (THE_USUAL + 1) * msInDay + epochMs
+
+  console.log('unlimited mode')
+
+  var solutionToBe = WORDS_BYGAME[index % WORDS_BYGAME.length].toUpperCase()
+
+  var loaded = loadUnlimitedStatsFromLocalStorage()
+  var loaded_array = loaded?.pastSolutions
+
+  if (loaded && loaded_array && loaded_array.length === WORDS_BYGAME.length) {
+    saveUnlimitedStatsToLocalStorage({
+      winDistribution: loaded?.winDistribution,
+      gamesFailed: loaded?.gamesFailed,
+      currentStreak: loaded?.currentStreak,
+      bestStreak: loaded?.bestStreak,
+      totalGames: loaded?.totalGames,
+      successRate: loaded?.successRate,
+      pastSolutions: [],
+    })
+  }
+
+  while (
+    loadUnlimitedStatsFromLocalStorage()?.pastSolutions.includes(solutionToBe)
+  ) {
+    index = Math.floor(Math.random() * WORDS_BYGAME.length)
+    solutionToBe = WORDS_BYGAME[index % WORDS_BYGAME.length].toUpperCase()
+  }
+
+  console.log('soln:', solutionToBe)
+
+  return {
+    solution: solutionToBe,
+    solutionIndex: index,
+    tomorrow: nextday,
+  }
+}
+
+export const getWord = () => {
+  if (DAY_OVERRIDE === undefined) return getWordDaily()
+  if (getURLFirst() === 'infinite') return getWordUnlimited()
+  return getWordDaily()
+}
+
+export const { solution, solutionIndex, tomorrow } = getWord()

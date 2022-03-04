@@ -5,6 +5,7 @@ import {
   CalendarIcon,
   RewindIcon,
   FastForwardIcon,
+  RefreshIcon,
 } from '@heroicons/react/outline'
 import { useState, useEffect } from 'react'
 import { Grid } from './components/grid/Grid'
@@ -84,17 +85,20 @@ function App() {
     if (loaded?.solution !== solution) {
       return []
     }
-    const gameWasWon = loaded.guesses.includes(solution)
-    if (gameWasWon) {
-      setIsGameWon(true)
+    if (loaded) {
+      const gameWasWon = loaded.guesses.includes(solution)
+      if (gameWasWon) {
+        setIsGameWon(true)
+      }
+      if (loaded.guesses.length === MAX_CHALLENGES && !gameWasWon) {
+        setIsGameLost(true)
+        showErrorAlert(CORRECT_WORD_MESSAGE(solution), {
+          persist: true,
+        })
+      }
+      return loaded.guesses
     }
-    if (loaded.guesses.length === MAX_CHALLENGES && !gameWasWon) {
-      setIsGameLost(true)
-      showErrorAlert(CORRECT_WORD_MESSAGE(solution), {
-        persist: true,
-      })
-    }
-    return loaded.guesses
+    return []
   })
 
   const [stats, setStats] = useState(() => loadStats())
@@ -198,7 +202,7 @@ function App() {
       }, ALERT_TIME_MS)
     }
 
-    if (!isWordInWordList(currentGuess)) {
+    if (!isWordInWordList(currentGuess, true)) {
       showErrorAlert(WORD_NOT_FOUND_MESSAGE)
       setCurrentRowClass('jiggle')
       return setTimeout(() => {
@@ -419,6 +423,12 @@ function App() {
             className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
             onClick={() => {
               window.open(getURLBase().concat(`/${DAY_INDEX - 1}`), '_self')
+            }}
+          />
+          <RefreshIcon
+            className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
+            onClick={() => {
+              window.open(getURLBase().concat(`/infinite`), '_self')
             }}
           />
           <InformationCircleIcon

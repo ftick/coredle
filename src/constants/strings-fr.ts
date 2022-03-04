@@ -7,7 +7,7 @@ export const WORD_NOT_FOUND_MESSAGE = 'Mot introuvable'
 export const HARD_MODE_ALERT_MESSAGE =
   "Le Mode Difficile ne peut être activé qu'au début!"
 export const CORRECT_WORD_MESSAGE = (solution: string) =>
-  `Le mot était ${solution}`
+  `Le randle était ${solution}`
 export const WRONG_SPOT_MESSAGE = (guess: string, position: number) =>
   `Doit utiliser ${guess} en position ${position}`
 export const NOT_CONTAINED_MESSAGE = (letter: string) =>
@@ -21,6 +21,7 @@ export const DELETE_TEXT = 'Supprimé'
 export const STATISTICS_TITLE = 'Statistiques'
 export const GUESS_DISTRIBUTION_TEXT = 'Distribution des essais'
 export const NEW_WORD_TEXT = 'Nouveau mot en'
+export const NEXT_WORD_TEXT = 'Prochain Mot'
 export const SHARE_TEXT = 'Partager'
 export const WITH_LINK_TEXT = 'Avec Lien'
 export const TOTAL_TRIES_TEXT = "Nombre total d'essais"
