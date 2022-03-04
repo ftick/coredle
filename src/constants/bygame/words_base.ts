@@ -188,6 +188,7 @@ export const WORDS_BASE = [
   'shark',
   'grind',
   'ranking',
+  'teeter',
 
   'firefox',
   'yoyo',
@@ -202,6 +203,7 @@ export const WORDS_BASE = [
   'twitch',
   'youtube',
   'smashgg',
+  'goat',
 
   'genesis',
   'boback',
@@ -211,6 +213,7 @@ export const WORDS_BASE = [
   'netplay',
   'metafy',
   'tloc',
+  'clash',
   'chia',
   'andy',
 
