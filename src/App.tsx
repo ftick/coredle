@@ -5,8 +5,9 @@ import {
   CalendarIcon,
   RewindIcon,
   FastForwardIcon,
-  RefreshIcon,
 } from '@heroicons/react/outline'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faInfinity } from '@fortawesome/free-solid-svg-icons'
 import { useState, useEffect } from 'react'
 import { Grid } from './components/grid/Grid'
 import { Keyboard } from './components/keyboard/Keyboard'
@@ -261,7 +262,6 @@ function App() {
         <div className="flex w-80 mx-auto items-center mb-4 mt-4">
           <h1 className="text-xl ml-2.5 grow font-bold dark:text-white">
             {GAME_TITLE} {DAY_INDEX}
-            {/* {GAME_TITLE} {getDayIndex()}-{LENGTH_OVERRIDE} */}
           </h1>
           <RewindIcon
             className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
@@ -342,7 +342,6 @@ function App() {
         <div className="flex w-80 mx-auto items-center mb-4 mt-4">
           <h1 className="text-xl ml-2.5 grow font-bold dark:text-white">
             {GAME_TITLE} {DAY_INDEX}
-            {/* {GAME_TITLE} {getDayIndex()}-{LENGTH_OVERRIDE} */}
           </h1>
           <FastForwardIcon
             className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
@@ -417,7 +416,6 @@ function App() {
         <div className="flex w-80 mx-auto items-center mb-4 mt-4">
           <h1 className="text-xl ml-2.5 grow font-bold dark:text-white">
             {GAME_TITLE} {DAY_INDEX}
-            {/* {GAME_TITLE} {getDayIndex()}-{LENGTH_OVERRIDE} */}
           </h1>
           <RewindIcon
             className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
@@ -425,10 +423,12 @@ function App() {
               window.open(getURLBase().concat(`/${DAY_INDEX - 1}`), '_self')
             }}
           />
-          <RefreshIcon
+          <FontAwesomeIcon
             className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
+            icon={faInfinity}
+            inverse={isDarkMode}
             onClick={() => {
-              window.open(getURLBase().concat(`/infinite`), '_self')
+              window.open(getURLBase() + '/infinite', '_self')
             }}
           />
           <InformationCircleIcon
