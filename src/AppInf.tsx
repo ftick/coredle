@@ -49,14 +49,14 @@ import {
   getStoredIsBrawlEnabled,
   getStoredIsFlashEnabled,
   getStoredIsPMEnabled,
-  getStoredIsSm4shEnabled,
+  getStoredIsSmash4Enabled,
   getStoredIsUltEnabled,
   setStoredIs64Enabled,
   setStoredIsBrawlEnabled,
   setStoredIsFlashEnabled,
   setStoredIsMeleeEnabled,
   setStoredIsPMEnabled,
-  setStoredIsSm4shEnabled,
+  setStoredIsSmash4Enabled,
   setStoredIsUltEnabled,
 } from './lib/localStorage'
 
@@ -125,8 +125,8 @@ function AppInf() {
     getStoredIsBrawlEnabled()
   )
   const [isPMEnabled, setIsPMEnabled] = useState(getStoredIsPMEnabled())
-  const [isSm4shEnabled, setIsSm4shEnabled] = useState(
-    getStoredIsSm4shEnabled()
+  const [isSm4shEnabled, setIsSmash4Enabled] = useState(
+    getStoredIsSmash4Enabled()
   )
   const [isUltEnabled, setIsUltEnabled] = useState(getStoredIsUltEnabled())
   const [isFlashEnabled, setIsFlashEnabled] = useState(
@@ -197,8 +197,8 @@ function AppInf() {
   }
 
   const handleSm4shEnabled = (isSm4shEnabled: boolean) => {
-    setIsSm4shEnabled(isSm4shEnabled)
-    setStoredIsSm4shEnabled(isSm4shEnabled)
+    setIsSmash4Enabled(isSm4shEnabled)
+    setStoredIsSmash4Enabled(isSm4shEnabled)
   }
 
   const handleUltEnabled = (isUltEnabled: boolean) => {
