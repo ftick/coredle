@@ -7,7 +7,7 @@ export const WORD_NOT_FOUND_MESSAGE = 'Mot introuvable'
 export const HARD_MODE_ALERT_MESSAGE =
   "Le Mode Difficile ne peut être activé qu'au début!"
 export const CORRECT_WORD_MESSAGE = (solution: string) =>
-  `Le mot était ${solution}`
+  `Le randle était ${solution}`
 export const WRONG_SPOT_MESSAGE = (guess: string, position: number) =>
   `Doit utiliser ${guess} en position ${position}`
 export const NOT_CONTAINED_MESSAGE = (letter: string) =>
