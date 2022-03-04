@@ -346,4 +346,5 @@ export const WORDS_MELEE = [
   'lordhdl',
   'okamibw',
   'killaor',
+  'tekkenz',
 ]

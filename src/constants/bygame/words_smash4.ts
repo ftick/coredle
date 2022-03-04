@@ -82,6 +82,7 @@ export const WORDS_SMASH4 = [
   'tapjump',
   'glory',
   'zdrop',
+  'justsdi',
 
   'cape',
   'fludd',
@@ -167,7 +168,6 @@ export const WORDS_SMASH4 = [
   'brosa',
   'coney',
   'charles',
-  'yeetsmash',
 
   'lurr',
   'dehf',
