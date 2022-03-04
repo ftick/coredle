@@ -18,6 +18,15 @@ export const WORDS_MELEE = [
   'nana',
   'mewtwo',
 
+  'apple',
+  'barrel',
+  'bobomb',
+  'capsule',
+  'crate',
+  'flipper',
+  'freezie',
+  'trophy',
+
   'sideb',
   'lcancel',
   'shffl',
@@ -42,7 +51,6 @@ export const WORDS_MELEE = [
   'arduino',
 
   'swallow',
-  'hammer',
   'cape',
   'pkfire',
   'pound',
@@ -72,7 +80,6 @@ export const WORDS_MELEE = [
   'float',
   'bomber',
   'parasol',
-  'bobomb',
   'beam',
   'sword',
   'disable',

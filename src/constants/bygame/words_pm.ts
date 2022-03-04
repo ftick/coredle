@@ -51,7 +51,6 @@ export const WORDS_PM = [
   'pushoff',
 
   'cape',
-  'hammer',
   'pkfire',
   'wobble',
   'desync',

@@ -1,4 +1,10 @@
 export const WORDS_64 = [
+  'barrel',
+  'bobomb',
+  'bumper',
+  'capsule',
+  'crate',
+
   'saffron',
   'sectorz',
   'zebes',

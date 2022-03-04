@@ -11,6 +11,10 @@ export const WORDS_BASE = [
   'falcon',
   'puff',
 
+  'raygun',
+  'hammer',
+  'starrod',
+
   'melee',
   'flash',
   'brawl',
