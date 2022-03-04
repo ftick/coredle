@@ -85,17 +85,20 @@ function App() {
     if (loaded?.solution !== solution) {
       return []
     }
-    const gameWasWon = loaded.guesses.includes(solution)
-    if (gameWasWon) {
-      setIsGameWon(true)
+    if (loaded) {
+      const gameWasWon = loaded.guesses.includes(solution)
+      if (gameWasWon) {
+        setIsGameWon(true)
+      }
+      if (loaded.guesses.length === MAX_CHALLENGES && !gameWasWon) {
+        setIsGameLost(true)
+        showErrorAlert(CORRECT_WORD_MESSAGE(solution), {
+          persist: true,
+        })
+      }
+      return loaded.guesses
     }
-    if (loaded.guesses.length === MAX_CHALLENGES && !gameWasWon) {
-      setIsGameLost(true)
-      showErrorAlert(CORRECT_WORD_MESSAGE(solution), {
-        persist: true,
-      })
-    }
-    return loaded.guesses
+    return []
   })
 
   const [stats, setStats] = useState(() => loadStats())

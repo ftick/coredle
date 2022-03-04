@@ -96,17 +96,20 @@ function AppInf() {
     if (loaded?.solution !== solution) {
       return []
     }
-    const gameWasWon = loaded.guesses.includes(solution)
-    if (gameWasWon) {
-      setIsGameWon(true)
+    if (loaded) {
+      const gameWasWon = loaded.guesses.includes(solution)
+      if (gameWasWon) {
+        setIsGameWon(true)
+      }
+      if (loaded.guesses.length === MAX_CHALLENGES && !gameWasWon) {
+        setIsGameLost(true)
+        showErrorAlert(CORRECT_WORD_MESSAGE(solution), {
+          persist: true,
+        })
+      }
+      return loaded.guesses
     }
-    if (loaded.guesses.length === MAX_CHALLENGES && !gameWasWon) {
-      setIsGameLost(true)
-      showErrorAlert(CORRECT_WORD_MESSAGE(solution), {
-        persist: true,
-      })
-    }
-    return loaded.guesses
+    return []
   })
 
   const [stats, setStats] = useState(() => loadUnlimitedStats())
@@ -138,7 +141,7 @@ function AppInf() {
     // show the user the how-to info modal
     if (!loadUnlimitedGameStateFromLocalStorage()) {
       setTimeout(() => {
-        setIsInfoModalOpen(true)
+        setIsSettingsModalOpen(true)
       }, WELCOME_INFO_MODAL_MS)
     }
   }, [])
