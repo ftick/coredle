@@ -1,4 +1,5 @@
 export const WORDS_BASE = [
+  'sakurai',
   'sandbag',
   'mario',
   'link',

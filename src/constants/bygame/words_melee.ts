@@ -139,6 +139,7 @@ export const WORDS_MELEE = [
   'crystal',
   'beyond',
   'sfatjam',
+  'kotc',
 
   'sktar',
   'alukard',

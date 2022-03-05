@@ -167,6 +167,8 @@ export const WORDS_SMASH4 = [
   'virum',
   'brosa',
   'coney',
+  'littlez',
+  'hazmatt',
   'charles',
 
   'lurr',

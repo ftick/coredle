@@ -116,6 +116,7 @@ export const WORDS_PM = [
   'wisely',
   'virum',
   'pmnexus',
+  'bird',
 
   'hbox',
   'sosa',
