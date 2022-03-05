@@ -241,7 +241,6 @@ export const WORDS_ULT = [
   'coney',
   'charles',
   'whydo',
-  'yeetsmash',
 
   'lurr',
   'wadi',
