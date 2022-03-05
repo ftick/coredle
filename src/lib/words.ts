@@ -9,10 +9,11 @@ import {
   saveUnlimitedStatsToLocalStorage,
 } from './localStorage'
 import { FLASH_VALID_GUESSES } from '../constants/validGuessesFlash'
+import { debuglog } from './log'
 
 // function getUrlVars() {
 //   var parts = window.location.href.split('/');
-//   console.log(parts)
+//   debuglog(parts)
 //   var dict = new Map<string, string>();
 
 //   parts.forEach((part: string) => {
@@ -35,7 +36,6 @@ import { FLASH_VALID_GUESSES } from '../constants/validGuessesFlash'
 
 function getURLParts() {
   var parts = window.location.href.replace('&', '').split('/')
-  // console.log(parts)
   return parts
 }
 
@@ -52,7 +52,7 @@ export function getURLFirst() {
 export function getUrlOverrides() {
   var parts = getURLParts()
   parts = parts.splice(3)
-  console.log(parts)
+  debuglog(parts)
   var dict = new Map<string, number>()
   if (parts[0]) dict.set('daily', parseInt(parts[0]))
   dict.set('max', parseInt(parts[1]))
@@ -120,11 +120,11 @@ export const getWordDaily = () => {
   var index = getDayIndex()
   const nextday = (THE_USUAL + 1) * msInDay + epochMs
 
-  console.log('daily #', index)
+  debuglog('daily #', index)
 
   var solutionToBe = WORDS[index % WORDS.length].toUpperCase()
 
-  console.log(solutionToBe)
+  debuglog(solutionToBe)
 
   return {
     solution: solutionToBe,
@@ -138,7 +138,7 @@ export const getWordUnlimited = () => {
   var index = Math.floor(Math.random() * WORDS_BYGAME.length)
   const nextday = (THE_USUAL + 1) * msInDay + epochMs
 
-  console.log('unlimited mode')
+  debuglog('unlimited mode')
 
   var solutionToBe = WORDS_BYGAME[index % WORDS_BYGAME.length].toUpperCase()
 
@@ -164,7 +164,7 @@ export const getWordUnlimited = () => {
     solutionToBe = WORDS_BYGAME[index % WORDS_BYGAME.length].toUpperCase()
   }
 
-  console.log('soln:', solutionToBe)
+  debuglog('soln:', solutionToBe)
 
   return {
     solution: solutionToBe,

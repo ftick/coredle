@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals'
 import { AlertProvider } from './context/AlertContext'
 import { getURLFirst } from './lib/words'
 import App from './App'
+import { debuglog } from './lib/log'
 
 const IS_INFINITE = getURLFirst().includes('infinite')
 if (IS_INFINITE) {
@@ -31,4 +32,4 @@ if (IS_INFINITE) {
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals()
+reportWebVitals(debuglog)

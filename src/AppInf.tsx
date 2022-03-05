@@ -65,7 +65,7 @@ import { AlertContainer } from './components/alerts/AlertContainer'
 import { useAlert } from './context/AlertContext'
 
 function AppInf() {
-  // console.log(DAY_INDEX, LENGTH_OVERRIDE)
+  // debug(DAY_INDEX, LENGTH_OVERRIDE)
 
   const prefersDarkMode = window.matchMedia(
     '(prefers-color-scheme: dark)'
