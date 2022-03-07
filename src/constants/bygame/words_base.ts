@@ -1,4 +1,5 @@
 export const WORDS_BASE = [
+  'sakurai',
   'sandbag',
   'mario',
   'link',
@@ -201,6 +202,10 @@ export const WORDS_BASE = [
   'ranking',
   'teeter',
   'trapper',
+  'banger',
+  'mash',
+  'masher',
+  'smasher',
 
   'firefox',
   'inhale',

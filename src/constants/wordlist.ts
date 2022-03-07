@@ -16,6 +16,7 @@ import { WORDS_MELEE } from './bygame/words_melee'
 import { WORDS_PM } from './bygame/words_pm'
 import { WORDS_SMASH4 } from './bygame/words_smash4'
 import { WORDS_ULT } from './bygame/words_ult'
+import { debuglog } from '../lib/log'
 
 export const WORDS = WORDS_DAILY
 
@@ -44,7 +45,7 @@ export function getWordsByGame(override?: boolean) {
     return arr.indexOf(element) === index
   })
 
-  console.log(uniqueWords.length, 'unique words')
+  debuglog(uniqueWords.length, 'unique words')
 
   return uniqueWords
 }

@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals'
 import { AlertProvider } from './context/AlertContext'
 import { getURLFirst } from './lib/words'
 import App from './App'
+// import { debuglog } from './lib/log'
 
 const IS_INFINITE = getURLFirst().includes('infinite')
 if (IS_INFINITE) {

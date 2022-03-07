@@ -55,7 +55,7 @@ import { useAlert } from './context/AlertContext'
 
 function App() {
   const DAY_INDEX = getDayIndex()
-  // console.log(DAY_INDEX, LENGTH_OVERRIDE)
+  // debuglog(DAY_INDEX, LENGTH_OVERRIDE)
 
   const prefersDarkMode = window.matchMedia(
     '(prefers-color-scheme: dark)'

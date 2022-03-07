@@ -4,6 +4,7 @@ import './infinite.css'
 import AppInf from './AppInf'
 import reportWebVitals from './reportWebVitals'
 import { AlertProvider } from './context/AlertContext'
+// import { debuglog } from './lib/log'
 
 ReactDOM.render(
   <React.StrictMode>

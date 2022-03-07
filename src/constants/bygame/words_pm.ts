@@ -103,6 +103,7 @@ export const WORDS_PM = [
   'vgbc',
   'gimr',
   'aposl',
+  'wombat',
 
   'legacy',
   'magus',
@@ -116,6 +117,7 @@ export const WORDS_PM = [
   'wisely',
   'virum',
   'pmnexus',
+  'bird',
 
   'hbox',
   'sosa',

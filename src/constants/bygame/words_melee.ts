@@ -50,6 +50,9 @@ export const WORDS_MELEE = [
   'mangles',
   'optimal',
   'arduino',
+  'pode',
+  'dockid',
+  'bigleff',
 
   'swallow',
   'cape',
@@ -140,6 +143,7 @@ export const WORDS_MELEE = [
   'crystal',
   'beyond',
   'sfatjam',
+  'kotc',
 
   'sktar',
   'alukard',
