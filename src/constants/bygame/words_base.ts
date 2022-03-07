@@ -132,6 +132,8 @@ export const WORDS_BASE = [
   'bair',
   'fair',
   'dair',
+  'downair',
+  'backair',
   'crew',
   'stocks',
   'rest',
@@ -153,6 +155,7 @@ export const WORDS_BASE = [
   'attack',
   'special',
   'homerun',
+  'carried',
 
   'crouch',
   'shield',

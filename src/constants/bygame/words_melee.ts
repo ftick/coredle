@@ -4,6 +4,7 @@ export const WORDS_MELEE = [
   'temple',
   'venom',
   'randall',
+  'whispy',
 
   'peach',
   'bowser',
@@ -160,6 +161,8 @@ export const WORDS_MELEE = [
   'mazer',
 
   'ppmd',
+  'juan',
+  'zuan',
   'hbox',
   'hugs',
   'amsa',

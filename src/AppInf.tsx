@@ -264,7 +264,7 @@ function AppInf() {
       }, ALERT_TIME_MS)
     }
 
-    if (!isWordInWordList(currentGuess)) {
+    if (!isWordInWordList(currentGuess, true)) {
       showErrorAlert(WORD_NOT_FOUND_MESSAGE)
       setCurrentRowClass('jiggle')
       return setTimeout(() => {
