@@ -16,6 +16,7 @@ export const WORDS_ULT = [
   'venom',
   'wuhu',
   'randall',
+  'whispy',
 
   'peach',
   'bowser',
@@ -118,6 +119,7 @@ export const WORDS_ULT = [
   'wifi',
   'tapjump',
   'zdrop',
+  'jair',
 
   'cape',
   'fludd',
@@ -210,6 +212,7 @@ export const WORDS_ULT = [
   'feint',
   'pacjump',
   'hydrant',
+  'plunger',
 
   'umebura',
   'watch',

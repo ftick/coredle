@@ -8,6 +8,7 @@ export const WORDS_64 = [
   'saffron',
   'sectorz',
   'zebes',
+  'whispy',
 
   'zcancel',
   'edgehog',
