@@ -49,6 +49,9 @@ export const WORDS_MELEE = [
   'mangles',
   'optimal',
   'arduino',
+  'pode',
+  'dockid',
+  'bigleff',
 
   'swallow',
   'cape',

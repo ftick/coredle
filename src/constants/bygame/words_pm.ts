@@ -103,6 +103,7 @@ export const WORDS_PM = [
   'vgbc',
   'gimr',
   'aposl',
+  'wombat',
 
   'legacy',
   'magus',
