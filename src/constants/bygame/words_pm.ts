@@ -92,6 +92,7 @@ export const WORDS_PM = [
   'feint',
 
   'balc',
+  'balcy',
   'olympus',
   'theatre',
   'paragon',
@@ -118,6 +119,7 @@ export const WORDS_PM = [
   'virum',
   'pmnexus',
   'bird',
+  'fingy',
 
   'hbox',
   'sosa',

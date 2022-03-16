@@ -247,5 +247,6 @@ export const WORDS_BASE = [
   'andy',
 
   'kuyachi',
+  'randle',
   'grsmash',
 ]
