@@ -64,9 +64,19 @@ const OVERRIDES = getUrlOverrides()
 export const DAY_OVERRIDE = OVERRIDES.get('daily')
 
 // February 15, 2022 Game Epoch
-const epochMs = new Date('February 15, 2022 00:00:00').valueOf()
-const msInDay = 86400000
-export const THE_USUAL = Math.floor((Date.now() - epochMs) / msInDay)
+// const epochMs = new Date('February 15, 2022 00:00:00').valueOf()
+// const msInDay = 86400000
+// export const THE_USUAL = Math.floor((Date.now() - epochMs) / msInDay)
+const epoch = new Date(2022, 1, 15)
+const start = new Date(epoch)
+const today = new Date()
+today.setHours(0, 0, 0, 0)
+let index = 0
+while (start < today) {
+  index++
+  start.setDate(start.getDate() + 1)
+}
+export const THE_USUAL = index
 
 export const isWordInWordList = (word: string, override = false) => {
   const WORD_LENGTH = word.length
@@ -118,7 +128,9 @@ export const getDayIndex = () => {
 
 export const getWordDaily = () => {
   var index = getDayIndex()
-  const nextday = (THE_USUAL + 1) * msInDay + epochMs
+  // const nextday = (THE_USUAL + 1) * msInDay + epochMs
+  const nextDay = new Date(today)
+  nextDay.setDate(today.getDate() + 1)
 
   debuglog('daily #', index)
 
@@ -129,14 +141,17 @@ export const getWordDaily = () => {
   return {
     solution: solutionToBe,
     solutionIndex: index,
-    tomorrow: nextday,
+    // tomorrow: nextday,
+    tomorrow: nextDay.valueOf(),
   }
 }
 
 export const getWordUnlimited = () => {
   const WORDS_BYGAME = getWordsByGame()
   var index = Math.floor(Math.random() * WORDS_BYGAME.length)
-  const nextday = (THE_USUAL + 1) * msInDay + epochMs
+  // const nextday = (THE_USUAL + 1) * msInDay + epochMs
+  const nextDay = new Date(today)
+  nextDay.setDate(today.getDate() + 1)
 
   debuglog('unlimited mode')
 
@@ -169,7 +184,8 @@ export const getWordUnlimited = () => {
   return {
     solution: solutionToBe,
     solutionIndex: index,
-    tomorrow: nextday,
+    // tomorrow: nextday,
+    tomorrow: nextDay.valueOf(),
   }
 }
 
