@@ -67,7 +67,7 @@ export const DAY_OVERRIDE = OVERRIDES.get('daily')
 // const epochMs = new Date('February 15, 2022 00:00:00').valueOf()
 // const msInDay = 86400000
 // export const THE_USUAL = Math.floor((Date.now() - epochMs) / msInDay)
-const epoch = new Date(2022, 2, 15)
+const epoch = new Date(2022, 1, 15)
 const start = new Date(epoch)
 const today = new Date()
 today.setHours(0, 0, 0, 0)
