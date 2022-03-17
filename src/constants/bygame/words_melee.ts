@@ -134,7 +134,6 @@ export const WORDS_MELEE = [
   'wheat',
   'edwin',
   'bensw',
-  'cyfer',
   'prog',
   'epengu',
   'clippi',
