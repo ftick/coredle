@@ -62,6 +62,8 @@ type Props = {
 }
 
 export const InfoModal = ({ isOpen, handleClose }: Props) => {
+  const kofiStyles: React.CSSProperties = { border: '0px', height: '36px' }
+
   return (
     <BaseModal title={HOW_TO0} isOpen={isOpen} handleClose={handleClose}>
       <p className="text-sm text-gray-500 dark:text-gray-300">{HOW_TO1}</p>
@@ -98,12 +100,19 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
       </p>
 
       <p className="mt-6 italic text-sm text-gray-500 dark:text-gray-300">
-        <a href="https://twitter.com/Kuyachi_" className="underline font-bold">
+        <a
+          href="https://twitter.com/Kuyachi_"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline font-bold"
+        >
           {HOW_TO6}
         </a>
         {' - '}
         <a
           href="https://github.com/ftick/smash-wordle"
+          target="_blank"
+          rel="noopener noreferrer"
           className="underline font-bold"
         >
           {HOW_TO7}
@@ -111,9 +120,26 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         {' - '}
         <a
           href="https://github.com/cwackerfuss/react-wordle"
+          target="_blank"
+          rel="noopener noreferrer"
           className="underline font-bold"
         >
           {HOW_TO8}
+        </a>
+      </p>
+
+      <p className="flex justify-center mt-6 italic text-sm text-gray-500 dark:text-gray-300">
+        <a
+          href="https://ko-fi.com/V7V2AN4X2"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            height="36"
+            style={kofiStyles}
+            src="https://cdn.ko-fi.com/cdn/kofi2.png?v=3"
+            alt="Buy Me a Coffee at ko-fi.com"
+          />
         </a>
       </p>
     </BaseModal>
