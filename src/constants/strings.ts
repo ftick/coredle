@@ -1,6 +1,6 @@
 export const GAME_TITLE = process.env.REACT_APP_GAME_NAME!
-export const GAME_URL = 'randle.vercel.app'
-// export const GAME_URL = 'randle.kuyachi.xyz'
+// export const GAME_URL = 'https://randle.vercel.app'
+export const GAME_URL = 'https://randle.kuyachi.xyz'
 
 export const WIN_MESSAGES = ['Great Job!', 'Awesome', 'Well done!']
 export const GAME_COPIED_MESSAGE = 'Game copied to clipboard'
