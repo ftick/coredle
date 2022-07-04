@@ -7,6 +7,7 @@ import {
   HOW_TO5_TEXT as HOW_TO5_EN,
   HOW_TO6_TEXT as HOW_TO6_EN,
   HOW_TO7_TEXT as HOW_TO7_EN,
+  HOW_TO8_TEXT as HOW_TO8_EN,
 } from '../../constants/strings'
 import {
   HOW_TO0_TEXT as HOW_TO0_FR,
@@ -17,6 +18,7 @@ import {
   HOW_TO5_TEXT as HOW_TO5_FR,
   HOW_TO6_TEXT as HOW_TO6_FR,
   HOW_TO7_TEXT as HOW_TO7_FR,
+  HOW_TO8_TEXT as HOW_TO8_FR,
 } from '../../constants/strings-fr'
 import { Cell } from '../grid/Cell'
 import { BaseModal } from './BaseModal'
@@ -29,6 +31,7 @@ var HOW_TO4 = ''
 var HOW_TO5 = ''
 var HOW_TO6 = ''
 var HOW_TO7 = ''
+var HOW_TO8 = ''
 var userLang = navigator.language
 
 if (userLang.startsWith('en')) {
@@ -40,6 +43,7 @@ if (userLang.startsWith('en')) {
   HOW_TO5 = HOW_TO5_EN
   HOW_TO6 = HOW_TO6_EN
   HOW_TO7 = HOW_TO7_EN
+  HOW_TO8 = HOW_TO8_EN
 } else if (userLang.startsWith('fr')) {
   HOW_TO0 = HOW_TO0_FR
   HOW_TO1 = HOW_TO1_FR
@@ -49,6 +53,7 @@ if (userLang.startsWith('en')) {
   HOW_TO5 = HOW_TO5_FR
   HOW_TO6 = HOW_TO6_FR
   HOW_TO7 = HOW_TO7_FR
+  HOW_TO8 = HOW_TO8_FR
 }
 
 type Props = {
@@ -93,18 +98,22 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
       </p>
 
       <p className="mt-6 italic text-sm text-gray-500 dark:text-gray-300">
+        <a href="https://twitter.com/Kuyachi_" className="underline font-bold">
+          {HOW_TO6}
+        </a>
+        {' - '}
         <a
           href="https://github.com/ftick/smash-wordle"
           className="underline font-bold"
         >
-          {HOW_TO6}
+          {HOW_TO7}
         </a>
         {' - '}
         <a
           href="https://github.com/cwackerfuss/react-wordle"
           className="underline font-bold"
         >
-          {HOW_TO7}
+          {HOW_TO8}
         </a>
       </p>
     </BaseModal>

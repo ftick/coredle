@@ -50,5 +50,6 @@ export const HOW_TO3_TEXT =
 export const HOW_TO4_TEXT = "La lettre N n'est dans le mot à aucun endroit."
 
 export const HOW_TO5_TEXT = `Il s'agit d'un Wordle utilisant des mots liés à Smash et à sa scène compétitive : joueurs, tournois majeurs, techniques, scènes, personnages, etc.`
-export const HOW_TO6_TEXT = 'réalisée par Kuyachi'
-export const HOW_TO7_TEXT = 'bifurqué de Reactle'
+export const HOW_TO6_TEXT = 'contactez-moi'
+export const HOW_TO7_TEXT = 'code source'
+export const HOW_TO8_TEXT = 'bifurqué de Reactle'
