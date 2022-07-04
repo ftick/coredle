@@ -9,7 +9,7 @@ const smash4Key = 'smash4'
 const ultKey = 'ult'
 const flashKey = 'flash'
 
-type StoredGameState = {
+export type StoredGameState = {
   guesses: string[]
   solution: string
 }

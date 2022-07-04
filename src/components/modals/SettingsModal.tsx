@@ -6,6 +6,8 @@ import {
   DARK_MODE_TEXT as DARK_EN,
   CONTRAST_MODE_TEXT as CONTRAST_EN,
   SETTINGS_TEXT as SETTNGS_EN,
+  HARD_MODE_DESCRIPTION,
+  CONTRAST_MODE_DESCRIPTION,
 } from '../../constants/strings'
 
 import {
@@ -83,11 +85,12 @@ export const SettingsModal = ({
 }: Props) => {
   return (
     <BaseModal title={SETTINGS_TITLE} isOpen={isOpen} handleClose={handleClose}>
-      <div className="grid-cols-2 gap-4">
+      <div className="grid-cols-2 gap-4 divide-y">
         <SettingsToggle
           settingName={HARD_MODE}
           flag={isHardMode}
           handleFlag={handleHardMode}
+          description={HARD_MODE_DESCRIPTION}
         />
         <SettingsToggle
           settingName={DARK_MODE}
@@ -98,11 +101,13 @@ export const SettingsModal = ({
           settingName={CONTRAST_MODE}
           flag={isHighContrastMode}
           handleFlag={handleHighContrastMode}
+          description={CONTRAST_MODE_DESCRIPTION}
         />
         <TrashIcon
           className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
           onClick={() => {
-            localStorage.clear()
+            localStorage.removeItem('gameState')
+            localStorage.removeItem('gameStats')
             window.location.reload()
           }}
         />
@@ -137,11 +142,12 @@ export const SettingsModalInf = ({
 }: PropsInf) => {
   return (
     <BaseModal title={SETTINGS_TITLE} isOpen={isOpen} handleClose={handleClose}>
-      <div className="grid-cols-2 gap-4">
+      <div className="grid-cols-2 gap-4 divide-y">
         <SettingsToggle
           settingName={HARD_MODE}
           flag={isHardMode}
           handleFlag={handleHardMode}
+          description={HARD_MODE_DESCRIPTION}
         />
         <SettingsToggle
           settingName={DARK_MODE}
@@ -152,9 +158,10 @@ export const SettingsModalInf = ({
           settingName={CONTRAST_MODE}
           flag={isHighContrastMode}
           handleFlag={handleHighContrastMode}
+          description={CONTRAST_MODE_DESCRIPTION}
         />
         <SettingsToggle
-          settingName={'64 Words'}
+          settingName={'Smash 64 Words'}
           flag={is64Enabled}
           handleFlag={handle64Enabled}
         />
@@ -192,7 +199,16 @@ export const SettingsModalInf = ({
           <TrashIcon
             className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
             onClick={() => {
-              localStorage.clear()
+              localStorage.removeItem('unlimitedState')
+              localStorage.removeItem('unlimitedStats')
+              localStorage.removeItem('sixtyfour')
+              localStorage.removeItem('melee')
+              localStorage.removeItem('brawl')
+              localStorage.removeItem('flash')
+              localStorage.removeItem('pm')
+              localStorage.removeItem('smash4')
+              localStorage.removeItem('ult')
+              // localStorage.clear()
               window.location.reload()
             }}
           />

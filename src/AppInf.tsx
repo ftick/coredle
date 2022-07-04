@@ -63,6 +63,7 @@ import {
 import './App.css'
 import { AlertContainer } from './components/alerts/AlertContainer'
 import { useAlert } from './context/AlertContext'
+import { MigrateStatsModal } from './components/modals/MigrateStatsModal'
 
 function AppInf() {
   // debug(DAY_INDEX, LENGTH_OVERRIDE)
@@ -77,6 +78,7 @@ function AppInf() {
   const [isGameWon, setIsGameWon] = useState(false)
   const [isInfoModalOpen, setIsInfoModalOpen] = useState(false)
   const [isStatsModalOpen, setIsStatsModalOpen] = useState(false)
+  const [isMigrateStatsModalOpen, setIsMigrateStatsModalOpen] = useState(false)
   const [isSettingsModalOpen, setIsSettingsModalOpen] = useState(false)
   const [currentRowClass, setCurrentRowClass] = useState('')
   const [isGameLost, setIsGameLost] = useState(false)
@@ -348,6 +350,7 @@ function AppInf() {
         />
       </div>
       <Grid
+        solution={solution}
         guesses={guesses}
         currentGuess={currentGuess}
         isRevealing={isRevealing}
@@ -368,12 +371,24 @@ function AppInf() {
       <StatsModalUnlimited
         isOpen={isStatsModalOpen}
         handleClose={() => setIsStatsModalOpen(false)}
+        solution={solution}
         guesses={guesses}
         gameStats={stats}
         isGameLost={isGameLost}
         isGameWon={isGameWon}
-        handleShare={() => showSuccessAlert(GAME_COPIED_MESSAGE)}
+        handleShareToClipboard={() => showSuccessAlert(GAME_COPIED_MESSAGE)}
+        handleMigrateStatsButton={() => {
+          setIsStatsModalOpen(false)
+          setIsMigrateStatsModalOpen(true)
+        }}
         isHardMode={isHardMode}
+        isDarkMode={isDarkMode}
+        isHighContrastMode={isHighContrastMode}
+        numberOfGuessesMade={guesses.length}
+      />
+      <MigrateStatsModal
+        isOpen={isMigrateStatsModalOpen}
+        handleClose={() => setIsMigrateStatsModalOpen(false)}
       />
       <SettingsModalInf
         isOpen={isSettingsModalOpen}

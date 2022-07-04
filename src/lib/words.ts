@@ -10,6 +10,7 @@ import {
 } from './localStorage'
 import { FLASH_VALID_GUESSES } from '../constants/validGuessesFlash'
 import { debuglog } from './log'
+import { default as GraphemeSplitter } from 'grapheme-splitter'
 
 // function getUrlVars() {
 //   var parts = window.location.href.split('/');
@@ -95,27 +96,43 @@ export const isWinningWord = (word: string) => {
 // build a set of previously revealed letters - present and correct
 // guess must use correct letters in that space and any other revealed letters
 export const findFirstUnusedReveal = (word: string, guesses: string[]) => {
-  const knownLetterSet = new Set<string>()
-  for (const guess of guesses) {
-    const statuses = getGuessStatuses(guess)
+  if (guesses.length === 0) {
+    return false
+  }
 
-    for (let i = 0; i < guess.length; i++) {
-      if (statuses[i] === 'correct' || statuses[i] === 'present') {
-        knownLetterSet.add(guess[i])
-      }
-      if (statuses[i] === 'correct' && word[i] !== guess[i]) {
-        return WRONG_SPOT_MESSAGE(guess[i], i + 1)
-      }
+  const lettersLeftArray = new Array<string>()
+  const guess = guesses[guesses.length - 1]
+  const statuses = getGuessStatuses(solution, guess)
+  const splitWord = unicodeSplit(word)
+  const splitGuess = unicodeSplit(guess)
+
+  for (let i = 0; i < splitGuess.length; i++) {
+    if (statuses[i] === 'correct' || statuses[i] === 'present') {
+      lettersLeftArray.push(splitGuess[i])
+    }
+    if (statuses[i] === 'correct' && splitWord[i] !== splitGuess[i]) {
+      return WRONG_SPOT_MESSAGE(splitGuess[i], i + 1)
     }
   }
 
-  for (const letter of Array.from(knownLetterSet.values())) {
-    // fail fast, always return first failed letter if applicable
-    if (!word.includes(letter)) {
-      return NOT_CONTAINED_MESSAGE(letter)
+  // check for the first unused letter, taking duplicate letters
+  // into account - see issue #198
+  let n
+  for (const letter of splitWord) {
+    n = lettersLeftArray.indexOf(letter)
+    if (n !== -1) {
+      lettersLeftArray.splice(n, 1)
     }
+  }
+
+  if (lettersLeftArray.length > 0) {
+    return NOT_CONTAINED_MESSAGE(lettersLeftArray[0])
   }
   return false
+}
+
+export const unicodeSplit = (word: string) => {
+  return new GraphemeSplitter().splitGraphemes(word)
 }
 
 export const getDayIndex = () => {

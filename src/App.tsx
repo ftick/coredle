@@ -22,6 +22,7 @@ import {
   WORD_NOT_FOUND_MESSAGE,
   CORRECT_WORD_MESSAGE,
   HARD_MODE_ALERT_MESSAGE,
+  DISCOURAGE_INAPP_BROWSER_TEXT,
 } from './constants/strings'
 import {
   MAX_WORD_LENGTH,
@@ -30,6 +31,7 @@ import {
   REVEAL_TIME_MS,
   GAME_LOST_INFO_DELAY,
   WELCOME_INFO_MODAL_MS,
+  DISCOURAGE_INAPP_BROWSERS,
 } from './constants/settings'
 import {
   isWordInWordList,
@@ -52,6 +54,8 @@ import {
 import './App.css'
 import { AlertContainer } from './components/alerts/AlertContainer'
 import { useAlert } from './context/AlertContext'
+import { isInAppBrowser } from './lib/browser'
+import { MigrateStatsModal } from './components/modals/MigrateStatsModal'
 
 function App() {
   const DAY_INDEX = getDayIndex()
@@ -67,6 +71,7 @@ function App() {
   const [isGameWon, setIsGameWon] = useState(false)
   const [isInfoModalOpen, setIsInfoModalOpen] = useState(false)
   const [isStatsModalOpen, setIsStatsModalOpen] = useState(false)
+  const [isMigrateStatsModalOpen, setIsMigrateStatsModalOpen] = useState(false)
   const [isSettingsModalOpen, setIsSettingsModalOpen] = useState(false)
   const [currentRowClass, setCurrentRowClass] = useState('')
   const [isGameLost, setIsGameLost] = useState(false)
@@ -119,6 +124,15 @@ function App() {
       }, WELCOME_INFO_MODAL_MS)
     }
   }, [])
+
+  useEffect(() => {
+    DISCOURAGE_INAPP_BROWSERS &&
+      isInAppBrowser() &&
+      showErrorAlert(DISCOURAGE_INAPP_BROWSER_TEXT, {
+        persist: false,
+        durationMs: 7000,
+      })
+  }, [showErrorAlert])
 
   useEffect(() => {
     if (isDarkMode) {
@@ -295,6 +309,7 @@ function App() {
           />
         </div>
         <Grid
+          solution={solution}
           guesses={guesses}
           currentGuess={currentGuess}
           isRevealing={isRevealing}
@@ -315,12 +330,20 @@ function App() {
         <StatsModal
           isOpen={isStatsModalOpen}
           handleClose={() => setIsStatsModalOpen(false)}
+          solution={solution}
           guesses={guesses}
           gameStats={stats}
           isGameLost={isGameLost}
           isGameWon={isGameWon}
-          handleShare={() => showSuccessAlert(GAME_COPIED_MESSAGE)}
+          handleShareToClipboard={() => showSuccessAlert(GAME_COPIED_MESSAGE)}
+          handleMigrateStatsButton={() => {
+            setIsStatsModalOpen(false)
+            setIsMigrateStatsModalOpen(true)
+          }}
           isHardMode={isHardMode}
+          isDarkMode={isDarkMode}
+          isHighContrastMode={isHighContrastMode}
+          numberOfGuessesMade={guesses.length}
         />
         <SettingsModal
           isOpen={isSettingsModalOpen}
@@ -369,6 +392,7 @@ function App() {
           />
         </div>
         <Grid
+          solution={solution}
           guesses={guesses}
           currentGuess={currentGuess}
           isRevealing={isRevealing}
@@ -389,12 +413,20 @@ function App() {
         <StatsModal
           isOpen={isStatsModalOpen}
           handleClose={() => setIsStatsModalOpen(false)}
+          solution={solution}
           guesses={guesses}
           gameStats={stats}
           isGameLost={isGameLost}
           isGameWon={isGameWon}
-          handleShare={() => showSuccessAlert(GAME_COPIED_MESSAGE)}
+          handleShareToClipboard={() => showSuccessAlert(GAME_COPIED_MESSAGE)}
+          handleMigrateStatsButton={() => {
+            setIsStatsModalOpen(false)
+            setIsMigrateStatsModalOpen(true)
+          }}
           isHardMode={isHardMode}
+          isDarkMode={isDarkMode}
+          isHighContrastMode={isHighContrastMode}
+          numberOfGuessesMade={guesses.length}
         />
         <SettingsModal
           isOpen={isSettingsModalOpen}
@@ -445,6 +477,7 @@ function App() {
           />
         </div>
         <Grid
+          solution={solution}
           guesses={guesses}
           currentGuess={currentGuess}
           isRevealing={isRevealing}
@@ -465,12 +498,24 @@ function App() {
         <StatsModal
           isOpen={isStatsModalOpen}
           handleClose={() => setIsStatsModalOpen(false)}
+          solution={solution}
           guesses={guesses}
           gameStats={stats}
           isGameLost={isGameLost}
           isGameWon={isGameWon}
-          handleShare={() => showSuccessAlert(GAME_COPIED_MESSAGE)}
+          handleShareToClipboard={() => showSuccessAlert(GAME_COPIED_MESSAGE)}
+          handleMigrateStatsButton={() => {
+            setIsStatsModalOpen(false)
+            setIsMigrateStatsModalOpen(true)
+          }}
           isHardMode={isHardMode}
+          isDarkMode={isDarkMode}
+          isHighContrastMode={isHighContrastMode}
+          numberOfGuessesMade={guesses.length}
+        />
+        <MigrateStatsModal
+          isOpen={isMigrateStatsModalOpen}
+          handleClose={() => setIsMigrateStatsModalOpen(false)}
         />
         <SettingsModal
           isOpen={isSettingsModalOpen}

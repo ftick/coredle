@@ -6,6 +6,7 @@ import {
   HOW_TO4_TEXT as HOW_TO4_EN,
   HOW_TO5_TEXT as HOW_TO5_EN,
   HOW_TO6_TEXT as HOW_TO6_EN,
+  HOW_TO7_TEXT as HOW_TO7_EN,
 } from '../../constants/strings'
 import {
   HOW_TO0_TEXT as HOW_TO0_FR,
@@ -15,6 +16,7 @@ import {
   HOW_TO4_TEXT as HOW_TO4_FR,
   HOW_TO5_TEXT as HOW_TO5_FR,
   HOW_TO6_TEXT as HOW_TO6_FR,
+  HOW_TO7_TEXT as HOW_TO7_FR,
 } from '../../constants/strings-fr'
 import { Cell } from '../grid/Cell'
 import { BaseModal } from './BaseModal'
@@ -26,6 +28,7 @@ var HOW_TO3 = ''
 var HOW_TO4 = ''
 var HOW_TO5 = ''
 var HOW_TO6 = ''
+var HOW_TO7 = ''
 var userLang = navigator.language
 
 if (userLang.startsWith('en')) {
@@ -36,6 +39,7 @@ if (userLang.startsWith('en')) {
   HOW_TO4 = HOW_TO4_EN
   HOW_TO5 = HOW_TO5_EN
   HOW_TO6 = HOW_TO6_EN
+  HOW_TO7 = HOW_TO7_EN
 } else if (userLang.startsWith('fr')) {
   HOW_TO0 = HOW_TO0_FR
   HOW_TO1 = HOW_TO1_FR
@@ -44,6 +48,7 @@ if (userLang.startsWith('en')) {
   HOW_TO4 = HOW_TO4_FR
   HOW_TO5 = HOW_TO5_FR
   HOW_TO6 = HOW_TO6_FR
+  HOW_TO7 = HOW_TO7_FR
 }
 
 type Props = {
@@ -54,6 +59,7 @@ type Props = {
 export const InfoModal = ({ isOpen, handleClose }: Props) => {
   return (
     <BaseModal title={HOW_TO0} isOpen={isOpen} handleClose={handleClose}>
+      
       <p className="text-sm text-gray-500 dark:text-gray-300">{HOW_TO1}</p>
 
       <div className="flex justify-center mb-1 mt-4">
@@ -82,15 +88,24 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         <Cell value="E" />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">{HOW_TO4}</p>
+      
+      <p className="mt-6 italic text-sm text-gray-500 dark:text-gray-300">
+        {HOW_TO5}
+      </p>
 
       <p className="mt-6 italic text-sm text-gray-500 dark:text-gray-300">
-        {HOW_TO5}{' '}
         <a
           href="https://github.com/ftick/smash-wordle"
           className="underline font-bold"
         >
           {HOW_TO6}
-        </a>{' '}
+        </a>{' - '}
+        <a
+          href="https://github.com/cwackerfuss/react-wordle"
+          className="underline font-bold"
+        >
+          {HOW_TO7}
+        </a>
       </p>
     </BaseModal>
   )
