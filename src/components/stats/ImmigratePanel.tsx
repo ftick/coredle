@@ -1,8 +1,14 @@
 import { SaveIcon } from '@heroicons/react/outline'
 import { useState } from 'react'
 import { decrypt } from '../../lib/encryption'
-import { MIGRATE_WARNING_TEXT as MIGRATE_EN, RELOAD_TEXT as RELOAD_EN } from '../../constants/strings'
-import { MIGRATE_WARNING_TEXT as MIGRATE_FR, RELOAD_TEXT as RELOAD_FR } from '../../constants/strings-fr'
+import {
+  MIGRATE_WARNING_TEXT as MIGRATE_EN,
+  RELOAD_TEXT as RELOAD_EN,
+} from '../../constants/strings'
+import {
+  MIGRATE_WARNING_TEXT as MIGRATE_FR,
+  RELOAD_TEXT as RELOAD_FR,
+} from '../../constants/strings-fr'
 import {
   saveGameStateToLocalStorage,
   saveUnlimitedGameStateToLocalStorage,
@@ -11,7 +17,8 @@ import {
 } from '../../lib/localStorage'
 import { MigrationStats } from '../modals/MigrateStatsModal'
 
-var MIGRATE_WARNING = '', RELOAD = ''
+var MIGRATE_WARNING = '',
+  RELOAD = ''
 var userLang = navigator.language
 
 if (userLang.startsWith('en')) {
@@ -62,12 +69,7 @@ export const ImmigratePanel = () => {
     const textarea = document.getElementById(
       'immigration-code'
     ) as HTMLInputElement
-    if (
-      textarea &&
-      window.confirm(
-        MIGRATE_WARNING
-      )
-    ) {
+    if (textarea && window.confirm(MIGRATE_WARNING)) {
       var migrationStats = JSON.parse(
         decrypt(textarea.value) ?? ''
       ) as MigrationStats

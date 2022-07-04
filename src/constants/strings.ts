@@ -17,7 +17,7 @@ export const NOT_CONTAINED_MESSAGE = (letter: string) =>
 export const SETTINGS_TEXT = 'Settings'
 export const HARD_MODE_TEXT = 'Hard Mode'
 export const HARD_MODE_DESCRIPTION =
-'Any revealed hints must be used in subsequent guesses'
+  'Any revealed hints must be used in subsequent guesses'
 export const DARK_MODE_TEXT = 'Dark Mode'
 export const CONTRAST_MODE_TEXT = 'High Contrast Mode'
 export const CONTRAST_MODE_DESCRIPTION = 'For improved color vision'
@@ -50,7 +50,6 @@ export const HOW_TO2_TEXT =
 export const HOW_TO3_TEXT = 'The letter C is in the word but in the wrong spot.'
 export const HOW_TO4_TEXT = 'The letter N is not in the word in any spot.'
 
-export const HOW_TO5_TEXT =
-  `This is Wordle using words related to Smash and its competitive scene, ft. players, major tournaments, techniques, stages, characters, you name it.`
+export const HOW_TO5_TEXT = `This is Wordle using words related to Smash and its competitive scene, ft. players, major tournaments, techniques, stages, characters, you name it.`
 export const HOW_TO6_TEXT = 'made by Kuyachi'
 export const HOW_TO7_TEXT = 'forked from Reactle'

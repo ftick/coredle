@@ -15,10 +15,11 @@ export const NOT_CONTAINED_MESSAGE = (letter: string) =>
 export const SETTINGS_TEXT = 'Paramètres'
 export const HARD_MODE_TEXT = 'Mode Difficile'
 export const HARD_MODE_DESCRIPTION =
-'Tous les indices révélés doivent être utilisés pour les devinettes suivantes'
+  'Tous les indices révélés doivent être utilisés pour les devinettes suivantes'
 export const DARK_MODE_TEXT = 'Mode Sombre'
 export const CONTRAST_MODE_TEXT = 'Mode de Contraste Élevé'
-export const CONTRAST_MODE_DESCRIPTION = 'Pour une meilleure vision des couleurs'
+export const CONTRAST_MODE_DESCRIPTION =
+  'Pour une meilleure vision des couleurs'
 export const ENTER_TEXT = 'Entrée'
 export const DELETE_TEXT = 'Supprimé'
 export const STATISTICS_TITLE = 'Statistiques'
@@ -38,7 +39,7 @@ export const MIGRATE_WARNING_TEXT =
   'Are you sure you want to override the statistics on this device? This action is not reversable.'
 export const RELOAD_TEXT = 'Le site va maintenant se recharger.'
 export const DISCOURAGE_INAPP_BROWSER_TEXT =
-  "Vous utilisez un navigateur intégré et pouvez rencontrer des problèmes pour partager ou enregistrer vos résultats. Nous vous encourageons plutôt à utiliser le navigateur par défaut de votre appareil."
+  'Vous utilisez un navigateur intégré et pouvez rencontrer des problèmes pour partager ou enregistrer vos résultats. Nous vous encourageons plutôt à utiliser le navigateur par défaut de votre appareil.'
 
 export const HOW_TO0_TEXT = 'Comment Jouer'
 export const HOW_TO1_TEXT =
@@ -48,7 +49,6 @@ export const HOW_TO3_TEXT =
   'La lettre C est dans le mot mais au mauvais endroit.'
 export const HOW_TO4_TEXT = "La lettre N n'est dans le mot à aucun endroit."
 
-export const HOW_TO5_TEXT =
-  `Il s'agit d'un Wordle utilisant des mots liés à Smash et à sa scène compétitive : joueurs, tournois majeurs, techniques, scènes, personnages, etc.`
+export const HOW_TO5_TEXT = `Il s'agit d'un Wordle utilisant des mots liés à Smash et à sa scène compétitive : joueurs, tournois majeurs, techniques, scènes, personnages, etc.`
 export const HOW_TO6_TEXT = 'réalisée par Kuyachi'
 export const HOW_TO7_TEXT = 'bifurqué de Reactle'

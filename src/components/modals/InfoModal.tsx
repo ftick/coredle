@@ -59,7 +59,6 @@ type Props = {
 export const InfoModal = ({ isOpen, handleClose }: Props) => {
   return (
     <BaseModal title={HOW_TO0} isOpen={isOpen} handleClose={handleClose}>
-      
       <p className="text-sm text-gray-500 dark:text-gray-300">{HOW_TO1}</p>
 
       <div className="flex justify-center mb-1 mt-4">
@@ -88,7 +87,7 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         <Cell value="E" />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">{HOW_TO4}</p>
-      
+
       <p className="mt-6 italic text-sm text-gray-500 dark:text-gray-300">
         {HOW_TO5}
       </p>
@@ -99,7 +98,8 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
           className="underline font-bold"
         >
           {HOW_TO6}
-        </a>{' - '}
+        </a>
+        {' - '}
         <a
           href="https://github.com/cwackerfuss/react-wordle"
           className="underline font-bold"

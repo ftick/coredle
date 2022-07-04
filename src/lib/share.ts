@@ -1,5 +1,5 @@
 import { getGuessStatuses } from './statuses'
-import { solutionIndex, unicodeSplit  } from './words'
+import { solutionIndex, unicodeSplit } from './words'
 import { GAME_TITLE, GAME_URL } from '../constants/strings'
 // import { getStoredIsHighContrastMode } from './localStorage'
 import { MAX_CHALLENGES } from '../constants/settings'
@@ -76,9 +76,9 @@ export const shareStatusInf = (
   handleShareToClipboard: () => void
 ) => {
   const textToShare =
-    `${GAME_TITLE} ${
-      lost ? 'X' : guesses.length
-    }/${MAX_CHALLENGES}${isHardMode ? '*' : ''}\n\n` +
+    `${GAME_TITLE} ${lost ? 'X' : guesses.length}/${MAX_CHALLENGES}${
+      isHardMode ? '*' : ''
+    }\n\n` +
     generateEmojiGrid(
       solution,
       guesses,

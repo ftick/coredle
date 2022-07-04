@@ -1,6 +1,10 @@
 import { BaseModal } from './BaseModal'
 import { useState } from 'react'
-import { GameStats, StoredGameState, UnlimitedStats } from '../../lib/localStorage'
+import {
+  GameStats,
+  StoredGameState,
+  UnlimitedStats,
+} from '../../lib/localStorage'
 import { EmigratePanel } from '../stats/EmigratePanel'
 import { ImmigratePanel } from '../stats/ImmigratePanel'
 

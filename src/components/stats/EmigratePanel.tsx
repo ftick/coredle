@@ -1,5 +1,9 @@
 import { loadStats, loadUnlimitedStats } from '../../lib/stats'
-import { loadGameStateFromLocalStorage, loadUnlimitedGameStateFromLocalStorage, loadUnlimitedStatsFromLocalStorage } from '../../lib/localStorage'
+import {
+  loadGameStateFromLocalStorage,
+  loadUnlimitedGameStateFromLocalStorage,
+  loadUnlimitedStatsFromLocalStorage,
+} from '../../lib/localStorage'
 import { MigrationStats } from '../modals/MigrateStatsModal'
 import { encrypt } from '../../lib/encryption'
 import { copyTextToClipboard } from '../../lib/clipboard'
