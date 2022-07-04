@@ -35,8 +35,7 @@ export const BEST_STREAK_TEXT = 'Meilleure série'
 export const MIGRATE_BUTTON_TEXT = 'Transférer'
 export const MIGRATE_DESCRIPTION_TEXT =
   'Cliquez ici pour transférer vos statistiques vers un nouvel appareil.'
-export const MIGRATE_WARNING_TEXT =
-  'Are you sure you want to override the statistics on this device? This action is not reversable.'
+export const MIGRATE_WARNING_TEXT = `Êtes-vous sûr de vouloir annuler les statistiques de ce dispositif ? Cette action n'est pas réversible.`
 export const RELOAD_TEXT = 'Le site va maintenant se recharger.'
 export const DISCOURAGE_INAPP_BROWSER_TEXT =
   'Vous utilisez un navigateur intégré et pouvez rencontrer des problèmes pour partager ou enregistrer vos résultats. Nous vous encourageons plutôt à utiliser le navigateur par défaut de votre appareil.'
