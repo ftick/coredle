@@ -1,6 +1,8 @@
 # Randle
 
-This is a clone project of the popular word guessing game we all know and love. Made using React, Typescript, and Tailwind.
+This is Wordle using words related to Smash and its competitive scene, ft. players, major tournaments, techniques, stages, characters, you name it. Made using React, Typescript, and Tailwind.
+
+Made using Reac
 
 ![image](https://user-images.githubusercontent.com/7319798/177638608-8e454b60-3241-468a-bd64-14be9d824410.png)
 
