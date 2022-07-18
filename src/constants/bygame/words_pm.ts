@@ -149,7 +149,6 @@ export const WORDS_PM = [
   'dart',
   'ppmd',
   'josev',
-  'grzly',
   'suvir',
   'sothe',
   'kycse',

@@ -282,7 +282,6 @@ export const WORDS_DAILY = [
   'colbol',
   'muteace',
   'unknown',
-  'grzly',
   'prince',
   'cort',
   'dash',
