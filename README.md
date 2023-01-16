@@ -2,7 +2,7 @@
 
 This is Wordle using words related to Omega Strikers and its competitive scene, ft. players, major tournaments, slang, stages, characters, you name it. Made using React, Typescript, and Tailwind.
 
-![image](https://user-images.githubusercontent.com/7319798/177638608-8e454b60-3241-468a-bd64-14be9d824410.png)
+![image](https://user-images.githubusercontent.com/7319798/212609405-7890a0d0-d86c-4a35-bc9e-9b2c15d3df78.png)
 
 Try out this Smash-themed clone [**here**](https://coredle.kuyachi.xyz/)!  
 If you're interested, check out the [demo](https://reactle.vercel.app/) and [source code](https://github.com/cwackerfuss/react-wordle) of the project this is based on
