@@ -1,4 +1,5 @@
 export const WORDS_DAILY = [
+  'FILLER',
   'lumost',
   'gingerpop',
   'kuyachi',

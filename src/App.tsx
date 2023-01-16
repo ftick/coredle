@@ -272,7 +272,7 @@ function App() {
 
   const DAY_DISPLAY = DAY_INDEX === 10 ? 'Ω' : DAY_INDEX
 
-  if (DAY_INDEX !== THE_USUAL && DAY_INDEX > 0) {
+  if (DAY_INDEX !== THE_USUAL && DAY_INDEX > 1) {
     return (
       <div className="flex flex-col pt-2 pb-4 max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div className="flex w-80 mx-auto items-center mb-4 mt-4">
