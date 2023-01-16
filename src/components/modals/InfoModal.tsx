@@ -69,29 +69,29 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
       <p className="text-sm text-gray-500 dark:text-gray-300">{HOW_TO1}</p>
 
       <div className="flex justify-center mb-1 mt-4">
-        <Cell value="M" status="correct" />
-        <Cell value="A" />
-        <Cell value="R" />
-        <Cell value="I" />
+        <Cell value="B" status="correct" />
         <Cell value="O" />
+        <Cell value="M" />
+        <Cell value="B" />
+        <Cell value="A" />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">{HOW_TO2}</p>
 
       <div className="flex justify-center mb-1 mt-4">
-        <Cell value="D" />
-        <Cell value="A" />
-        <Cell value="C" status="present" />
-        <Cell value="U" />
+        <Cell value="L" />
+        <Cell value="E" />
+        <Cell value="X" />
+        <Cell value="U" status="present" />
         <Cell value="S" />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">{HOW_TO3}</p>
 
       <div className="flex justify-center mb-1 mt-4">
-        <Cell value="S" />
-        <Cell value="H" />
-        <Cell value="I" />
+        <Cell value="J" />
+        <Cell value="7" />
+        <Cell value="A" />
         <Cell value="N" status="absent" />
-        <Cell value="E" />
+        <Cell value="G" />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">{HOW_TO4}</p>
 
@@ -110,7 +110,7 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         </a>
         {' - '}
         <a
-          href="https://github.com/ftick/smash-wordle"
+          href="https://github.com/ftick/smash-wordle/tree/omega"
           target="_blank"
           rel="noopener noreferrer"
           className="underline font-bold"
