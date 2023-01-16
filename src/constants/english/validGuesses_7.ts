@@ -24051,6 +24051,7 @@ export const VALID_GUESSES_7 = [
   'romanza',
   'romaunt',
   'romcoms',
+  'romedmv',
   'romneya',
   'rompers',
   'romping',

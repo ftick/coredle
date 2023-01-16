@@ -15968,6 +15968,7 @@ export const VALID_GUESSES_6 = [
   'romano',
   'romans',
   'romcom',
+  'romega',
   'romeos',
   'romped',
   'romper',

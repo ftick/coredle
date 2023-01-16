@@ -78,19 +78,19 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
       <p className="text-sm text-gray-500 dark:text-gray-300">{HOW_TO2}</p>
 
       <div className="flex justify-center mb-1 mt-4">
-        <Cell value="L" />
+        <Cell value="Y" />
+        <Cell value="O" />
+        <Cell value="K" />
+        <Cell value="I" status="present" />
         <Cell value="E" />
-        <Cell value="X" />
-        <Cell value="U" status="present" />
-        <Cell value="S" />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">{HOW_TO3}</p>
 
       <div className="flex justify-center mb-1 mt-4">
         <Cell value="J" />
-        <Cell value="7" />
+        <Cell value="7" status="absent" />
         <Cell value="A" />
-        <Cell value="N" status="absent" />
+        <Cell value="N" />
         <Cell value="G" />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">{HOW_TO4}</p>

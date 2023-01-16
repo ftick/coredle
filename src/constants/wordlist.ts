@@ -1,5 +1,4 @@
 import {
-  getStoredIsCostcoEnabled,
   getStoredIsTourneyEnabled,
   getStoredIsDiscordEnabled,
   getStoredIsEUEnabled,
@@ -9,7 +8,6 @@ import { WORDS_DAILY } from './words_daily'
 import { WORDS_BASE } from './bycategory/words_base'
 import { WORDS_DISCORD } from './bycategory/words_discord'
 import { WORDS_TOURNEY } from './bycategory/words_tourney'
-import { WORDS_COSTCO } from './bycategory/words_costco'
 import { WORDS_EU } from './bycategory/words_eu'
 import { WORDS_OCE } from './bycategory/words_oce'
 import { debuglog } from '../lib/log'
@@ -22,13 +20,11 @@ export function getWordsByGame(override?: boolean) {
   if (override) {
     arr.push(...WORDS_DISCORD)
     arr.push(...WORDS_TOURNEY)
-    arr.push(...WORDS_COSTCO)
     arr.push(...WORDS_EU)
     arr.push(...WORDS_OCE)
   } else {
     if (getStoredIsDiscordEnabled()) arr.push(...WORDS_DISCORD)
     if (getStoredIsTourneyEnabled()) arr.push(...WORDS_TOURNEY)
-    if (getStoredIsCostcoEnabled()) arr.push(...WORDS_COSTCO)
     if (getStoredIsEUEnabled()) arr.push(...WORDS_EU)
     if (getStoredIsOCEEnabled()) arr.push(...WORDS_OCE)
   }

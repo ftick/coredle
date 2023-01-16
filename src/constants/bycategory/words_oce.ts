@@ -9,4 +9,5 @@ export const WORDS_OCE = [
   'thunder',
   'tsuneko',
   'kevfun',
+  'singapore',
 ]

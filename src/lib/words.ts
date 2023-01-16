@@ -1,5 +1,6 @@
 import { getWordsByGame, WORDS } from '../constants/wordlist'
 import { VALID_GUESSES } from '../constants/validGuesses'
+import { VALID_OMEGA } from '../constants/validGuessesOmega'
 
 import { WRONG_SPOT_MESSAGE, NOT_CONTAINED_MESSAGE } from '../constants/strings'
 import { getGuessStatuses } from './statuses'
@@ -63,10 +64,10 @@ const OVERRIDES = getUrlOverrides()
 export const DAY_OVERRIDE = OVERRIDES.get('daily')
 
 // February 15, 2022 Game Epoch
-// const epochMs = new Date('January 16, 2022 00:00:00').valueOf()
+// const epochMs = new Date('January 17, 2022 00:00:00').valueOf()
 // const msInDay = 86400000
 // export const THE_USUAL = Math.floor((Date.now() - epochMs) / msInDay)
-const epoch = new Date(2023, 0, 15)
+const epoch = new Date(2023, 0, 16)
 const start = new Date(epoch)
 const today = new Date()
 today.setHours(0, 0, 0, 0)
@@ -81,7 +82,8 @@ export const isWordInWordList = (word: string, override = false) => {
   const WORD_LENGTH = word.length
   return (
     getWordsByGame(override).includes(word.toLowerCase()) ||
-    VALID_GUESSES[WORD_LENGTH].includes(word.toLowerCase())
+    VALID_GUESSES[WORD_LENGTH].includes(word.toLowerCase()) ||
+    VALID_OMEGA.includes(word.toLowerCase())
   )
 }
 

@@ -47,10 +47,10 @@ export const HOW_TO1_TEXT =
   'Guess the word in 8 tries. After each guess, the color of the tiles will change to show how close your guess was to the word.'
 export const HOW_TO2_TEXT =
   'The letter B is in the word and in the correct spot.'
-export const HOW_TO3_TEXT = 'The letter U is in the word but in the wrong spot.'
-export const HOW_TO4_TEXT = 'The letter N is not in the word in any spot.'
+export const HOW_TO3_TEXT = 'The letter I is in the word but in the wrong spot.'
+export const HOW_TO4_TEXT = 'The number 7 is not in the word in any spot.'
 
-export const HOW_TO5_TEXT = `This is Wordle using words related to Omega Strikers and its competitive scene, ft. players, major tournaments, slang, arenas, characters, you name it.`
+export const HOW_TO5_TEXT = `This is Wordle using words related to Omega Strikers and its competitive scene, ft. players, tournaments, slang, arenas, characters, you name it.`
 export const HOW_TO6_TEXT = 'contact me'
 export const HOW_TO7_TEXT = 'source code'
 export const HOW_TO8_TEXT = 'forked from Reactle'

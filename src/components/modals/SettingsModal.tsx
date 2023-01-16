@@ -163,11 +163,6 @@ export const SettingsModalInf = ({
           handleFlag={handleTourneyEnabled}
         />
         <SettingsToggle
-          settingName={'Costco'}
-          flag={isCostcoEnabled}
-          handleFlag={handleCostcoEnabled}
-        />
-        <SettingsToggle
           settingName={'EU'}
           flag={isEUEnabled}
           handleFlag={handleEUEnabled}

@@ -13,11 +13,17 @@
   --present-cell-bg-color: theme('colors.yellow.400');
 }
 
+:root.dark {
+  background-color: #0e0106;
+}
+
 .dark {
   --default-cell-bg-color: theme('colors.slate.900');
+  /* --default-cell-bg-color: #0E0106; */
   --default-cell-border-color: theme('colors.white');
   --default-cell-text-color: theme('colors.white');
   --absent-cell-bg-color: theme('colors.slate.700');
+  /* --absent-cell-bg-color: #0E0106; */
 }
 
 .high-contrast {

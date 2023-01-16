@@ -1,6 +1,4 @@
 export const WORDS_EU = [
-  'matu42',
-  'kolaishu',
   'xmetix',
   'alex2704',
   'alex',
@@ -9,7 +7,6 @@ export const WORDS_EU = [
   'piols',
   'rekkosed',
   'atsuro',
-  'switch',
   'kekle',
   'venomyami',
   'balu',
