@@ -11,6 +11,7 @@ type Props = {
   status?: CharStatus
   onClick: (value: string) => void
   isRevealing?: boolean
+  isSmall?: boolean
 }
 
 export const Key = ({
@@ -20,6 +21,7 @@ export const Key = ({
   value,
   onClick,
   isRevealing,
+  isSmall,
 }: Props) => {
   const keyDelayMs = REVEAL_TIME_MS * MAX_WORD_LENGTH
   const isHighContrast = getStoredIsHighContrastMode()
@@ -45,7 +47,7 @@ export const Key = ({
   const styles = {
     transitionDelay: isRevealing ? `${keyDelayMs}ms` : 'unset',
     width: `${width}px`,
-    height: '58px',
+    height: !isSmall ? '56px' : '30px',
   }
 
   const handleClick: React.MouseEventHandler<HTMLButtonElement> = (event) => {

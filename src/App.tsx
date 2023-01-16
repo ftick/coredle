@@ -270,12 +270,14 @@ function App() {
     }
   }
 
+  const DAY_DISPLAY = DAY_INDEX === 10 ? 'Ω' : DAY_INDEX
+
   if (DAY_INDEX !== THE_USUAL && DAY_INDEX > 0) {
     return (
       <div className="flex flex-col pt-2 pb-4 max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div className="flex w-80 mx-auto items-center mb-4 mt-4">
           <h1 className="text-xl ml-2.5 grow font-bold dark:text-white">
-            {GAME_TITLE} {DAY_INDEX}
+            {GAME_TITLE} {DAY_DISPLAY}
           </h1>
           <RewindIcon
             className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
@@ -364,7 +366,7 @@ function App() {
       <div className="flex flex-col pt-2 pb-4 max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div className="flex w-80 mx-auto items-center mb-4 mt-4">
           <h1 className="text-xl ml-2.5 grow font-bold dark:text-white">
-            {GAME_TITLE} {DAY_INDEX}
+            {GAME_TITLE} {DAY_DISPLAY}
           </h1>
           <FastForwardIcon
             className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
@@ -447,7 +449,7 @@ function App() {
       <div className="flex flex-col pt-2 pb-4 max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div className="flex w-80 mx-auto items-center mb-4 mt-4">
           <h1 className="text-xl ml-2.5 grow font-bold dark:text-white">
-            {GAME_TITLE} {DAY_INDEX}
+            {GAME_TITLE} {DAY_DISPLAY}
           </h1>
           <RewindIcon
             className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"

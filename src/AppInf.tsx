@@ -44,20 +44,18 @@ import {
   getStoredIsHighContrastMode,
   loadUnlimitedGameStateFromLocalStorage,
   saveUnlimitedGameStateToLocalStorage,
-  getStoredIs64Enabled,
-  getStoredIsMeleeEnabled,
-  getStoredIsBrawlEnabled,
-  getStoredIsFlashEnabled,
-  getStoredIsPMEnabled,
-  getStoredIsSmash4Enabled,
-  getStoredIsUltEnabled,
-  setStoredIs64Enabled,
-  setStoredIsBrawlEnabled,
-  setStoredIsFlashEnabled,
-  setStoredIsMeleeEnabled,
-  setStoredIsPMEnabled,
-  setStoredIsSmash4Enabled,
-  setStoredIsUltEnabled,
+  getStoredIsTourneyEnabled,
+  getStoredIsCostcoEnabled,
+  getStoredIsSlangEnabled,
+  getStoredIsDiscordEnabled,
+  setStoredIsTourneyEnabled,
+  setStoredIsCostcoEnabled,
+  setStoredIsSlangEnabled,
+  setStoredIsDiscordEnabled,
+  setStoredIsOCEEnabled,
+  setStoredIsEUEnabled,
+  getStoredIsEUEnabled,
+  getStoredIsOCEEnabled,
 } from './lib/localStorage'
 
 import './App.css'
@@ -122,21 +120,17 @@ function AppInf() {
       : false
   )
 
-  const [is64Enabled, setIs64Enabled] = useState(getStoredIs64Enabled())
-  const [isMeleeEnabled, setIsMeleeEnabled] = useState(
-    getStoredIsMeleeEnabled()
+  const [isDiscordEnabled, setIsDiscordEnabled] = useState(
+    getStoredIsDiscordEnabled()
   )
-  const [isBrawlEnabled, setIsBrawlEnabled] = useState(
-    getStoredIsBrawlEnabled()
+  const [isTourneyEnabled, setIsTourneyEnabled] = useState(
+    getStoredIsTourneyEnabled()
   )
-  const [isPMEnabled, setIsPMEnabled] = useState(getStoredIsPMEnabled())
-  const [isSm4shEnabled, setIsSmash4Enabled] = useState(
-    getStoredIsSmash4Enabled()
+  const [isCostcoEnabled, setIsCostcoEnabled] = useState(
+    getStoredIsCostcoEnabled()
   )
-  const [isUltEnabled, setIsUltEnabled] = useState(getStoredIsUltEnabled())
-  const [isFlashEnabled, setIsFlashEnabled] = useState(
-    getStoredIsFlashEnabled()
-  )
+  const [isEUEnabled, setIsEUEnabled] = useState(getStoredIsEUEnabled())
+  const [isOCEEnabled, setIsOCEEnabled] = useState(getStoredIsOCEEnabled())
 
   useEffect(() => {
     // if no game state on load,
@@ -181,39 +175,29 @@ function AppInf() {
     setStoredIsHighContrastMode(isHighContrast)
   }
 
-  const handle64Enabled = (is64Enabled: boolean) => {
-    setIs64Enabled(is64Enabled)
-    setStoredIs64Enabled(is64Enabled)
+  const handleTourneyEnabled = (isTourneyEnabled: boolean) => {
+    setIsTourneyEnabled(isTourneyEnabled)
+    setStoredIsTourneyEnabled(isTourneyEnabled)
   }
 
-  const handleMeleeEnabled = (isMeleeEnabled: boolean) => {
-    setIsMeleeEnabled(isMeleeEnabled)
-    setStoredIsMeleeEnabled(isMeleeEnabled)
+  const handleCostcoEnabled = (isCostcoEnabled: boolean) => {
+    setIsCostcoEnabled(isCostcoEnabled)
+    setStoredIsCostcoEnabled(isCostcoEnabled)
   }
 
-  const handleBrawlEnabled = (isBrawlEnabled: boolean) => {
-    setIsBrawlEnabled(isBrawlEnabled)
-    setStoredIsBrawlEnabled(isBrawlEnabled)
+  const handleEUEnabled = (isEUEnabled: boolean) => {
+    setIsEUEnabled(isEUEnabled)
+    setStoredIsEUEnabled(isEUEnabled)
   }
 
-  const handlePMEnabled = (isPMEnabled: boolean) => {
-    setIsPMEnabled(isPMEnabled)
-    setStoredIsPMEnabled(isPMEnabled)
+  const handleOCEEnabled = (isOCEEnabled: boolean) => {
+    setIsOCEEnabled(isOCEEnabled)
+    setStoredIsOCEEnabled(isOCEEnabled)
   }
 
-  const handleSm4shEnabled = (isSm4shEnabled: boolean) => {
-    setIsSmash4Enabled(isSm4shEnabled)
-    setStoredIsSmash4Enabled(isSm4shEnabled)
-  }
-
-  const handleUltEnabled = (isUltEnabled: boolean) => {
-    setIsUltEnabled(isUltEnabled)
-    setStoredIsUltEnabled(isUltEnabled)
-  }
-
-  const handleFlashEnabled = (isFlashEnabled: boolean) => {
-    setIsFlashEnabled(isFlashEnabled)
-    setStoredIsFlashEnabled(isFlashEnabled)
+  const handleDiscordEnabled = (isDiscordEnabled: boolean) => {
+    setIsDiscordEnabled(isDiscordEnabled)
+    setStoredIsDiscordEnabled(isDiscordEnabled)
   }
 
   useEffect(() => {
@@ -399,20 +383,16 @@ function AppInf() {
         handleDarkMode={handleDarkMode}
         isHighContrastMode={isHighContrastMode}
         handleHighContrastMode={handleHighContrastMode}
-        is64Enabled={is64Enabled}
-        handle64Enabled={handle64Enabled}
-        isMeleeEnabled={isMeleeEnabled}
-        handleMeleeEnabled={handleMeleeEnabled}
-        isBrawlEnabled={isBrawlEnabled}
-        handleBrawlEnabled={handleBrawlEnabled}
-        isPMEnabled={isPMEnabled}
-        handlePMEnabled={handlePMEnabled}
-        isUltEnabled={isUltEnabled}
-        handleUltEnabled={handleUltEnabled}
-        isSm4shEnabled={isSm4shEnabled}
-        handleSm4shEnabled={handleSm4shEnabled}
-        isFlashEnabled={isFlashEnabled}
-        handleFlashEnabled={handleFlashEnabled}
+        isDiscordEnabled={isDiscordEnabled}
+        handleDiscordEnabled={handleDiscordEnabled}
+        isTourneyEnabled={isTourneyEnabled}
+        handleTourneyEnabled={handleTourneyEnabled}
+        isCostcoEnabled={isCostcoEnabled}
+        handleCostcoEnabled={handleCostcoEnabled}
+        isEUEnabled={isEUEnabled}
+        handleEUEnabled={handleEUEnabled}
+        isOCEEnabled={isOCEEnabled}
+        handleOCEEnabled={handleOCEEnabled}
       />
 
       <AlertContainer />

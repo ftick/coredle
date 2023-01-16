@@ -1,6 +1,5 @@
 import { getWordsByGame, WORDS } from '../constants/wordlist'
 import { VALID_GUESSES } from '../constants/validGuesses'
-import { SMASH_VALID_GUESSES } from '../constants/validGuessesSmash'
 
 import { WRONG_SPOT_MESSAGE, NOT_CONTAINED_MESSAGE } from '../constants/strings'
 import { getGuessStatuses } from './statuses'
@@ -8,7 +7,6 @@ import {
   loadUnlimitedStatsFromLocalStorage,
   saveUnlimitedStatsToLocalStorage,
 } from './localStorage'
-import { FLASH_VALID_GUESSES } from '../constants/validGuessesFlash'
 import { debuglog } from './log'
 import { default as GraphemeSplitter } from 'grapheme-splitter'
 
@@ -65,10 +63,10 @@ const OVERRIDES = getUrlOverrides()
 export const DAY_OVERRIDE = OVERRIDES.get('daily')
 
 // February 15, 2022 Game Epoch
-// const epochMs = new Date('February 15, 2022 00:00:00').valueOf()
+// const epochMs = new Date('January 16, 2022 00:00:00').valueOf()
 // const msInDay = 86400000
 // export const THE_USUAL = Math.floor((Date.now() - epochMs) / msInDay)
-const epoch = new Date(2022, 1, 15)
+const epoch = new Date(2023, 0, 15)
 const start = new Date(epoch)
 const today = new Date()
 today.setHours(0, 0, 0, 0)
@@ -83,9 +81,7 @@ export const isWordInWordList = (word: string, override = false) => {
   const WORD_LENGTH = word.length
   return (
     getWordsByGame(override).includes(word.toLowerCase()) ||
-    VALID_GUESSES[WORD_LENGTH].includes(word.toLowerCase()) ||
-    SMASH_VALID_GUESSES.includes(word.toLowerCase()) ||
-    FLASH_VALID_GUESSES.includes(word.toLowerCase())
+    VALID_GUESSES[WORD_LENGTH].includes(word.toLowerCase())
   )
 }
 

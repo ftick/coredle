@@ -20,6 +20,7 @@ type Props = {
   onEnter: () => void
   guesses: string[]
   isRevealing?: boolean
+  isTall?: boolean
 }
 
 export const Keyboard = ({
@@ -52,6 +53,9 @@ export const Keyboard = ({
         if (key.length === 1 && key >= 'A' && key <= 'Z') {
           onChar(key)
         }
+        if (key.length === 1 && key >= '0' && key <= '9') {
+          onChar(key)
+        }
       }
     }
     window.addEventListener('keyup', listener)
@@ -61,7 +65,20 @@ export const Keyboard = ({
   }, [onEnter, onDelete, onChar])
 
   return (
-    <div className="flex flex-flow flex-col fixed bottom-8 sm:-left-1">
+    <div className="flex flex-flow flex-col backdrop-blur-md fixed bottom-4 sm:-left-1">
+      <div className="flex mb-1 w-screen"></div>
+      <div className="flex justify-center mb-1 w-screen">
+        {['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'].map((key) => (
+          <Key
+            value={key}
+            key={key}
+            onClick={onClick}
+            status={charStatuses[key]}
+            isRevealing={isRevealing}
+            isSmall={true}
+          />
+        ))}
+      </div>
       <div className="flex justify-center mb-1 w-screen">
         {['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'].map((key) => (
           <Key

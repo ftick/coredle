@@ -21,7 +21,7 @@ const device = parser.getDevice()
 //       lost ? 'X' : guesses.length
 //     }/${MAX_CHALLENGES}${isHardMode ? '*' : ''}\n\n` +
 //       generateEmojiGrid(guesses) +
-//       `${includeLink ? '\nrandle.vercel.app' : ''}`
+//       `${includeLink ? '\ncoredle.vercel.app' : ''}`
 //   )
 // }
 
@@ -116,7 +116,7 @@ export const shareStatusInf = (
 //       isHardMode ? '*' : ''
 //     }\n\n` +
 //       generateEmojiGrid(guesses) +
-//       `${includeLink ? '\nrandle.vercel.app/infinite' : ''}`
+//       `${includeLink ? '\ncoredle.vercel.app/infinite' : ''}`
 //   )
 // }
 

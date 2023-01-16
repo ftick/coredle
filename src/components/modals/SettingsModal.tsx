@@ -57,20 +57,16 @@ type PropsInf = {
   handleDarkMode: Function
   isHighContrastMode: boolean
   handleHighContrastMode: Function
-  is64Enabled: boolean
-  handle64Enabled: Function
-  isMeleeEnabled: boolean
-  handleMeleeEnabled: Function
-  isBrawlEnabled: boolean
-  handleBrawlEnabled: Function
-  isPMEnabled: boolean
-  handlePMEnabled: Function
-  isUltEnabled: boolean
-  handleUltEnabled: Function
-  isSm4shEnabled: boolean
-  handleSm4shEnabled: Function
-  isFlashEnabled: boolean
-  handleFlashEnabled: Function
+  isTourneyEnabled: boolean
+  handleTourneyEnabled: Function
+  isCostcoEnabled: boolean
+  handleCostcoEnabled: Function
+  isDiscordEnabled: boolean
+  handleDiscordEnabled: Function
+  isEUEnabled: boolean
+  handleEUEnabled: Function
+  isOCEEnabled: boolean
+  handleOCEEnabled: Function
 }
 
 export const SettingsModal = ({
@@ -125,20 +121,16 @@ export const SettingsModalInf = ({
   handleDarkMode,
   isHighContrastMode,
   handleHighContrastMode,
-  is64Enabled,
-  handle64Enabled,
-  isMeleeEnabled,
-  handleMeleeEnabled,
-  isBrawlEnabled,
-  handleBrawlEnabled,
-  isPMEnabled,
-  handlePMEnabled,
-  isSm4shEnabled,
-  handleSm4shEnabled,
-  isUltEnabled,
-  handleUltEnabled,
-  isFlashEnabled,
-  handleFlashEnabled,
+  isDiscordEnabled,
+  handleDiscordEnabled,
+  isTourneyEnabled,
+  handleTourneyEnabled,
+  isCostcoEnabled,
+  handleCostcoEnabled,
+  isEUEnabled,
+  handleEUEnabled,
+  isOCEEnabled,
+  handleOCEEnabled,
 }: PropsInf) => {
   return (
     <BaseModal title={SETTINGS_TITLE} isOpen={isOpen} handleClose={handleClose}>
@@ -161,39 +153,29 @@ export const SettingsModalInf = ({
           description={CONTRAST_MODE_DESCRIPTION}
         />
         <SettingsToggle
-          settingName={'Smash 64 Words'}
-          flag={is64Enabled}
-          handleFlag={handle64Enabled}
+          settingName={'Main Discord'}
+          flag={isDiscordEnabled}
+          handleFlag={handleDiscordEnabled}
         />
         <SettingsToggle
-          settingName={'Melee Words'}
-          flag={isMeleeEnabled}
-          handleFlag={handleMeleeEnabled}
+          settingName={'Tourneys'}
+          flag={isTourneyEnabled}
+          handleFlag={handleTourneyEnabled}
         />
         <SettingsToggle
-          settingName={'Brawl Words'}
-          flag={isBrawlEnabled}
-          handleFlag={handleBrawlEnabled}
+          settingName={'Costco'}
+          flag={isCostcoEnabled}
+          handleFlag={handleCostcoEnabled}
         />
         <SettingsToggle
-          settingName={'Project M Words'}
-          flag={isPMEnabled}
-          handleFlag={handlePMEnabled}
+          settingName={'EU'}
+          flag={isEUEnabled}
+          handleFlag={handleEUEnabled}
         />
         <SettingsToggle
-          settingName={'Smash 4 Words'}
-          flag={isSm4shEnabled}
-          handleFlag={handleSm4shEnabled}
-        />
-        <SettingsToggle
-          settingName={'Ultimate Words'}
-          flag={isUltEnabled}
-          handleFlag={handleUltEnabled}
-        />
-        <SettingsToggle
-          settingName={'SSF2 Words'}
-          flag={isFlashEnabled}
-          handleFlag={handleFlashEnabled}
+          settingName={'OCE'}
+          flag={isOCEEnabled}
+          handleFlag={handleOCEEnabled}
         />
         <div className="grid-cols-2 gap-4 flex flex-row">
           <TrashIcon
@@ -202,7 +184,7 @@ export const SettingsModalInf = ({
               localStorage.removeItem('unlimitedState')
               localStorage.removeItem('unlimitedStats')
               localStorage.removeItem('sixtyfour')
-              localStorage.removeItem('melee')
+              localStorage.removeItem('Tourney')
               localStorage.removeItem('brawl')
               localStorage.removeItem('flash')
               localStorage.removeItem('pm')

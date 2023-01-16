@@ -1,13 +1,13 @@
 const gameStateKey = 'gameState'
 const unlimitedStateKey = 'unlimitedState'
 const highContrastKey = 'highContrast'
-const sixtyFourKey = 'sixtyFour'
-const meleeKey = 'melee'
-const brawlKey = 'brawl'
-const pmKey = 'pm'
-const smash4Key = 'smash4'
-const ultKey = 'ult'
-const flashKey = 'flash'
+const tourneyKey = 'tourney'
+const costcoKey = 'costco'
+const staffKey = 'staff'
+const slangKey = 'slang'
+const naKey = 'na'
+const euKey = 'eu'
+const oceKey = 'oce'
 
 export type StoredGameState = {
   guesses: string[]
@@ -89,93 +89,93 @@ export const getStoredIsHighContrastMode = () => {
   return highContrast === '1'
 }
 
-export const setStoredIs64Enabled = (is64Enabled: boolean) => {
-  if (is64Enabled) {
-    localStorage.setItem(sixtyFourKey, '1')
+export const setStoredIsTourneyEnabled = (isTourneyEnabled: boolean) => {
+  if (isTourneyEnabled) {
+    localStorage.setItem(tourneyKey, '1')
   } else {
-    localStorage.removeItem(sixtyFourKey)
+    localStorage.removeItem(tourneyKey)
   }
 }
 
-export const getStoredIs64Enabled = () => {
-  const is64Enabled = localStorage.getItem(sixtyFourKey)
-  return is64Enabled === '1'
+export const getStoredIsTourneyEnabled = () => {
+  const isTourneyEnabled = localStorage.getItem(tourneyKey)
+  return isTourneyEnabled === '1'
 }
 
-export const setStoredIsMeleeEnabled = (isMeleeEnabled: boolean) => {
-  if (isMeleeEnabled) {
-    localStorage.setItem(meleeKey, '1')
+export const setStoredIsCostcoEnabled = (isCostcoEnabled: boolean) => {
+  if (isCostcoEnabled) {
+    localStorage.setItem(costcoKey, '1')
   } else {
-    localStorage.removeItem(meleeKey)
+    localStorage.removeItem(costcoKey)
   }
 }
 
-export const getStoredIsMeleeEnabled = () => {
-  const isMeleeEnabled = localStorage.getItem(meleeKey)
-  return isMeleeEnabled === '1'
+export const getStoredIsCostcoEnabled = () => {
+  const isCostcoEnabled = localStorage.getItem(costcoKey)
+  return isCostcoEnabled === '1'
 }
 
-export const setStoredIsBrawlEnabled = (isBrawlEnabled: boolean) => {
-  if (isBrawlEnabled) {
-    localStorage.setItem(brawlKey, '1')
+export const setStoredIsNAEnabled = (isNAEnabled: boolean) => {
+  if (isNAEnabled) {
+    localStorage.setItem(naKey, '1')
   } else {
-    localStorage.removeItem(brawlKey)
+    localStorage.removeItem(naKey)
   }
 }
 
-export const getStoredIsBrawlEnabled = () => {
-  const isBrawlEnabled = localStorage.getItem(brawlKey)
-  return isBrawlEnabled === '1'
+export const getStoredIsNAEnabled = () => {
+  const isNAEnabled = localStorage.getItem(naKey)
+  return isNAEnabled === '1'
 }
 
-export const setStoredIsPMEnabled = (isPMEnabled: boolean) => {
-  if (isPMEnabled) {
-    localStorage.setItem(pmKey, '1')
+export const setStoredIsSlangEnabled = (isSlangEnabled: boolean) => {
+  if (isSlangEnabled) {
+    localStorage.setItem(slangKey, '1')
   } else {
-    localStorage.removeItem(pmKey)
+    localStorage.removeItem(slangKey)
   }
 }
 
-export const getStoredIsPMEnabled = () => {
-  const isPMEnabled = localStorage.getItem(pmKey)
-  return isPMEnabled === '1'
+export const getStoredIsSlangEnabled = () => {
+  const isSlangEnabled = localStorage.getItem(slangKey)
+  return isSlangEnabled === '1'
 }
 
-export const setStoredIsSmash4Enabled = (isSmash4Enabled: boolean) => {
-  if (isSmash4Enabled) {
-    localStorage.setItem(smash4Key, '1')
+export const setStoredIsDiscordEnabled = (isDiscordEnabled: boolean) => {
+  if (isDiscordEnabled) {
+    localStorage.setItem(staffKey, '1')
   } else {
-    localStorage.removeItem(smash4Key)
+    localStorage.removeItem(staffKey)
   }
 }
 
-export const getStoredIsSmash4Enabled = () => {
-  const isSmash4Enabled = localStorage.getItem(smash4Key)
-  return isSmash4Enabled === '1'
+export const getStoredIsDiscordEnabled = () => {
+  const isDiscordEnabled = localStorage.getItem(staffKey)
+  return isDiscordEnabled === '1'
 }
 
-export const setStoredIsUltEnabled = (isUltEnabled: boolean) => {
-  if (isUltEnabled) {
-    localStorage.setItem(ultKey, '1')
+export const setStoredIsEUEnabled = (isEUEnabled: boolean) => {
+  if (isEUEnabled) {
+    localStorage.setItem(euKey, '1')
   } else {
-    localStorage.removeItem(ultKey)
+    localStorage.removeItem(euKey)
   }
 }
 
-export const getStoredIsUltEnabled = () => {
-  const isUltEnabled = localStorage.getItem(ultKey)
-  return isUltEnabled === '1'
+export const getStoredIsEUEnabled = () => {
+  const isEUEnabled = localStorage.getItem(euKey)
+  return isEUEnabled === '1'
 }
 
-export const setStoredIsFlashEnabled = (isFlashEnabled: boolean) => {
-  if (isFlashEnabled) {
-    localStorage.setItem(flashKey, '1')
+export const setStoredIsOCEEnabled = (isOCEEnabled: boolean) => {
+  if (isOCEEnabled) {
+    localStorage.setItem(oceKey, '1')
   } else {
-    localStorage.removeItem(flashKey)
+    localStorage.removeItem(oceKey)
   }
 }
 
-export const getStoredIsFlashEnabled = () => {
-  const isFlashEnabled = localStorage.getItem(flashKey)
-  return isFlashEnabled === '1'
+export const getStoredIsOCEEnabled = () => {
+  const isOCEEnabled = localStorage.getItem(oceKey)
+  return isOCEEnabled === '1'
 }

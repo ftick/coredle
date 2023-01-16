@@ -1,6 +1,6 @@
 export const GAME_TITLE = process.env.REACT_APP_GAME_NAME!
-// export const GAME_URL = 'https://randle.vercel.app'
-export const GAME_URL = 'https://randle.kuyachi.xyz'
+// export const GAME_URL = 'https://coredle.vercel.app'
+export const GAME_URL = 'https://coredle.kuyachi.xyz'
 
 export const WIN_MESSAGES = ['Great Job!', 'Awesome', 'Well done!']
 export const GAME_COPIED_MESSAGE = 'Game copied to clipboard'
@@ -9,7 +9,7 @@ export const WORD_NOT_FOUND_MESSAGE = 'Word not found'
 export const HARD_MODE_ALERT_MESSAGE =
   'Hard Mode can only be enabled at the start!'
 export const CORRECT_WORD_MESSAGE = (solution: string) =>
-  `The randle was ${solution}`
+  `The coredle was ${solution}`
 export const WRONG_SPOT_MESSAGE = (guess: string, position: number) =>
   `Must use ${guess} in position ${position}`
 export const NOT_CONTAINED_MESSAGE = (letter: string) =>
