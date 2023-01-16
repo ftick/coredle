@@ -282,13 +282,13 @@ function App() {
           <RewindIcon
             className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
             onClick={() => {
-              window.open(getURLBase().concat(`/${DAY_INDEX - 1}`), '_self')
+              window.open(getURLBase().concat(`/${DAY_INDEX}`), '_self')
             }}
           />
           <FastForwardIcon
             className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
             onClick={() => {
-              window.open(getURLBase().concat(`/${DAY_INDEX + 1}`), '_self')
+              window.open(getURLBase().concat(`/${DAY_INDEX + 2}`), '_self')
             }}
           />
           <CalendarIcon
@@ -371,7 +371,7 @@ function App() {
           <FastForwardIcon
             className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
             onClick={() => {
-              window.open(getURLBase().concat(`/${DAY_INDEX + 1}`), '_self')
+              window.open(getURLBase().concat(`/${DAY_INDEX + 2}`), '_self')
             }}
           />
           <CalendarIcon
@@ -454,7 +454,7 @@ function App() {
           <RewindIcon
             className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
             onClick={() => {
-              window.open(getURLBase().concat(`/${DAY_INDEX - 1}`), '_self')
+              window.open(getURLBase().concat(`/${DAY_INDEX}`), '_self')
             }}
           />
           <FontAwesomeIcon

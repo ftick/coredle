@@ -54,7 +54,7 @@ export function getUrlOverrides() {
   parts = parts.splice(3)
   debuglog(parts)
   var dict = new Map<string, number>()
-  if (parts[0]) dict.set('daily', parseInt(parts[0]))
+  if (parts[0]) dict.set('daily', parseInt(parts[0]) - 1)
   dict.set('max', parseInt(parts[1]))
   return dict
 }
