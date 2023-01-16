@@ -101,7 +101,7 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
 
       <p className="mt-6 italic text-sm text-gray-500 dark:text-gray-300">
         <a
-          href="https://twitter.com/Kuyachi_"
+          href="https://twitter.com/kuyachi_"
           target="_blank"
           rel="noopener noreferrer"
           className="underline font-bold"
