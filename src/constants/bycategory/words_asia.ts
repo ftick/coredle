@@ -1,4 +1,5 @@
 export const WORDS_ASIA = [
+  'asswhy',
   'kitey',
   'liltjay',
   'plyasm',
