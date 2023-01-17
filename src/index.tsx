@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals'
 import { AlertProvider } from './context/AlertContext'
 import { getURLFirst } from './lib/words'
 import App from './App'
+import { Analytics } from '@vercel/analytics/react'
 // import { debuglog } from './lib/log'
 
 const IS_INFINITE = getURLFirst().includes('infinite')
@@ -14,6 +15,7 @@ if (IS_INFINITE) {
     <React.StrictMode>
       <AlertProvider>
         <AppInf />
+        <Analytics />
       </AlertProvider>
     </React.StrictMode>,
     document.getElementById('root')
@@ -23,6 +25,7 @@ if (IS_INFINITE) {
     <React.StrictMode>
       <AlertProvider>
         <App />
+        <Analytics />
       </AlertProvider>
     </React.StrictMode>,
     document.getElementById('root')
