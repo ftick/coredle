@@ -94,6 +94,7 @@ export const WORDS_BASE = [
   'ctl',
   'stinger',
   'wellfed',
+  'builtdiff',
   'adren',
   'adrenrush',
   'eject',
