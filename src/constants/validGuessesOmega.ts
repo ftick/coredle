@@ -5,9 +5,7 @@ import { WORDS_EU } from './bycategory/words_eu'
 import { WORDS_OCE } from './bycategory/words_oce'
 
 var arr = [
-  'matu42',
   'kolaishu',
-  'switch',
 
   'kraken',
   'yatta',

@@ -14,4 +14,5 @@ export const WORDS_EU = [
   'lynx',
   'connax',
   'kitsune',
+  'matu42',
 ]
