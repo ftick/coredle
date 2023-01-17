@@ -57,6 +57,8 @@ var arr = [
   'hayden',
   'tofu1',
   'litaf',
+  'nafan',
+  'nafanuwu',
 
   'f4ntasy',
   'kero',
