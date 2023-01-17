@@ -8,6 +8,7 @@ const slangKey = 'slang'
 const naKey = 'na'
 const euKey = 'eu'
 const oceKey = 'oce'
+const asiaKey = 'asia'
 
 export type StoredGameState = {
   guesses: string[]
@@ -178,4 +179,17 @@ export const setStoredIsOCEEnabled = (isOCEEnabled: boolean) => {
 export const getStoredIsOCEEnabled = () => {
   const isOCEEnabled = localStorage.getItem(oceKey)
   return isOCEEnabled === '1'
+}
+
+export const setStoredIsASIAEnabled = (isASIAEnabled: boolean) => {
+  if (isASIAEnabled) {
+    localStorage.setItem(asiaKey, '1')
+  } else {
+    localStorage.removeItem(asiaKey)
+  }
+}
+
+export const getStoredIsASIAEnabled = () => {
+  const isASIAEnabled = localStorage.getItem(asiaKey)
+  return isASIAEnabled === '1'
 }

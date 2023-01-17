@@ -59,14 +59,14 @@ type PropsInf = {
   handleHighContrastMode: Function
   isTourneyEnabled: boolean
   handleTourneyEnabled: Function
-  isCostcoEnabled: boolean
-  handleCostcoEnabled: Function
   isDiscordEnabled: boolean
   handleDiscordEnabled: Function
   isEUEnabled: boolean
   handleEUEnabled: Function
   isOCEEnabled: boolean
   handleOCEEnabled: Function
+  isASIAEnabled: boolean
+  handleASIAEnabled: Function
 }
 
 export const SettingsModal = ({
@@ -125,12 +125,12 @@ export const SettingsModalInf = ({
   handleDiscordEnabled,
   isTourneyEnabled,
   handleTourneyEnabled,
-  isCostcoEnabled,
-  handleCostcoEnabled,
   isEUEnabled,
   handleEUEnabled,
   isOCEEnabled,
   handleOCEEnabled,
+  isASIAEnabled,
+  handleASIAEnabled,
 }: PropsInf) => {
   return (
     <BaseModal title={SETTINGS_TITLE} isOpen={isOpen} handleClose={handleClose}>
@@ -171,6 +171,11 @@ export const SettingsModalInf = ({
           settingName={'OCE'}
           flag={isOCEEnabled}
           handleFlag={handleOCEEnabled}
+        />
+        <SettingsToggle
+          settingName={'ASIA'}
+          flag={isASIAEnabled}
+          handleFlag={handleASIAEnabled}
         />
         <div className="grid-cols-2 gap-4 flex flex-row">
           <TrashIcon

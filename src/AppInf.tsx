@@ -44,16 +44,18 @@ import {
   getStoredIsHighContrastMode,
   loadUnlimitedGameStateFromLocalStorage,
   saveUnlimitedGameStateToLocalStorage,
-  getStoredIsTourneyEnabled,
-  getStoredIsCostcoEnabled,
   getStoredIsDiscordEnabled,
-  setStoredIsTourneyEnabled,
-  setStoredIsCostcoEnabled,
   setStoredIsDiscordEnabled,
-  setStoredIsOCEEnabled,
-  setStoredIsEUEnabled,
+  getStoredIsTourneyEnabled,
+  setStoredIsTourneyEnabled,
+  getStoredIsCostcoEnabled,
+  setStoredIsCostcoEnabled,
   getStoredIsEUEnabled,
+  setStoredIsEUEnabled,
   getStoredIsOCEEnabled,
+  setStoredIsOCEEnabled,
+  getStoredIsASIAEnabled,
+  setStoredIsASIAEnabled,
 } from './lib/localStorage'
 
 import './App.css'
@@ -129,6 +131,7 @@ function AppInf() {
   )
   const [isEUEnabled, setIsEUEnabled] = useState(getStoredIsEUEnabled())
   const [isOCEEnabled, setIsOCEEnabled] = useState(getStoredIsOCEEnabled())
+  const [isASIAEnabled, setIsASIAEnabled] = useState(getStoredIsASIAEnabled())
 
   useEffect(() => {
     // if no game state on load,
@@ -173,6 +176,11 @@ function AppInf() {
     setStoredIsHighContrastMode(isHighContrast)
   }
 
+  const handleDiscordEnabled = (isDiscordEnabled: boolean) => {
+    setIsDiscordEnabled(isDiscordEnabled)
+    setStoredIsDiscordEnabled(isDiscordEnabled)
+  }
+
   const handleTourneyEnabled = (isTourneyEnabled: boolean) => {
     setIsTourneyEnabled(isTourneyEnabled)
     setStoredIsTourneyEnabled(isTourneyEnabled)
@@ -193,9 +201,9 @@ function AppInf() {
     setStoredIsOCEEnabled(isOCEEnabled)
   }
 
-  const handleDiscordEnabled = (isDiscordEnabled: boolean) => {
-    setIsDiscordEnabled(isDiscordEnabled)
-    setStoredIsDiscordEnabled(isDiscordEnabled)
+  const handleASIAEnabled = (isASIAEnabled: boolean) => {
+    setIsASIAEnabled(isASIAEnabled)
+    setStoredIsASIAEnabled(isASIAEnabled)
   }
 
   useEffect(() => {
@@ -385,12 +393,12 @@ function AppInf() {
         handleDiscordEnabled={handleDiscordEnabled}
         isTourneyEnabled={isTourneyEnabled}
         handleTourneyEnabled={handleTourneyEnabled}
-        isCostcoEnabled={isCostcoEnabled}
-        handleCostcoEnabled={handleCostcoEnabled}
         isEUEnabled={isEUEnabled}
         handleEUEnabled={handleEUEnabled}
         isOCEEnabled={isOCEEnabled}
         handleOCEEnabled={handleOCEEnabled}
+        isASIAEnabled={isASIAEnabled}
+        handleASIAEnabled={handleASIAEnabled}
       />
 
       <AlertContainer />
