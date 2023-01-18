@@ -48,8 +48,6 @@ import {
   setStoredIsDiscordEnabled,
   getStoredIsTourneyEnabled,
   setStoredIsTourneyEnabled,
-  getStoredIsCostcoEnabled,
-  setStoredIsCostcoEnabled,
   getStoredIsEUEnabled,
   setStoredIsEUEnabled,
   getStoredIsOCEEnabled,
@@ -126,9 +124,6 @@ function AppInf() {
   const [isTourneyEnabled, setIsTourneyEnabled] = useState(
     getStoredIsTourneyEnabled()
   )
-  const [isCostcoEnabled, setIsCostcoEnabled] = useState(
-    getStoredIsCostcoEnabled()
-  )
   const [isEUEnabled, setIsEUEnabled] = useState(getStoredIsEUEnabled())
   const [isOCEEnabled, setIsOCEEnabled] = useState(getStoredIsOCEEnabled())
   const [isASIAEnabled, setIsASIAEnabled] = useState(getStoredIsASIAEnabled())
@@ -184,11 +179,6 @@ function AppInf() {
   const handleTourneyEnabled = (isTourneyEnabled: boolean) => {
     setIsTourneyEnabled(isTourneyEnabled)
     setStoredIsTourneyEnabled(isTourneyEnabled)
-  }
-
-  const handleCostcoEnabled = (isCostcoEnabled: boolean) => {
-    setIsCostcoEnabled(isCostcoEnabled)
-    setStoredIsCostcoEnabled(isCostcoEnabled)
   }
 
   const handleEUEnabled = (isEUEnabled: boolean) => {
