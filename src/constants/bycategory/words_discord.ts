@@ -100,6 +100,7 @@ export const WORDS_DISCORD = [
   'bedge',
   'sadge',
   'madge',
+  'deadge',
   'comfy',
   'glow',
   'fight',
@@ -117,4 +118,17 @@ export const WORDS_DISCORD = [
   'smurf',
   'smurfs',
   'korea',
+
+  'eradeadge', // emotes
+  'dububedge',
+  'aimipat',
+  'juliglow',
+  'julicomfy',
+  'juliheart',
+  'juliez',
+  'julisad',
+  'julipunch',
+  'asherpog',
+  'lunanice',
+  'aimicomfy',
 ]

@@ -138,6 +138,8 @@ var arr = [
   'userwet',
   'umc',
 
+  'beba', // na discord
+
   'wisdom', // tourneys
   'koalas',
   'surprise',
