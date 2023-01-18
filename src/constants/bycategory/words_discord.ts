@@ -105,6 +105,7 @@ export const WORDS_DISCORD = [
   'punch',
   'copium',
   'procure',
+  'ironwall',
   'catjuno',
   'spinning',
   'freebird',
