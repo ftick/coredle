@@ -119,6 +119,7 @@ export const WORDS_DISCORD = [
   'smurfs',
   'lemurline',
   'bugfixing',
+  'ifear',
   'korea',
 
   'eradeadge', // emotes
