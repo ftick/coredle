@@ -2,7 +2,7 @@ import { solution } from '../lib/words'
 
 export const MAX_WORD_LENGTH = solution.length
 export const MAX_CHALLENGES = Math.min(
-  Math.max(0, Math.abs(MAX_WORD_LENGTH - 6) - 1) + 8,
+  Math.max(0, Math.floor(Math.abs(MAX_WORD_LENGTH - 6.5)) - 1) + 8,
   9
 )
 export const ALERT_TIME_MS = 2000
@@ -20,5 +20,5 @@ export const BLOWFISH_IV = 'sSd9EI@o'
 // 5, 0 -> 8
 // 6, 0 -> 8
 // 7, 0 -> 8
-// 8, 1 -> 9
-// 9, 2 -> 9
+// 8, 0 -> 8
+// 9, 1 -> 9
