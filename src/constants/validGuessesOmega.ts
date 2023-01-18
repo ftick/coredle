@@ -7,7 +7,7 @@ import { WORDS_ASIA } from './bycategory/words_asia'
 
 var arr = [
   'kolaishu',
-  'kekle9ttv',
+  'nero',
 
   'kraken',
   'yatta',

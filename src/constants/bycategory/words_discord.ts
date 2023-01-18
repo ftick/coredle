@@ -9,6 +9,7 @@ export const WORDS_DISCORD = [
   'lazy',
   'corey',
   'teremina',
+  'stinky',
 
   'sonii',
   'kelly',
