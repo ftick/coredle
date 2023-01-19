@@ -1,9 +1,3 @@
-import {
-  InformationCircleIcon,
-  ChartBarIcon,
-  CogIcon,
-  CalendarIcon,
-} from '@heroicons/react/outline'
 import { useState, useEffect } from 'react'
 import { Grid } from './components/grid/Grid'
 import { Keyboard } from './components/keyboard/Keyboard'
@@ -11,7 +5,6 @@ import { InfoModal } from './components/modals/InfoModal'
 import { StatsModalUnlimited } from './components/modals/StatsModalUnlimited'
 import { SettingsModalInf } from './components/modals/SettingsModal'
 import {
-  GAME_TITLE,
   WIN_MESSAGES,
   GAME_COPIED_MESSAGE,
   NOT_ENOUGH_LETTERS_MESSAGE,
@@ -32,7 +25,7 @@ import {
   isWinningWord,
   solution,
   findFirstUnusedReveal,
-  getURLBase,
+  // getURLBase,
   // LENGTH_OVERRIDE,
 } from './lib/words'
 import {
@@ -60,6 +53,7 @@ import './App.css'
 import { AlertContainer } from './components/alerts/AlertContainer'
 import { useAlert } from './context/AlertContext'
 import { MigrateStatsModal } from './components/modals/MigrateStatsModal'
+import { Navbar } from './components/navbar/Navbar'
 
 function AppInf() {
   // debug(DAY_INDEX, LENGTH_OVERRIDE)
@@ -305,10 +299,9 @@ function AppInf() {
 
   return (
     <div className="flex flex-col pt-2 pb-4 max-w-7xl mx-auto sm:px-6 lg:px-8">
-      <div className="flex w-80 mx-auto items-center mb-4 mt-4">
+      {/* <div className="flex w-80 mx-auto items-center mb-4 mt-4">
         <h1 className="text-xl ml-2.5 grow font-bold dark:text-white">
-          {GAME_TITLE} ∞{/* {GAME_TITLE} Infinite */}
-          {/* {GAME_TITLE} {getDayIndex()}-{LENGTH_OVERRIDE} */}
+          {GAME_TITLE} ∞
         </h1>
         <CalendarIcon
           className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
@@ -328,7 +321,15 @@ function AppInf() {
           className="h-6 w-6 mr-3 cursor-pointer dark:stroke-white"
           onClick={() => setIsSettingsModalOpen(true)}
         />
-      </div>
+      </div> */}
+      <Navbar
+        isInfinite={true}
+        dayDisplay={0}
+        isDarkMode={isDarkMode}
+        setIsInfoModalOpen={() => setIsInfoModalOpen(true)}
+        setIsSettingsModalOpen={() => setIsStatsModalOpen(true)}
+        setIsStatsModalOpen={() => setIsSettingsModalOpen(true)}
+      />
       <Grid
         solution={solution}
         guesses={guesses}

@@ -1,13 +1,3 @@
-import {
-  InformationCircleIcon,
-  ChartBarIcon,
-  CogIcon,
-  // CalendarIcon,
-  // RewindIcon,
-  // FastForwardIcon,
-} from '@heroicons/react/outline'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faInfinity } from '@fortawesome/free-solid-svg-icons'
 import { useState, useEffect } from 'react'
 import { Grid } from './components/grid/Grid'
 import { Keyboard } from './components/keyboard/Keyboard'
@@ -15,7 +5,6 @@ import { InfoModal } from './components/modals/InfoModal'
 import { StatsModal } from './components/modals/StatsModal'
 import { SettingsModal } from './components/modals/SettingsModal'
 import {
-  GAME_TITLE,
   WIN_MESSAGES,
   GAME_COPIED_MESSAGE,
   NOT_ENOUGH_LETTERS_MESSAGE,
@@ -40,7 +29,7 @@ import {
   findFirstUnusedReveal,
   getDayIndex,
   // THE_USUAL,
-  getURLBase,
+  // getURLBase,
   // LENGTH_OVERRIDE,
 } from './lib/words'
 import { addStatsForCompletedGame, loadStats } from './lib/stats'
@@ -56,6 +45,7 @@ import { AlertContainer } from './components/alerts/AlertContainer'
 import { useAlert } from './context/AlertContext'
 import { isInAppBrowser } from './lib/browser'
 import { MigrateStatsModal } from './components/modals/MigrateStatsModal'
+import { Navbar } from './components/navbar/Navbar'
 
 function App() {
   const DAY_INDEX = getDayIndex()
@@ -537,31 +527,14 @@ function App() {
   // if (DAY_INDEX === THE_USUAL && DAY_INDEX == 0) {
   return (
     <div className="flex flex-col pt-2 pb-4 max-w-7xl mx-auto sm:px-6 lg:px-8">
-      <div className="flex w-80 mx-auto items-center mb-4 mt-4">
-        <h1 className="text-xl ml-2.5 grow font-bold dark:text-white">
-          {GAME_TITLE} {DAY_DISPLAY}
-        </h1>
-        <FontAwesomeIcon
-          className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
-          icon={faInfinity}
-          inverse={isDarkMode}
-          onClick={() => {
-            window.open(getURLBase() + '/infinite', '_self')
-          }}
-        />
-        <InformationCircleIcon
-          className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
-          onClick={() => setIsInfoModalOpen(true)}
-        />
-        <ChartBarIcon
-          className="h-6 w-6 mr-3 cursor-pointer dark:stroke-white"
-          onClick={() => setIsStatsModalOpen(true)}
-        />
-        <CogIcon
-          className="h-6 w-6 mr-3 cursor-pointer dark:stroke-white"
-          onClick={() => setIsSettingsModalOpen(true)}
-        />
-      </div>
+      <Navbar
+        isInfinite={false}
+        dayDisplay={DAY_DISPLAY}
+        isDarkMode={isDarkMode}
+        setIsInfoModalOpen={() => setIsInfoModalOpen(true)}
+        setIsSettingsModalOpen={() => setIsStatsModalOpen(true)}
+        setIsStatsModalOpen={() => setIsSettingsModalOpen(true)}
+      />
       <Grid
         solution={solution}
         guesses={guesses}
