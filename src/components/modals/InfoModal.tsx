@@ -110,7 +110,7 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         </a>
         {' - '}
         <a
-          href="https://github.com/ftick/smash-wordle/tree/omega"
+          href="https://github.com/ftick/coredle"
           target="_blank"
           rel="noopener noreferrer"
           className="underline font-bold"
