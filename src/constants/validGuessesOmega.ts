@@ -138,6 +138,9 @@ var arr = [
   'userwet',
   'umc',
   'appa',
+  '3zyangle',
+  'kazzed',
+  'kazzedit',
 
   'beba', // na discord
 
