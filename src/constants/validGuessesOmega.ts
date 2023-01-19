@@ -141,6 +141,8 @@ var arr = [
   '3zyangle',
   'kazzed',
   'kazzedit',
+  'elo',
+  'omegalul',
 
   'beba', // na discord
 
