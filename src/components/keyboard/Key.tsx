@@ -27,7 +27,12 @@ export const Key = ({
   const isHighContrast = getStoredIsHighContrastMode()
 
   const classes = classnames(
-    'flex items-center justify-center rounded mx-0.5 text-xs font-bold cursor-pointer select-none dark:text-white',
+    {
+      'xxshort:h-6 xxshort:w-8 xxshort:text-xxs xshort:w-10 xshort:h-6 flex short:h-6 h-8 items-center justify-center rounded mx-0.5 text-xs font-bold cursor-pointer select-none dark:text-white':
+        isSmall,
+      'xxshort:h-8 xxshort:w-8 xxshort:text-xxs xshort:w-10 xshort:h-8 flex short:h-10 h-12 items-center justify-center rounded mx-0.5 text-xs font-bold cursor-pointer select-none dark:text-white':
+        !isSmall,
+    },
     {
       'transition ease-in-out': isRevealing,
       'bg-slate-200 dark:bg-slate-600 hover:bg-slate-300 active:bg-slate-400':
@@ -47,7 +52,7 @@ export const Key = ({
   const styles = {
     transitionDelay: isRevealing ? `${keyDelayMs}ms` : 'unset',
     width: `${width}px`,
-    height: !isSmall ? '56px' : '30px',
+    // height: !isSmall ? '56px' : '30px',
   }
 
   const handleClick: React.MouseEventHandler<HTMLButtonElement> = (event) => {

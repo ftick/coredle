@@ -28,57 +28,74 @@ export const Navbar = ({
 }: Props) => {
   if (isInfinite) {
     return (
-      <div className="flex w-80 mx-auto items-center mb-4 mt-4">
-        <h1 className="text-xl ml-2.5 grow font-bold dark:text-white">
-          {GAME_TITLE} ∞{/* {GAME_TITLE} Infinite */}
-          {/* {GAME_TITLE} {getDayIndex()}-{LENGTH_OVERRIDE} */}
-        </h1>
-        <CalendarIcon
-          className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
-          onClick={() => {
-            window.open(getURLBase(), '_self')
-          }}
-        />
-        <InformationCircleIcon
-          className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
-          onClick={() => setIsInfoModalOpen(true)}
-        />
-        <ChartBarIcon
-          className="h-6 w-6 mr-3 cursor-pointer dark:stroke-white"
-          onClick={() => setIsStatsModalOpen(true)}
-        />
-        <CogIcon
-          className="h-6 w-6 mr-3 cursor-pointer dark:stroke-white"
-          onClick={() => setIsSettingsModalOpen(true)}
-        />
+      <div className="navbar">
+        <div className="navbar-content px-5 short:h-auto">
+          <div className="flex">
+            <InformationCircleIcon
+              className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
+              onClick={() => setIsInfoModalOpen(true)}
+            />
+          </div>
+          <div className="flex">
+            <h1 className="text-xl ml-2.5 grow font-bold dark:text-white">
+              {GAME_TITLE} ∞
+            </h1>
+          </div>
+          <div className="right-icons">
+            <CalendarIcon
+              className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
+              onClick={() => {
+                window.open(getURLBase(), '_self')
+              }}
+            />
+            <ChartBarIcon
+              className="h-6 w-6 mr-3 cursor-pointer dark:stroke-white"
+              onClick={() => setIsStatsModalOpen(true)}
+            />
+            <CogIcon
+              className="h-6 w-6 mr-3 cursor-pointer dark:stroke-white"
+              onClick={() => setIsSettingsModalOpen(true)}
+            />
+          </div>
+        </div>
+        <hr></hr>
       </div>
     )
   }
   return (
-    <div className="flex w-80 mx-auto items-center mb-4 mt-4">
-      <h1 className="text-xl ml-2.5 grow font-bold dark:text-white">
-        {GAME_TITLE} {dayDisplay}
-      </h1>
-      <FontAwesomeIcon
-        className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
-        icon={faInfinity}
-        inverse={isDarkMode}
-        onClick={() => {
-          window.open(getURLBase() + '/infinite', '_self')
-        }}
-      />
-      <InformationCircleIcon
-        className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
-        onClick={() => setIsInfoModalOpen(true)}
-      />
-      <ChartBarIcon
-        className="h-6 w-6 mr-3 cursor-pointer dark:stroke-white"
-        onClick={() => setIsStatsModalOpen(true)}
-      />
-      <CogIcon
-        className="h-6 w-6 mr-3 cursor-pointer dark:stroke-white"
-        onClick={() => setIsSettingsModalOpen(true)}
-      />
+    <div className="navbar">
+      <div className="navbar-content px-5 short:h-auto">
+        <div className="flex">
+          <InformationCircleIcon
+            className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
+            onClick={() => setIsInfoModalOpen(true)}
+          />
+        </div>
+        <div className="flex">
+          <h1 className="text-xl ml-2.5 grow font-bold dark:text-white">
+            {GAME_TITLE} {dayDisplay}
+          </h1>
+        </div>
+        <div className="right-icons">
+          <FontAwesomeIcon
+            className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
+            icon={faInfinity}
+            inverse={isDarkMode}
+            onClick={() => {
+              window.open(getURLBase() + '/infinite', '_self')
+            }}
+          />
+          <ChartBarIcon
+            className="h-6 w-6 mr-3 cursor-pointer dark:stroke-white"
+            onClick={() => setIsStatsModalOpen(true)}
+          />
+          <CogIcon
+            className="h-6 w-6 mr-3 cursor-pointer dark:stroke-white"
+            onClick={() => setIsSettingsModalOpen(true)}
+          />
+        </div>
+      </div>
+      <hr></hr>
     </div>
   )
 }

@@ -526,14 +526,14 @@ function App() {
   // } else {
   // if (DAY_INDEX === THE_USUAL && DAY_INDEX == 0) {
   return (
-    <div className="flex flex-col pt-2 pb-4 max-w-7xl mx-auto sm:px-6 lg:px-8">
+    <div className="flex h-full flex-col">
       <Navbar
         isInfinite={false}
         dayDisplay={DAY_DISPLAY}
         isDarkMode={isDarkMode}
         setIsInfoModalOpen={() => setIsInfoModalOpen(true)}
-        setIsSettingsModalOpen={() => setIsStatsModalOpen(true)}
-        setIsStatsModalOpen={() => setIsSettingsModalOpen(true)}
+        setIsSettingsModalOpen={() => setIsSettingsModalOpen(true)}
+        setIsStatsModalOpen={() => setIsStatsModalOpen(true)}
       />
       <Grid
         solution={solution}

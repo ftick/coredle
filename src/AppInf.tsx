@@ -298,37 +298,14 @@ function AppInf() {
   }
 
   return (
-    <div className="flex flex-col pt-2 pb-4 max-w-7xl mx-auto sm:px-6 lg:px-8">
-      {/* <div className="flex w-80 mx-auto items-center mb-4 mt-4">
-        <h1 className="text-xl ml-2.5 grow font-bold dark:text-white">
-          {GAME_TITLE} ∞
-        </h1>
-        <CalendarIcon
-          className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
-          onClick={() => {
-            window.open(getURLBase(), '_self')
-          }}
-        />
-        <InformationCircleIcon
-          className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
-          onClick={() => setIsInfoModalOpen(true)}
-        />
-        <ChartBarIcon
-          className="h-6 w-6 mr-3 cursor-pointer dark:stroke-white"
-          onClick={() => setIsStatsModalOpen(true)}
-        />
-        <CogIcon
-          className="h-6 w-6 mr-3 cursor-pointer dark:stroke-white"
-          onClick={() => setIsSettingsModalOpen(true)}
-        />
-      </div> */}
+    <div className="flex h-full flex-col">
       <Navbar
         isInfinite={true}
         dayDisplay={0}
         isDarkMode={isDarkMode}
         setIsInfoModalOpen={() => setIsInfoModalOpen(true)}
-        setIsSettingsModalOpen={() => setIsStatsModalOpen(true)}
-        setIsStatsModalOpen={() => setIsSettingsModalOpen(true)}
+        setIsSettingsModalOpen={() => setIsSettingsModalOpen(true)}
+        setIsStatsModalOpen={() => setIsStatsModalOpen(true)}
       />
       <Grid
         solution={solution}
