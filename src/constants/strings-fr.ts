@@ -42,7 +42,7 @@ export const DISCOURAGE_INAPP_BROWSER_TEXT =
 
 export const HOW_TO0_TEXT = 'Comment Jouer'
 export const HOW_TO1_TEXT =
-  'Devinez le mot en 8 essais. Après chaque essai, la couleur des tuiles changera pour montrer à quel point votre essai était proche du mot.'
+  'Devinez le mot en 8 ou 9 essais. Après chaque essai, la couleur des tuiles changera pour montrer à quel point votre essai était proche du mot.'
 export const HOW_TO2_TEXT = 'La lettre B est dans le mot et au bon endroit.'
 export const HOW_TO3_TEXT =
   'La lettre I est dans le mot mais au mauvais endroit.'
