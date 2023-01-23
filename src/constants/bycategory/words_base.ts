@@ -43,6 +43,7 @@ export const WORDS_BASE = [
   'ody',
   'odyssey',
   'projectp',
+  'coredle',
 
   'cafejuno',
   'rosiedubu',
