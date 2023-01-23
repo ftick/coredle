@@ -75,7 +75,6 @@ export const WORDS_BASE = [
   'rollout',
   'flurry',
   'flurries',
-  'bullrush',
   'maximus',
 
   'narrows',
