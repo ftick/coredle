@@ -13,7 +13,6 @@ export const WORDS_TOURNEY = [
   'startgg',
   'grilla',
   'octagon',
-  'kazangle',
   'pingpong',
   'chicago',
   'ohio',

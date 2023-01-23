@@ -79,7 +79,6 @@ export const WORDS_DISCORD = [
 
   'aws',
   'achi',
-  'dashkick',
   'ratlas',
   'xdd',
   'yea',
@@ -98,17 +97,14 @@ export const WORDS_DISCORD = [
   'punch',
   'copium',
   'procure',
-  'ironwall',
-  'catjuno',
   'spinning',
-  'freebird',
   'hampter',
   'wiwi',
   'wiwis',
   'diff',
   'smurf',
   'smurfs',
-  'ifear',
+  'fear',
   'korea',
 
   'aimipat', // emotes
