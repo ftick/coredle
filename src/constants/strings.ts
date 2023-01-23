@@ -5,7 +5,7 @@ export const GAME_URL = 'https://coredle.kuyachi.xyz'
 export const WIN_MESSAGES = ['Great Job!', 'Awesome', 'Well done!']
 export const GAME_COPIED_MESSAGE = 'Game copied to clipboard'
 export const NOT_ENOUGH_LETTERS_MESSAGE = 'Not enough letters'
-export const WORD_NOT_FOUND_MESSAGE = 'Word not found'
+export const WORD_NOT_FOUND_MESSAGE = 'Term not found'
 export const HARD_MODE_ALERT_MESSAGE =
   'Hard Mode can only be enabled at the start!'
 export const CORRECT_WORD_MESSAGE = (solution: string) =>
@@ -25,8 +25,8 @@ export const ENTER_TEXT = 'Enter'
 export const DELETE_TEXT = 'Delete'
 export const STATISTICS_TITLE = 'Statistics'
 export const GUESS_DISTRIBUTION_TEXT = 'Guess Distribution'
-export const NEW_WORD_TEXT = 'New word in'
-export const NEXT_WORD_TEXT = 'Next Word'
+export const NEW_WORD_TEXT = 'New term in'
+export const NEXT_WORD_TEXT = 'Next Term'
 export const SHARE_TEXT = 'Share'
 export const WITH_LINK_TEXT = 'With Link'
 export const TOTAL_TRIES_TEXT = 'Total tries'
@@ -44,14 +44,14 @@ export const DISCOURAGE_INAPP_BROWSER_TEXT =
 
 export const HOW_TO0_TEXT = 'How to Play'
 export const HOW_TO1_TEXT =
-  'Guess the word in 8-9 tries. After each guess, the color of the tiles will change to show how close your guess was to the word.'
+  'Guess the term in 8-9 tries. After each guess, the color of the tiles will change to show how close your guess was to the answer.'
 export const HOW_TO2_TEXT =
-  'The letter B is in this word and in the correct spot.'
+  'The letter B is in this term and in the correct spot.'
 export const HOW_TO3_TEXT =
-  'The letter I is in this word but in the wrong spot.'
-export const HOW_TO4_TEXT = 'The number 7 is not in this word in any spot.'
+  'The letter I is in this term but in the wrong spot.'
+export const HOW_TO4_TEXT = 'The number 7 is not in this term in any spot.'
 
-export const HOW_TO5_TEXT = `This is Wordle using words related to Omega Strikers and its competitive scene, ft. players, tournaments, slang, arenas, characters, you name it.`
+export const HOW_TO5_TEXT = `This is Wordle using terms related to Omega Strikers and its competitive scene, ft. players, tournaments, slang, arenas, characters, you name it.`
 export const HOW_TO6_TEXT = 'contact me'
 export const HOW_TO7_TEXT = 'source code'
 export const HOW_TO8_TEXT = 'forked from Reactle'
