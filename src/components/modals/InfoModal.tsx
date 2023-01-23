@@ -5,6 +5,7 @@ import {
   HOW_TO3_TEXT as HOW_TO3_EN,
   HOW_TO4_TEXT as HOW_TO4_EN,
   HOW_TO5_TEXT as HOW_TO5_EN,
+  HOW_TO5B_TEXT as HOW_TO5B_EN,
   HOW_TO6_TEXT as HOW_TO6_EN,
   HOW_TO7_TEXT as HOW_TO7_EN,
   HOW_TO8_TEXT as HOW_TO8_EN,
@@ -16,6 +17,7 @@ import {
   HOW_TO3_TEXT as HOW_TO3_FR,
   HOW_TO4_TEXT as HOW_TO4_FR,
   HOW_TO5_TEXT as HOW_TO5_FR,
+  HOW_TO5B_TEXT as HOW_TO5B_FR,
   HOW_TO6_TEXT as HOW_TO6_FR,
   HOW_TO7_TEXT as HOW_TO7_FR,
   HOW_TO8_TEXT as HOW_TO8_FR,
@@ -29,6 +31,7 @@ var HOW_TO2 = ''
 var HOW_TO3 = ''
 var HOW_TO4 = ''
 var HOW_TO5 = ''
+var HOW_TO5B = ''
 var HOW_TO6 = ''
 var HOW_TO7 = ''
 var HOW_TO8 = ''
@@ -41,6 +44,7 @@ if (userLang.startsWith('en')) {
   HOW_TO3 = HOW_TO3_EN
   HOW_TO4 = HOW_TO4_EN
   HOW_TO5 = HOW_TO5_EN
+  HOW_TO5B = HOW_TO5B_EN
   HOW_TO6 = HOW_TO6_EN
   HOW_TO7 = HOW_TO7_EN
   HOW_TO8 = HOW_TO8_EN
@@ -51,6 +55,7 @@ if (userLang.startsWith('en')) {
   HOW_TO3 = HOW_TO3_FR
   HOW_TO4 = HOW_TO4_FR
   HOW_TO5 = HOW_TO5_FR
+  HOW_TO5B = HOW_TO5B_FR
   HOW_TO6 = HOW_TO6_FR
   HOW_TO7 = HOW_TO7_FR
   HOW_TO8 = HOW_TO8_FR
@@ -97,6 +102,10 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
 
       <p className="mt-6 italic text-sm text-gray-500 dark:text-gray-300">
         {HOW_TO5}
+      </p>
+
+      <p className="mt-6 italic bold text-sm text-gray-500 dark:text-gray-300">
+        {HOW_TO5B}
       </p>
 
       <p className="mt-6 italic text-sm text-gray-500 dark:text-gray-300">

@@ -52,6 +52,8 @@ export const HOW_TO3_TEXT =
 export const HOW_TO4_TEXT = 'The number 7 is not in this word in any spot.'
 
 export const HOW_TO5_TEXT = `This is Wordle using words related to Omega Strikers and its competitive scene, ft. players, tournaments, slang, arenas, characters, you name it.`
+export const HOW_TO5B_TEXT =
+  'Please refresh the page every Monday @ 3PM EST to ensure your daily words are properly synced.'
 export const HOW_TO6_TEXT = 'contact me'
 export const HOW_TO7_TEXT = 'source code'
 export const HOW_TO8_TEXT = 'forked from Reactle'

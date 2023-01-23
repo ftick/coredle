@@ -49,6 +49,8 @@ export const HOW_TO3_TEXT =
 export const HOW_TO4_TEXT = "La nombre 7 n'est dans le mot à aucun endroit."
 
 export const HOW_TO5_TEXT = `Il s'agit d'un Wordle utilisant des mots liés à Omega Strikers et à sa scène compétitive : joueurs, tournois, mots d'argot, arenas, personnages, etc.`
+export const HOW_TO5B_TEXT =
+  'Veuillez rafraîchir la page tous les lundis à 15 h HNE pour vous assurer que vous utilisez la version la plus récente.'
 export const HOW_TO6_TEXT = 'contactez-moi'
 export const HOW_TO7_TEXT = 'code source'
 export const HOW_TO8_TEXT = 'bifurqué de Reactle'

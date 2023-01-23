@@ -6,6 +6,7 @@ import { WORDS_OCE } from './bycategory/words_oce'
 import { WORDS_ASIA } from './bycategory/words_asia'
 
 var arr = [
+  'builtdiff',
   'kraken', // mods
   'yatta',
   'twiglief',
