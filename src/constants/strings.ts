@@ -51,7 +51,7 @@ export const HOW_TO3_TEXT =
   'The letter I is in this word but in the wrong spot.'
 export const HOW_TO4_TEXT = 'The number 7 is not in this word in any spot.'
 
-export const HOW_TO5_TEXT = `This is Wordle using word related to Omega Strikers and its competitive scene, ft. players, tournaments, slang, arenas, characters, you name it.`
+export const HOW_TO5_TEXT = `This is Wordle using words related to Omega Strikers and its competitive scene, ft. players, tournaments, slang, arenas, characters, you name it.`
 export const HOW_TO6_TEXT = 'contact me'
 export const HOW_TO7_TEXT = 'source code'
 export const HOW_TO8_TEXT = 'forked from Reactle'
