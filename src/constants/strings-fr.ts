@@ -24,8 +24,8 @@ export const ENTER_TEXT = 'Entrée'
 export const DELETE_TEXT = 'Supprimé'
 export const STATISTICS_TITLE = 'Statistiques'
 export const GUESS_DISTRIBUTION_TEXT = 'Distribution des essais'
-export const NEW_WORD_TEXT = 'Nouvelle terme en'
-export const NEXT_WORD_TEXT = 'Prochaine Terme'
+export const NEW_WORD_TEXT = 'Nouveau mot en'
+export const NEXT_WORD_TEXT = 'Prochain Mot'
 export const SHARE_TEXT = 'Partager'
 export const WITH_LINK_TEXT = 'Avec Lien'
 export const TOTAL_TRIES_TEXT = "Nombre total d'essais"
@@ -42,11 +42,11 @@ export const DISCOURAGE_INAPP_BROWSER_TEXT =
 
 export const HOW_TO0_TEXT = 'Comment Jouer'
 export const HOW_TO1_TEXT =
-  'Devinez la terme en 8 ou 9 essais. Après chaque essai, la couleur des tuiles changera pour montrer à quel point votre essai était proche de la terme.'
-export const HOW_TO2_TEXT = 'La lettre B est dans la terme et au bon endroit.'
+  'Devinez le mot en 8 ou 9 essais. Après chaque essai, la couleur des tuiles changera pour montrer à quel point votre essai était proche du mot.'
+export const HOW_TO2_TEXT = 'La lettre B est dans le mot et au bon endroit.'
 export const HOW_TO3_TEXT =
-  'La lettre I est dans la terme mais au mauvais endroit.'
-export const HOW_TO4_TEXT = "La nombre 7 n'est dans la terme à aucun endroit."
+  'La lettre I est dans le mot mais au mauvais endroit.'
+export const HOW_TO4_TEXT = "La nombre 7 n'est dans le mot à aucun endroit."
 
 export const HOW_TO5_TEXT = `Il s'agit d'un Wordle utilisant des termes liés à Omega Strikers et à sa scène compétitive : joueurs, tournois, mots d'argot, arenas, personnages, etc.`
 export const HOW_TO6_TEXT = 'contactez-moi'
