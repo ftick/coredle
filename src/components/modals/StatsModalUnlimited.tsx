@@ -9,6 +9,7 @@ import {
   NEXT_WORD_TEXT,
   SHARE_TEXT,
   WITH_LINK_TEXT,
+  WITH_WORDS_TEXT,
 } from '../../constants/strings'
 import { MigrationIntro } from '../stats/MigrationIntro'
 import { ENABLE_MIGRATE_STATS } from '../../constants/settings'
@@ -74,11 +75,11 @@ export const StatsModalUnlimited = ({
         numberOfGuessesMade={numberOfGuessesMade}
       />
       {(isGameLost || isGameWon) && (
-        <div className="mt-5 sm:mt-0 columns-2 dark:text-white">
-          <div className="flex justify-between">
+        <div className="flex flex-row justify-evenly dark:text-white">
+          <div className="flex flex-col justify-center">
             <button
               type="button"
-              className="mt-2 w-full rounded-md border border-transparent shadow-sm px-3 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"
+              className="mt-2 h-3/5 w-full rounded-md border border-transparent shadow-sm px-3 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"
               onClick={() => {
                 window.location.reload()
               }}
@@ -86,12 +87,12 @@ export const StatsModalUnlimited = ({
               {NEXT_WORD_TEXT}
             </button>
           </div>
-          <div className="flex justify-between">
+          <div className="flex flex-col justify-center">
             <button
               type="button"
-              className="mt-2 w-half rounded-md border border-transparent shadow-sm px-3 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"
+              className="mt-2 h-3/5 w-half rounded-md border border-transparent shadow-sm px-3 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"
               onClick={() => {
-                // shareStatusInf(guesses, isGameLost, isHardMode, false)
+                // shareStatusInf(guesses, isGameLost, isHardMode, false, false)
                 // handleShare()
                 shareStatusInf(
                   solution,
@@ -101,17 +102,20 @@ export const StatsModalUnlimited = ({
                   isDarkMode,
                   isHighContrastMode,
                   false,
+                  false,
                   handleShareToClipboard
                 )
               }}
             >
               {SHARE_TEXT}
             </button>
+          </div>
+          <div className="flex flex-col">
             <button
               type="button"
               className="mt-2 w-half rounded-md border border-transparent shadow-sm px-3 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"
               onClick={() => {
-                // shareStatusInf(guesses, isGameLost, isHardMode, true)
+                // shareStatusInf(guesses, isGameLost, isHardMode, true, false)
                 // handleShare()
                 shareStatusInf(
                   solution,
@@ -121,11 +125,33 @@ export const StatsModalUnlimited = ({
                   isDarkMode,
                   isHighContrastMode,
                   true,
+                  false,
                   handleShareToClipboard
                 )
               }}
             >
               {WITH_LINK_TEXT}
+            </button>
+            <button
+              type="button"
+              className="mt-2 w-half rounded-md border border-transparent shadow-sm px-3 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"
+              onClick={() => {
+                // shareStatusInf(guesses, isGameLost, isHardMode, false, true)
+                // handleShare()
+                shareStatusInf(
+                  solution,
+                  guesses,
+                  isGameLost,
+                  isHardMode,
+                  isDarkMode,
+                  isHighContrastMode,
+                  false,
+                  true,
+                  handleShareToClipboard
+                )
+              }}
+            >
+              {WITH_WORDS_TEXT}
             </button>
           </div>
         </div>
