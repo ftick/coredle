@@ -33,6 +33,7 @@ export const shareStatus = (
   isDarkMode: boolean,
   isHighContrastMode: boolean,
   includeLink: boolean,
+  includeWords: boolean,
   handleShareToClipboard: () => void
 ) => {
   const textToShare =
@@ -42,7 +43,8 @@ export const shareStatus = (
     generateEmojiGrid(
       solution,
       guesses,
-      getEmojiTiles(isDarkMode, isHighContrastMode)
+      getEmojiTiles(isDarkMode, isHighContrastMode),
+      includeWords
     ) +
     `${includeLink ? `\n${GAME_URL}` : ''}`
 
@@ -73,6 +75,7 @@ export const shareStatusInf = (
   isDarkMode: boolean,
   isHighContrastMode: boolean,
   includeLink: boolean,
+  includeWords: boolean,
   handleShareToClipboard: () => void
 ) => {
   const textToShare =
@@ -82,7 +85,8 @@ export const shareStatusInf = (
     generateEmojiGrid(
       solution,
       guesses,
-      getEmojiTiles(isDarkMode, isHighContrastMode)
+      getEmojiTiles(isDarkMode, isHighContrastMode),
+      includeWords
     ) +
     `${includeLink ? `\n${GAME_URL}/infinite` : ''}`
 
@@ -123,25 +127,28 @@ export const shareStatusInf = (
 export const generateEmojiGrid = (
   solution: string,
   guesses: string[],
-  tiles: string[]
+  tiles: string[],
+  includeWords: boolean
 ) => {
   return guesses
     .map((guess) => {
       const status = getGuessStatuses(solution, guess)
       const splitGuess = unicodeSplit(guess)
 
-      return splitGuess
-        .map((_, i) => {
-          switch (status[i]) {
-            case 'correct':
-              return tiles[0]
-            case 'present':
-              return tiles[1]
-            default:
-              return tiles[2]
-          }
-        })
-        .join('')
+      return (
+        splitGuess
+          .map((_, i) => {
+            switch (status[i]) {
+              case 'correct':
+                return tiles[0]
+              case 'present':
+                return tiles[1]
+              default:
+                return tiles[2]
+            }
+          })
+          .join('') + (includeWords ? ' ||' + guess + '||' : '')
+      )
     })
     .join('\n')
 }
