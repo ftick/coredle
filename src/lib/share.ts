@@ -75,6 +75,14 @@ export const toDiscord = (solution: string) => {
   return fin
 }
 
+export const toTiles = (solution: string) => {
+  var fin = ''
+  for (let char of solution) {
+    fin += '🟪'
+  }
+  return fin
+}
+
 export const shareStatusInf = (
   solution: string,
   guesses: string[],
@@ -83,9 +91,13 @@ export const shareStatusInf = (
   isDarkMode: boolean,
   isHighContrastMode: boolean,
   includeLink: boolean,
-  includeWords: boolean,
+  usingDiscord: boolean,
   handleShareToClipboard: () => void
 ) => {
+  const SOLN = usingDiscord
+    ? `\n${toDiscord(solution.toLowerCase())}`
+    : `\n${toTiles(solution)} ${solution}`
+
   const textToShare =
     `${GAME_TITLE}∞ ${lost ? 'X' : guesses.length}/${maxChallenges(
       isHardMode
@@ -94,9 +106,9 @@ export const shareStatusInf = (
       solution,
       guesses,
       getEmojiTiles(isDarkMode, isHighContrastMode),
-      includeWords
+      true
     ).replaceAll('||', '') +
-    `${lost ? `\n  SOLUTION : ${solution}` : ''}` +
+    `${lost ? SOLN : ''}` +
     `${includeLink ? `\n${GAME_URL}/infinite` : ''}`
 
   const shareData = { text: textToShare }

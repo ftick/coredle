@@ -151,7 +151,7 @@ export const StatsModalUnlimited = ({
                 )
               }}
             >
-              {WITH_WORDS_TEXT}
+              to Discord
             </button>
           </div>
         </div>
