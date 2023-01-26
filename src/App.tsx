@@ -91,6 +91,9 @@ function App() {
       if (gameWasWon) {
         setIsGameWon(true)
       }
+      if (loaded.guesses.length > maxChallenges(isHardMode)) {
+        setIsHardMode(false)
+      }
       if (loaded.guesses.length === maxChallenges(isHardMode) && !gameWasWon) {
         setIsGameLost(true)
         showErrorAlert(CORRECT_WORD_MESSAGE(solution), {
