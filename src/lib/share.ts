@@ -87,7 +87,7 @@ export const shareStatusInf = (
       guesses,
       getEmojiTiles(isDarkMode, isHighContrastMode),
       includeWords
-    ) +
+    ).replaceAll('||', '') +
     `${includeLink ? `\n${GAME_URL}/infinite` : ''}`
 
   const shareData = { text: textToShare }
