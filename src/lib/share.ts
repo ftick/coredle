@@ -79,9 +79,9 @@ export const shareStatusInf = (
   handleShareToClipboard: () => void
 ) => {
   const textToShare =
-    `${GAME_TITLE} ${lost ? 'X' : guesses.length}/${maxChallenges(isHardMode)}${
-      isHardMode ? ' 😺🎀' : ''
-    }\n\n` +
+    `${GAME_TITLE}∞ ${lost ? 'X' : guesses.length}/${maxChallenges(
+      isHardMode
+    )}${isHardMode ? ' 😺🎀' : ''}\n\n` +
     generateEmojiGrid(
       solution,
       guesses,
