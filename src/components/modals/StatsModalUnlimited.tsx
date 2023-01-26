@@ -9,7 +9,7 @@ import {
   NEXT_WORD_TEXT,
   SHARE_TEXT,
   WITH_LINK_TEXT,
-  WITH_WORDS_TEXT,
+  // WITH_WORDS_TEXT,
 } from '../../constants/strings'
 import { MigrationIntro } from '../stats/MigrationIntro'
 import { ENABLE_MIGRATE_STATS } from '../../constants/settings'

@@ -77,6 +77,7 @@ export const toDiscord = (solution: string) => {
 
 export const toTiles = (solution: string) => {
   var fin = ''
+  // eslint-disable-next-line
   for (let char of solution) {
     fin += '🟪'
   }
