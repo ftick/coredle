@@ -7,18 +7,18 @@ type Props = {
   solution: string
   guesses: string[]
   currentGuess: string
+  isHard: boolean
   isRevealing?: boolean
   currentRowClassName: string
-  isHard: boolean
 }
 
 export const Grid = ({
   solution,
   guesses,
   currentGuess,
+  isHard,
   isRevealing,
   currentRowClassName,
-  isHard,
 }: Props) => {
   const MAX_CHALLENGES = maxChallenges(isHard)
   const empties =

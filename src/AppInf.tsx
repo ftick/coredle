@@ -83,6 +83,11 @@ function AppInf() {
     getStoredIsHighContrastMode()
   )
   const [isRevealing, setIsRevealing] = useState(false)
+  const [isHardMode, setIsHardMode] = useState(
+    localStorage.getItem('gameMode')
+      ? localStorage.getItem('gameMode') === 'hard'
+      : false
+  )
   const [guesses, setGuesses] = useState<string[]>(() => {
     const loaded = loadUnlimitedGameStateFromLocalStorage()
     if (loaded?.solution !== solution) {
@@ -105,12 +110,6 @@ function AppInf() {
   })
 
   const [stats, setStats] = useState(() => loadUnlimitedStats())
-
-  const [isHardMode, setIsHardMode] = useState(
-    localStorage.getItem('gameMode')
-      ? localStorage.getItem('gameMode') === 'hard'
-      : false
-  )
 
   const [isDiscordEnabled, setIsDiscordEnabled] = useState(
     getStoredIsDiscordEnabled()
@@ -152,7 +151,7 @@ function AppInf() {
   }
 
   const handleHardMode = (isHard: boolean) => {
-    if (guesses.length === 0 || localStorage.getItem('gameMode') === 'hard') {
+    if (guesses.length < 3 || localStorage.getItem('gameMode') === 'hard') {
       setIsHardMode(isHard)
       localStorage.setItem('gameMode', isHard ? 'hard' : 'normal')
     } else {
@@ -321,9 +320,9 @@ function AppInf() {
         solution={solution}
         guesses={guesses}
         currentGuess={currentGuess}
+        isHard={isHardMode}
         isRevealing={isRevealing}
         currentRowClassName={currentRowClass}
-        isHard={isHardMode}
       />
       <div className="h-48"></div>
       <Keyboard
