@@ -1,4 +1,4 @@
-import { MAX_CHALLENGES } from '../../constants/settings'
+import { maxChallenges } from '../../constants/settings'
 import { CompletedRow } from './CompletedRow'
 import { CurrentRow } from './CurrentRow'
 import { EmptyRow } from './EmptyRow'
@@ -7,6 +7,7 @@ type Props = {
   solution: string
   guesses: string[]
   currentGuess: string
+  isHard: boolean
   isRevealing?: boolean
   currentRowClassName: string
 }
@@ -15,9 +16,11 @@ export const Grid = ({
   solution,
   guesses,
   currentGuess,
+  isHard,
   isRevealing,
   currentRowClassName,
 }: Props) => {
+  const MAX_CHALLENGES = maxChallenges(isHard)
   const empties =
     guesses.length < MAX_CHALLENGES - 1
       ? Array.from(Array(MAX_CHALLENGES - 1 - guesses.length))

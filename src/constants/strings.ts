@@ -7,7 +7,7 @@ export const GAME_COPIED_MESSAGE = 'Game copied to clipboard'
 export const NOT_ENOUGH_LETTERS_MESSAGE = 'Not enough letters'
 export const WORD_NOT_FOUND_MESSAGE = 'Word not found'
 export const HARD_MODE_ALERT_MESSAGE =
-  'Hard Mode can only be enabled at the start!'
+  'Kisu Mode can only be enabled before your 3rd guess!'
 export const CORRECT_WORD_MESSAGE = (solution: string) =>
   `The coredle was ${solution}`
 export const WRONG_SPOT_MESSAGE = (guess: string, position: number) =>
@@ -15,9 +15,11 @@ export const WRONG_SPOT_MESSAGE = (guess: string, position: number) =>
 export const NOT_CONTAINED_MESSAGE = (letter: string) =>
   `Guess must contain ${letter}`
 export const SETTINGS_TEXT = 'Settings'
-export const HARD_MODE_TEXT = 'Hard Mode'
-export const HARD_MODE_DESCRIPTION =
-  'Any revealed hints must be used in subsequent guesses'
+// export const HARD_MODE_TEXT = 'Hard Mode'
+// export const HARD_MODE_DESCRIPTION =
+//   'Any revealed hints must be used in subsequent guesses'
+export const HARD_MODE_TEXT = 'Kisu Mode'
+export const HARD_MODE_DESCRIPTION = 'Only 3 guesses allowed'
 export const DARK_MODE_TEXT = 'Dark Mode'
 export const CONTRAST_MODE_TEXT = 'High Contrast Mode'
 export const CONTRAST_MODE_DESCRIPTION = 'For improved color vision'

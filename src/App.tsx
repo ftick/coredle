@@ -14,8 +14,8 @@ import {
   DISCOURAGE_INAPP_BROWSER_TEXT,
 } from './constants/strings'
 import {
+  maxChallenges,
   MAX_WORD_LENGTH,
-  MAX_CHALLENGES,
   ALERT_TIME_MS,
   REVEAL_TIME_MS,
   GAME_LOST_INFO_DELAY,
@@ -26,7 +26,7 @@ import {
   isWordInWordList,
   isWinningWord,
   solution,
-  findFirstUnusedReveal,
+  // findFirstUnusedReveal,
   getDayIndex,
   // THE_USUAL,
   // getURLBase,
@@ -76,6 +76,11 @@ function App() {
     getStoredIsHighContrastMode()
   )
   const [isRevealing, setIsRevealing] = useState(false)
+  const [isHardMode, setIsHardMode] = useState(
+    localStorage.getItem('gameMode')
+      ? localStorage.getItem('gameMode') === 'hard'
+      : false
+  )
   const [guesses, setGuesses] = useState<string[]>(() => {
     const loaded = loadGameStateFromLocalStorage()
     if (loaded?.solution !== solution) {
@@ -86,7 +91,7 @@ function App() {
       if (gameWasWon) {
         setIsGameWon(true)
       }
-      if (loaded.guesses.length === MAX_CHALLENGES && !gameWasWon) {
+      if (loaded.guesses.length === maxChallenges(isHardMode) && !gameWasWon) {
         setIsGameLost(true)
         showErrorAlert(CORRECT_WORD_MESSAGE(solution), {
           persist: true,
@@ -98,12 +103,6 @@ function App() {
   })
 
   const [stats, setStats] = useState(() => loadStats())
-
-  const [isHardMode, setIsHardMode] = useState(
-    localStorage.getItem('gameMode')
-      ? localStorage.getItem('gameMode') === 'hard'
-      : false
-  )
 
   useEffect(() => {
     // if no game state on load,
@@ -144,7 +143,7 @@ function App() {
   }
 
   const handleHardMode = (isHard: boolean) => {
-    if (guesses.length === 0 || localStorage.getItem('gameMode') === 'hard') {
+    if (guesses.length < 3 || localStorage.getItem('gameMode') === 'hard') {
       setIsHardMode(isHard)
       localStorage.setItem('gameMode', isHard ? 'hard' : 'normal')
     } else {
@@ -183,7 +182,7 @@ function App() {
   const onChar = (value: string) => {
     if (
       currentGuess.length < MAX_WORD_LENGTH && // LENGTH_OVERRIDE &&
-      guesses.length < MAX_CHALLENGES &&
+      guesses.length < maxChallenges(isHardMode) &&
       !isGameWon
     ) {
       setCurrentGuess(`${currentGuess}${value}`)
@@ -216,16 +215,16 @@ function App() {
     }
 
     // enforce hard mode - all guesses must contain all previously revealed letters
-    if (isHardMode) {
-      const firstMissingReveal = findFirstUnusedReveal(currentGuess, guesses)
-      if (firstMissingReveal) {
-        showErrorAlert(firstMissingReveal)
-        setCurrentRowClass('jiggle')
-        return setTimeout(() => {
-          setCurrentRowClass('')
-        }, ALERT_TIME_MS)
-      }
-    }
+    // if (isHardMode) {
+    //   const firstMissingReveal = findFirstUnusedReveal(currentGuess, guesses)
+    //   if (firstMissingReveal) {
+    //     showErrorAlert(firstMissingReveal)
+    //     setCurrentRowClass('jiggle')
+    //     return setTimeout(() => {
+    //       setCurrentRowClass('')
+    //     }, ALERT_TIME_MS)
+    //   }
+    // }
 
     setIsRevealing(true)
     // turn this back off after all
@@ -238,19 +237,21 @@ function App() {
 
     if (
       currentGuess.length === MAX_WORD_LENGTH && // LENGTH_OVERRIDE &&
-      guesses.length < MAX_CHALLENGES &&
+      guesses.length < maxChallenges(isHardMode) &&
       !isGameWon
     ) {
       setGuesses([...guesses, currentGuess])
       setCurrentGuess('')
 
       if (winningWord) {
-        setStats(addStatsForCompletedGame(stats, guesses.length))
+        setStats(addStatsForCompletedGame(stats, guesses.length, isHardMode))
         return setIsGameWon(true)
       }
 
-      if (guesses.length === MAX_CHALLENGES - 1) {
-        setStats(addStatsForCompletedGame(stats, guesses.length + 1))
+      if (guesses.length === maxChallenges(isHardMode) - 1) {
+        setStats(
+          addStatsForCompletedGame(stats, guesses.length + 1, isHardMode)
+        )
         setIsGameLost(true)
         showErrorAlert(CORRECT_WORD_MESSAGE(solution), {
           persist: true,
@@ -539,6 +540,7 @@ function App() {
         solution={solution}
         guesses={guesses}
         currentGuess={currentGuess}
+        isHard={isHardMode}
         isRevealing={isRevealing}
         currentRowClassName={currentRowClass}
       />

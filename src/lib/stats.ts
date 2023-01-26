@@ -1,4 +1,4 @@
-import { MAX_CHALLENGES } from '../constants/settings'
+import { maxChallenges } from '../constants/settings'
 import {
   GameStats,
   loadStatsFromLocalStorage,
@@ -13,7 +13,8 @@ import { getDayIndex, THE_USUAL } from './words'
 
 export const addStatsForCompletedGame = (
   gameStats: GameStats,
-  count: number
+  count: number,
+  isHard: boolean
 ) => {
   // Count is number of incorrect guesses before end.
   const stats = { ...gameStats }
@@ -31,7 +32,7 @@ export const addStatsForCompletedGame = (
     stats.totalGames += 1
     stats.lastAttempted = day_index
 
-    if (count >= MAX_CHALLENGES) {
+    if (count >= maxChallenges(isHard)) {
       // A fail situation
       stats.currentStreak = 0
       stats.gamesFailed += 1
@@ -54,7 +55,8 @@ export const addStatsForCompletedGame = (
 export const addStatsForCompletedUnlimitedGame = (
   unlimitedStats: UnlimitedStats,
   count: number,
-  solution: string
+  solution: string,
+  isHard: boolean
 ) => {
   // Count is number of incorrect guesses before end.
   const stats = { ...unlimitedStats }
@@ -62,7 +64,7 @@ export const addStatsForCompletedUnlimitedGame = (
   stats.totalGames += 1
   stats.pastSolutions.push(solution)
 
-  if (count >= MAX_CHALLENGES) {
+  if (count >= maxChallenges(isHard)) {
     // A fail situation
     stats.currentStreak = 0
     stats.gamesFailed += 1
@@ -82,7 +84,7 @@ export const addStatsForCompletedUnlimitedGame = (
 }
 
 const defaultStats: GameStats = {
-  winDistribution: Array.from(new Array(MAX_CHALLENGES), () => 0),
+  winDistribution: Array.from(new Array(maxChallenges(false)), () => 0),
   gamesFailed: 0,
   currentStreak: 0,
   bestStreak: 0,
@@ -92,7 +94,7 @@ const defaultStats: GameStats = {
 }
 
 const defaultUnlimitedStats: UnlimitedStats = {
-  winDistribution: Array.from(new Array(MAX_CHALLENGES), () => 0),
+  winDistribution: Array.from(new Array(maxChallenges(false)), () => 0),
   gamesFailed: 0,
   currentStreak: 0,
   bestStreak: 0,
