@@ -67,6 +67,14 @@ export const shareStatus = (
   }
 }
 
+export const toDiscord = (solution: string) => {
+  var fin = ''
+  for (let char of solution) {
+    fin += `:regional_indicator_${char}:`
+  }
+  return fin
+}
+
 export const shareStatusInf = (
   solution: string,
   guesses: string[],
@@ -88,6 +96,7 @@ export const shareStatusInf = (
       getEmojiTiles(isDarkMode, isHighContrastMode),
       includeWords
     ).replaceAll('||', '') +
+    `${lost ? `\n  SOLUTION : ${solution}` : ''}` +
     `${includeLink ? `\n${GAME_URL}/infinite` : ''}`
 
   const shareData = { text: textToShare }
