@@ -15,9 +15,11 @@ export const WRONG_SPOT_MESSAGE = (guess: string, position: number) =>
 export const NOT_CONTAINED_MESSAGE = (letter: string) =>
   `Guess must contain ${letter}`
 export const SETTINGS_TEXT = 'Settings'
-export const HARD_MODE_TEXT = 'Hard Mode'
-export const HARD_MODE_DESCRIPTION =
-  'Any revealed hints must be used in subsequent guesses'
+// export const HARD_MODE_TEXT = 'Hard Mode'
+// export const HARD_MODE_DESCRIPTION =
+//   'Any revealed hints must be used in subsequent guesses'
+export const HARD_MODE_TEXT = 'Kisu Mode'
+export const HARD_MODE_DESCRIPTION = 'Only 3 guesses allowed'
 export const DARK_MODE_TEXT = 'Dark Mode'
 export const CONTRAST_MODE_TEXT = 'High Contrast Mode'
 export const CONTRAST_MODE_DESCRIPTION = 'For improved color vision'

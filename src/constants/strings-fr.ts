@@ -13,9 +13,11 @@ export const WRONG_SPOT_MESSAGE = (guess: string, position: number) =>
 export const NOT_CONTAINED_MESSAGE = (letter: string) =>
   `Supposition doit contenir ${letter}`
 export const SETTINGS_TEXT = 'Paramètres'
-export const HARD_MODE_TEXT = 'Mode Difficile'
-export const HARD_MODE_DESCRIPTION =
-  'Tous les indices révélés doivent être utilisés pour les devinettes suivantes'
+// export const HARD_MODE_TEXT = 'Mode Difficile'
+// export const HARD_MODE_DESCRIPTION =
+//   'Tous les indices révélés doivent être utilisés pour les devinettes suivantes'
+export const HARD_MODE_TEXT = 'Mode Kisu'
+export const HARD_MODE_DESCRIPTION = 'Seulement 3 Essais'
 export const DARK_MODE_TEXT = 'Mode Sombre'
 export const CONTRAST_MODE_TEXT = 'Mode de Contraste Élevé'
 export const CONTRAST_MODE_DESCRIPTION =

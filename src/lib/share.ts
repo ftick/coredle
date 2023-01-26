@@ -2,7 +2,7 @@ import { getGuessStatuses } from './statuses'
 import { solutionIndex, unicodeSplit } from './words'
 import { GAME_TITLE, GAME_URL } from '../constants/strings'
 // import { getStoredIsHighContrastMode } from './localStorage'
-import { MAX_CHALLENGES } from '../constants/settings'
+import { maxChallenges } from '../constants/settings'
 import { UAParser } from 'ua-parser-js'
 
 const webShareApiDeviceTypes: string[] = ['mobile', 'smarttv', 'wearable']
@@ -39,7 +39,7 @@ export const shareStatus = (
   const textToShare =
     `${GAME_TITLE} ${solutionIndex + 1} ${
       lost ? 'X' : guesses.length
-    }/${MAX_CHALLENGES}${isHardMode ? '*' : ''}\n\n` +
+    }/${maxChallenges(isHardMode)}${isHardMode ? ' 😺🎀' : ''}\n\n` +
     generateEmojiGrid(
       solution,
       guesses,
@@ -79,8 +79,8 @@ export const shareStatusInf = (
   handleShareToClipboard: () => void
 ) => {
   const textToShare =
-    `${GAME_TITLE} ${lost ? 'X' : guesses.length}/${MAX_CHALLENGES}${
-      isHardMode ? '*' : ''
+    `${GAME_TITLE} ${lost ? 'X' : guesses.length}/${maxChallenges(isHardMode)}${
+      isHardMode ? ' 😺🎀' : ''
     }\n\n` +
     generateEmojiGrid(
       solution,
