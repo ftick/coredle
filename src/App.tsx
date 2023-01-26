@@ -531,6 +531,7 @@ function App() {
       <Navbar
         isInfinite={false}
         dayDisplay={DAY_DISPLAY}
+        isHardMode={isHardMode}
         isDarkMode={isDarkMode}
         setIsInfoModalOpen={() => setIsInfoModalOpen(true)}
         setIsSettingsModalOpen={() => setIsSettingsModalOpen(true)}

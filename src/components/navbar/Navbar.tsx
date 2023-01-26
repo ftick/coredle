@@ -12,6 +12,7 @@ import { getURLBase } from '../../lib/words'
 type Props = {
   isInfinite: boolean
   dayDisplay: number | string
+  isHardMode: boolean
   isDarkMode: boolean
   setIsInfoModalOpen: (value: boolean) => void
   setIsStatsModalOpen: (value: boolean) => void
@@ -21,6 +22,7 @@ type Props = {
 export const Navbar = ({
   isInfinite,
   dayDisplay,
+  isHardMode,
   isDarkMode,
   setIsInfoModalOpen,
   setIsStatsModalOpen,
@@ -38,7 +40,7 @@ export const Navbar = ({
           </div>
           <div className="flex">
             <h1 className="text-xl ml-2.5 grow font-bold dark:text-white">
-              {GAME_TITLE} ∞
+              {GAME_TITLE} ∞ {isHardMode ? '😺🎀' : ''}
             </h1>
           </div>
           <div className="right-icons">
@@ -74,6 +76,7 @@ export const Navbar = ({
         <div className="flex">
           <h1 className="text-xl ml-2.5 grow font-bold dark:text-white">
             {GAME_TITLE} {dayDisplay}
+            {isHardMode ? '😺🎀' : ''}
           </h1>
         </div>
         <div className="right-icons">
