@@ -95,7 +95,9 @@ export const shareStatusInf = (
   usingDiscord: boolean,
   handleShareToClipboard: () => void
 ) => {
-  const SOLN = usingDiscord
+  const SOLN = !lost
+    ? ''
+    : usingDiscord
     ? `\n${toDiscord(solution.toLowerCase())}`
     : `\n${toTiles(solution)} ${solution}`
 
