@@ -54,7 +54,7 @@ export const WORDS_TOURNEY = [
   'waterloo',
   'alberta',
   'floppa',
-  't3ayumi',
+  'ayumi',
   'zealots',
   'ignition',
   'meta',

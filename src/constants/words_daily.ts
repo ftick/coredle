@@ -177,7 +177,7 @@ export var WORDS_DAILY = [
   'cbk',
   'noodle',
   'inter',
-  't3ayumi',
+  'ayumi',
   'shrimple',
   'aimi',
   'brickbat',
