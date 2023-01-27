@@ -72,13 +72,26 @@ var arr = [
   'noca',
   'toca',
   'ether',
+  'nillun',
+  'nolan',
+  'ian',
   'iak',
-  'chris',
+
+  'chris', // ody
   'bokehbot',
   'sstrikerr',
   'repertoir',
   'rkrigney',
   'lutzburg',
+  'gahzi',
+  'maddump',
+  'drika',
+  'liyart',
+  'nosro',
+  'tkdd',
+  'archod',
+  'gustogod',
+  'kevin',
   'eric',
 
   'karmak', // comms
