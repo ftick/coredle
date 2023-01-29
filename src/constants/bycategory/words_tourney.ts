@@ -38,6 +38,7 @@ export const WORDS_TOURNEY = [
   'mystic',
   'coyne',
   'saya',
+  'kuyachi',
   'prime',
   'frust',
 
