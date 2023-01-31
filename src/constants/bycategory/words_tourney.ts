@@ -165,7 +165,6 @@ export const WORDS_TOURNEY = [
   's1lent',
   'snoball',
   'kaiser',
-  'letterb',
   'thejoker',
   'joker',
   'treddy',

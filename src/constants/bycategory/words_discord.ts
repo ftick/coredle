@@ -71,7 +71,6 @@ export const WORDS_DISCORD = [
   'kaiwen',
   'oldrey',
   'kaiser',
-  'letterb',
   'yeesh',
   'mloom',
   'solazur',
