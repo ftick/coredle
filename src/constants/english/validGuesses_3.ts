@@ -4,6 +4,7 @@ export const VALID_GUESSES_3 = [
   'aas',
   'aba',
   'abb',
+  'abl',
   'abo',
   'abs',
   'aby',

@@ -79,6 +79,7 @@ export const WORDS_TOURNEY = [
   'pp7',
   '3zy',
   'oki',
+  'abl',
   'dixon',
   'flair',
   'taco',
