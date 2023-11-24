@@ -38,6 +38,7 @@ import {
   saveGameStateToLocalStorage,
   setStoredIsHighContrastMode,
   getStoredIsHighContrastMode,
+  loadStatsFromLocalStorage,
 } from './lib/localStorage'
 
 import './App.css'
@@ -90,6 +91,7 @@ function App() {
       const gameWasWon = loaded.guesses.includes(solution)
       if (gameWasWon) {
         setIsGameWon(true)
+        return loaded.guesses
       }
       if (loaded.guesses.length > maxChallenges(isHardMode)) {
         setIsHardMode(false)
@@ -100,6 +102,16 @@ function App() {
           persist: true,
         })
       }
+      const statsObj = loadStatsFromLocalStorage()
+      if (statsObj?.lastAttempted) {
+        if (statsObj.lastAttempted === DAY_INDEX) {
+          setIsGameLost(true)
+          showErrorAlert(CORRECT_WORD_MESSAGE(solution), {
+            persist: true,
+          })
+        }
+      }
+
       return loaded.guesses
     }
     return []
@@ -146,12 +158,12 @@ function App() {
   }
 
   const handleHardMode = (isHard: boolean) => {
-    if (guesses.length < 3 || localStorage.getItem('gameMode') === 'hard') {
-      setIsHardMode(isHard)
-      localStorage.setItem('gameMode', isHard ? 'hard' : 'normal')
-    } else {
+    if (guesses.length >= 3) {
       showErrorAlert(HARD_MODE_ALERT_MESSAGE)
+      return
     }
+    setIsHardMode(isHard)
+    localStorage.setItem('gameMode', isHard ? 'hard' : 'normal')
   }
 
   const handleHighContrastMode = (isHighContrast: boolean) => {

@@ -151,12 +151,12 @@ function AppInf() {
   }
 
   const handleHardMode = (isHard: boolean) => {
-    if (guesses.length < 3 || localStorage.getItem('gameMode') === 'hard') {
-      setIsHardMode(isHard)
-      localStorage.setItem('gameMode', isHard ? 'hard' : 'normal')
-    } else {
+    if (guesses.length >= 3) {
       showErrorAlert(HARD_MODE_ALERT_MESSAGE)
+      return
     }
+    setIsHardMode(isHard)
+    localStorage.setItem('gameMode', isHard ? 'hard' : 'normal')
   }
 
   const handleHighContrastMode = (isHighContrast: boolean) => {

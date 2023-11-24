@@ -114,7 +114,7 @@ export const loadUnlimitedStats = () => {
 const getSuccessRate = (gameStats: GameStats) => {
   const { totalGames, gamesFailed } = gameStats
 
-  return Math.round(
+  return Math.floor(
     (100 * (totalGames - gamesFailed)) / Math.max(totalGames, 1)
   )
 }
