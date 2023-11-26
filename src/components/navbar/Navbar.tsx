@@ -64,6 +64,44 @@ export const Navbar = ({
       </div>
     )
   }
+  if (typeof dayDisplay == typeof 20 && dayDisplay > 319) {
+    return (
+      <div className="navbar">
+        <div className="navbar-content px-5 short:h-auto">
+          <div className="flex">
+            <InformationCircleIcon
+              className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
+              onClick={() => setIsInfoModalOpen(true)}
+            />
+          </div>
+          <div className="flex">
+            <h1 className="text-xl ml-2.5 grow font-bold dark:text-white">
+              {GAME_TITLE} END
+            </h1>
+          </div>
+          <div className="right-icons">
+            <FontAwesomeIcon
+              className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
+              icon={faInfinity}
+              inverse={isDarkMode}
+              onClick={() => {
+                window.open(getURLBase() + '/infinite', '_self')
+              }}
+            />
+            <ChartBarIcon
+              className="h-6 w-6 mr-3 cursor-pointer dark:stroke-white"
+              onClick={() => setIsStatsModalOpen(true)}
+            />
+            <CogIcon
+              className="h-6 w-6 mr-3 cursor-pointer dark:stroke-white"
+              onClick={() => setIsSettingsModalOpen(true)}
+            />
+          </div>
+        </div>
+        <hr></hr>
+      </div>
+    )
+  }
   return (
     <div className="navbar">
       <div className="navbar-content px-5 short:h-auto">

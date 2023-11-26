@@ -541,73 +541,140 @@ function App() {
   //   )
   // } else {
   // if (DAY_INDEX === THE_USUAL && DAY_INDEX == 0) {
-  return (
-    <div className="flex h-full flex-col">
-      <Navbar
-        isInfinite={false}
-        dayDisplay={DAY_DISPLAY}
-        isHardMode={isHardMode}
-        isDarkMode={isDarkMode}
-        setIsInfoModalOpen={() => setIsInfoModalOpen(true)}
-        setIsSettingsModalOpen={() => setIsSettingsModalOpen(true)}
-        setIsStatsModalOpen={() => setIsStatsModalOpen(true)}
-      />
-      <Grid
-        solution={solution}
-        guesses={guesses}
-        currentGuess={currentGuess}
-        isHard={isHardMode}
-        isRevealing={isRevealing}
-        currentRowClassName={currentRowClass}
-      />
-      <div className="h-48"></div>
-      <Keyboard
-        onChar={onChar}
-        onDelete={onDelete}
-        onEnter={onEnter}
-        guesses={guesses}
-        isRevealing={isRevealing}
-      />
-      <InfoModal
-        isOpen={isInfoModalOpen}
-        handleClose={() => setIsInfoModalOpen(false)}
-      />
-      <StatsModal
-        isOpen={isStatsModalOpen}
-        handleClose={() => setIsStatsModalOpen(false)}
-        solution={solution}
-        guesses={guesses}
-        gameStats={stats}
-        isGameLost={isGameLost}
-        isGameWon={isGameWon}
-        handleShareToClipboard={() => showSuccessAlert(GAME_COPIED_MESSAGE)}
-        handleMigrateStatsButton={() => {
-          setIsStatsModalOpen(false)
-          setIsMigrateStatsModalOpen(true)
-        }}
-        isHardMode={isHardMode}
-        isDarkMode={isDarkMode}
-        isHighContrastMode={isHighContrastMode}
-        numberOfGuessesMade={guesses.length}
-      />
-      <MigrateStatsModal
-        isOpen={isMigrateStatsModalOpen}
-        handleClose={() => setIsMigrateStatsModalOpen(false)}
-      />
-      <SettingsModal
-        isOpen={isSettingsModalOpen}
-        handleClose={() => setIsSettingsModalOpen(false)}
-        isHardMode={isHardMode}
-        handleHardMode={handleHardMode}
-        isDarkMode={isDarkMode}
-        handleDarkMode={handleDarkMode}
-        isHighContrastMode={isHighContrastMode}
-        handleHighContrastMode={handleHighContrastMode}
-      />
 
-      <AlertContainer />
-    </div>
-  )
+  console.log(DAY_INDEX)
+  if (DAY_INDEX > 318) {
+    return (
+      <div className="flex h-full flex-col">
+        <Navbar
+          isInfinite={false}
+          dayDisplay={DAY_DISPLAY}
+          isHardMode={isHardMode}
+          isDarkMode={isDarkMode}
+          setIsInfoModalOpen={() => setIsInfoModalOpen(true)}
+          setIsSettingsModalOpen={() => setIsSettingsModalOpen(true)}
+          setIsStatsModalOpen={() => setIsStatsModalOpen(true)}
+        />
+        <div>
+          <h1 className="text-7xl text-center ml-2.5 grow font-bold dark:text-white">
+            🔗
+            <a
+              className="text-yellow-400 hover:underline decoration-yellow-500"
+              href="https://coredle2.kuyachi.xyz"
+            >
+              Coredle 2
+            </a>
+          </h1>
+        </div>
+        <InfoModal
+          isOpen={isInfoModalOpen}
+          handleClose={() => setIsInfoModalOpen(false)}
+        />
+        <StatsModal
+          isOpen={isStatsModalOpen}
+          handleClose={() => setIsStatsModalOpen(false)}
+          solution={solution}
+          guesses={guesses}
+          gameStats={stats}
+          isGameLost={isGameLost}
+          isGameWon={isGameWon}
+          handleShareToClipboard={() => showSuccessAlert(GAME_COPIED_MESSAGE)}
+          handleMigrateStatsButton={() => {
+            setIsStatsModalOpen(false)
+            setIsMigrateStatsModalOpen(true)
+          }}
+          isHardMode={isHardMode}
+          isDarkMode={isDarkMode}
+          isHighContrastMode={isHighContrastMode}
+          numberOfGuessesMade={guesses.length}
+        />
+        <MigrateStatsModal
+          isOpen={isMigrateStatsModalOpen}
+          handleClose={() => setIsMigrateStatsModalOpen(false)}
+        />
+        <SettingsModal
+          isOpen={isSettingsModalOpen}
+          handleClose={() => setIsSettingsModalOpen(false)}
+          isHardMode={isHardMode}
+          handleHardMode={handleHardMode}
+          isDarkMode={isDarkMode}
+          handleDarkMode={handleDarkMode}
+          isHighContrastMode={isHighContrastMode}
+          handleHighContrastMode={handleHighContrastMode}
+        />
+
+        <AlertContainer />
+      </div>
+    )
+  } else {
+    return (
+      <div className="flex h-full flex-col">
+        <Navbar
+          isInfinite={false}
+          dayDisplay={DAY_DISPLAY}
+          isHardMode={isHardMode}
+          isDarkMode={isDarkMode}
+          setIsInfoModalOpen={() => setIsInfoModalOpen(true)}
+          setIsSettingsModalOpen={() => setIsSettingsModalOpen(true)}
+          setIsStatsModalOpen={() => setIsStatsModalOpen(true)}
+        />
+        <Grid
+          solution={solution}
+          guesses={guesses}
+          currentGuess={currentGuess}
+          isHard={isHardMode}
+          isRevealing={isRevealing}
+          currentRowClassName={currentRowClass}
+        />
+        <div className="h-48"></div>
+        <Keyboard
+          onChar={onChar}
+          onDelete={onDelete}
+          onEnter={onEnter}
+          guesses={guesses}
+          isRevealing={isRevealing}
+        />
+        <InfoModal
+          isOpen={isInfoModalOpen}
+          handleClose={() => setIsInfoModalOpen(false)}
+        />
+        <StatsModal
+          isOpen={isStatsModalOpen}
+          handleClose={() => setIsStatsModalOpen(false)}
+          solution={solution}
+          guesses={guesses}
+          gameStats={stats}
+          isGameLost={isGameLost}
+          isGameWon={isGameWon}
+          handleShareToClipboard={() => showSuccessAlert(GAME_COPIED_MESSAGE)}
+          handleMigrateStatsButton={() => {
+            setIsStatsModalOpen(false)
+            setIsMigrateStatsModalOpen(true)
+          }}
+          isHardMode={isHardMode}
+          isDarkMode={isDarkMode}
+          isHighContrastMode={isHighContrastMode}
+          numberOfGuessesMade={guesses.length}
+        />
+        <MigrateStatsModal
+          isOpen={isMigrateStatsModalOpen}
+          handleClose={() => setIsMigrateStatsModalOpen(false)}
+        />
+        <SettingsModal
+          isOpen={isSettingsModalOpen}
+          handleClose={() => setIsSettingsModalOpen(false)}
+          isHardMode={isHardMode}
+          handleHardMode={handleHardMode}
+          isDarkMode={isDarkMode}
+          handleDarkMode={handleDarkMode}
+          isHighContrastMode={isHighContrastMode}
+          handleHighContrastMode={handleHighContrastMode}
+        />
+
+        <AlertContainer />
+      </div>
+    )
+  }
 }
 // }
 
