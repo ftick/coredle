@@ -37,7 +37,7 @@ export const CURRENT_STREAK_TEXT = 'Traînée actuelle'
 export const BEST_STREAK_TEXT = 'Meilleure série'
 export const MIGRATE_BUTTON_TEXT = 'Transférer'
 export const MIGRATE_DESCRIPTION_TEXT =
-  'Cliquez ici pour transférer vos statistiques vers un nouvel appareil.'
+  'Cliquez ici pour transférer vos statistiques de Coredle vers un nouvel appareil.'
 export const MIGRATE_WARNING_TEXT = `Êtes-vous sûr de vouloir annuler les statistiques de ce dispositif ? Cette action n'est pas réversible.`
 export const RELOAD_TEXT = 'Le site va maintenant se recharger.'
 export const DISCOURAGE_INAPP_BROWSER_TEXT =

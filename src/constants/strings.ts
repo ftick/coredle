@@ -38,7 +38,7 @@ export const CURRENT_STREAK_TEXT = 'Current streak'
 export const BEST_STREAK_TEXT = 'Best streak'
 export const MIGRATE_BUTTON_TEXT = 'Transfer'
 export const MIGRATE_DESCRIPTION_TEXT =
-  'Click here to transfer your statistics to a new device.'
+  'Click here to transfer your Coredle statistics to a new device.'
 export const MIGRATE_WARNING_TEXT =
   'Are you sure you want to override the statistics on this device? This action is not reversable.'
 export const RELOAD_TEXT = 'The site will now reload.'
