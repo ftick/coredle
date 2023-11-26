@@ -560,7 +560,7 @@ function App() {
             🔗
             <a
               className="text-yellow-400 hover:underline decoration-yellow-500"
-              href="https://coredle2.kuyachi.xyz"
+              href="https://coredletwo.kuyachi.xyz"
             >
               Coredle 2
             </a>
